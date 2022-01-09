@@ -65,4 +65,4 @@ V.1.1 - 21 May 2015
 * Add custom controller name and custom model name
 * Add client side datatables
 
-**Copyright 2015 [harviacode.com](http://harviacode.com)**
+**Copyright 2015 [harviacode.com](http://harviacode.com)**# awan
