@@ -3,8 +3,8 @@
 .DS_STORE
 
 # Config
-application/v1/config/config.php
-application/v1/config/database.php
+application/config/config.php
+application/config/database.php
 
 # Assets
 assets/
