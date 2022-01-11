@@ -23,7 +23,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><?php echo $page_url ;?></h1>
+            <h1 class="m-0"></h1>
           </div>
           </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -42,6 +42,7 @@
         foreach($data_unit as $val) {
             $total_plafon += $val->plafon;
             $total_target += $val->target;
+           
             //echo $val->plafon;
         }
         $percent_target = ($total_plafon/$total_target) * 100;
@@ -79,10 +80,10 @@
                     </p>
                     <br>
                     <div class="progress-group">
-                      Total Realisasi Unit <?= $percent_target.'%' ?>
+                      Total Realisasi Unit <?= number_format($percent_target,2),'%' ; ?>
                       <span class="float-right"><b><?= number_format($total_plafon,2,',','.'); ?></b>/<?= number_format($total_target,2,',','.') ?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width: <?= $percent_target.'%' ?>"></div>
+                        <div class="progress-bar bg-primary" style="width:  <?= number_format($percent_target,2),'%' ; ?>"></div>
                       </div>
                     </div>
                     <!-- /.progress-group -->

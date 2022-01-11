@@ -44,6 +44,20 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>
+                </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=3409') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Kota</p>
+                </a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=3410') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Jati</p>
+                </a>
+              </li>
               </li>
               <li class="nav-item">
                 <a href="<?php echo site_url('unit?kode=5921') ?>" class="nav-link">
@@ -51,10 +65,77 @@
                   <p>Unit Bae</p>
                 </a>
               </li>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5922') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Dawe</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5923') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Gebog</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5924') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Gondosari</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5926') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Mejobo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5927') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Ngetuk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5928') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Ps Jember</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5929') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Undaan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=5930') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Wates</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="<?php echo site_url('unit?kode=5931') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Unit Jekulo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=7059') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Jati2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=7542') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Gulang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('unit?kode=8122') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit Colo</p>
                 </a>
               </li>
               
