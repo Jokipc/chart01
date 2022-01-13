@@ -79,6 +79,7 @@ $db['default'] = array(
 	'username' => 'u259880211_root',
 	'password' => 'Brikudus2',
 	'database' => 'u259880211_chart',
+	
 	//'username' => 'root',
 	//'password' => '',
 	//'database' => 'chart_db',
