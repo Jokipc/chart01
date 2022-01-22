@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://arkudus.online/';
-//$config['base_url'] = 'http://localhost/chart/';
+//$config['base_url'] = 'https://arkudus.online/';
+$config['base_url'] = 'http://localhost/chart/';
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ $config['uri_protocol']	= 'REQUEST_URI';
 |
 | https://codeigniter.com/user_guide/general/urls.html
 */
-$config['url_suffix'] = 'html';
+$config['url_suffix'] = '.html';
 
 /*
 |--------------------------------------------------------------------------
@@ -325,7 +325,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '894djfo94irkwow394tgjoieirreoeruu944ir';
+$config['encryption_key'] = 'randomstring';
 
 /*
 |--------------------------------------------------------------------------

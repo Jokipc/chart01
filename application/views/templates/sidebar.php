@@ -1,4 +1,5 @@
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
  
 
     <!-- Sidebar -->
@@ -6,10 +7,12 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?php echo base_url() ;?>template/dist/img/r.png" class="img-circle elevation-2" alt="User Image">
+          
+          <img src="<?php echo base_url() ;?>template/dist/img/<?php echo $this->session->userdata('ico');?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Monitoring Dashboard</a>
+          <a href="#" class="d-block"><?php echo $this->session->userdata('nama_mantri');?></a>
+
         </div>
       </div>
 
@@ -26,18 +29,15 @@
       </div>
 
       <!-- Sidebar Menu -->
+      <li class="nav-item">
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
+          
+
+          <li class="nav-item">
+            
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?php echo site_url('home') ?>" class="nav-link active">
@@ -141,8 +141,6 @@
               
             </ul>
           </li>
-
-         
           
         
          
@@ -156,27 +154,33 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="<?php echo site_url();?>saving" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General Elements</p>
+                  <p>Saving</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Advanced Elements</p>
+                  <p>Qris</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
+                <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
+                  <p>Brimo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/validation.html" class="nav-link">
+                <a href="<?php echo site_url();?>kunjual" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
+                  <p>Kunjual</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>stroberikasir" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Stroberi Kasir<p>
                 </a>
               </li>
             </ul>

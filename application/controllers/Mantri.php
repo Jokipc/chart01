@@ -9,6 +9,7 @@ class Mantri extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mantri_model');
+        $this->load->model('Rank_model');
         $this->load->library('form_validation');
     }
 
@@ -29,17 +30,21 @@ class Mantri extends CI_Controller
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Mantri_model->total_rows($q);
         $mantri = $this->Mantri_model->get_limit_data($config['per_page'], $start, $q);
+        $mantri_rank = $this->Rank_model->get_rank()->result();
+     
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
-            'mantri_data' => $mantri,
+            'mantri_data' => mantri_rank,
+            'mantri_rank' => $mantri_rank,
             'q' => $q,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
+        
         $this->load->view('mantri/mantri_list', $data);
     }
 
@@ -154,6 +159,9 @@ class Mantri extends CI_Controller
 	$this->form_validation->set_rules('id_pn', 'id_pn', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
+
+
+
 
 }
 

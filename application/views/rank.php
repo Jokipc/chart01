@@ -1,13 +1,33 @@
+<?php if($this->session->userdata('id_level')==='1'):?> 
+
+
 <html lang="en"	dir="ltr">
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
 		<title>Air Balons</title>
 	</head>
+	
+	
+	
 	<body>
-	<img src="<?php echo base_url() ;?>template/dist/img/a.png" class="b b1" alt="">
-	<img src="<?php echo base_url() ;?>template/dist/img/aa.png" class="b b2" alt="">
-	<img src="<?php echo base_url() ;?>template/dist/img/aaa.png" class="b b3" alt="">
+	
+	<br></br>
+	<h3 style= "color : blue"><center>PERANGKAT MANTRI</center></h3>
+	<?php
+		$number = 0;
+		foreach( $data as $val){
+		$number++;
+			print '<img src="'.base_url().'template/dist/img/a.png" class="b b'.$number.'" alt="">';
+			
+			
+			
+
+			print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+			
+		}
+	?>
+	
 	
 	<div class="c c1">
 		<div class="cloud">
@@ -40,7 +60,11 @@
 		<span></span>
 	</div>
 	
+	 
 	</body>
-
-
+	
+	
 </html>
+<?php else: ?>
+<?= "Bukan Hak Akses Anda !!" ?>
+<?php endif;?>

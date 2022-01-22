@@ -2,13 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\controllers",
+    "\\application\\config",
     "\\application\\models",
     "\\application\\views",
-    "\\application\\views\\mantri",
-    "\\application\\views\\real",
+    "\\application\\views\\brimo",
+    "\\application\\views\\saving",
     "\\application\\views\\templates",
-    "\\application\\views\\unit"
+    "\\application\\views\\unit",
+    "\\tests"
   ],
   "SelectedNode": "\\application\\views\\templates\\meta.php",
   "PreviewInSolutionExplorer": false

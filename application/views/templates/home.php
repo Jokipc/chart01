@@ -8,7 +8,7 @@
   </div>
 
   <!-- Navbar -->
- //<?php $this->load->view('templates/meta') ?>
+ <?php $this->load->view('templates/meta') ?>
  
 
   <!-- /.navbar -->

@@ -8,7 +8,7 @@
   </div>
 
   <!-- Navbar -->
- //<?php $this->load->view('templates/meta') ?>
+ <?php $this->load->view('templates/meta') ?>
  
 
   <!-- /.navbar -->
@@ -40,7 +40,7 @@
         $total_plafon = 0;
         $total_target = 0;
         foreach($data_unit as $val) {
-            $total_plafon += $val->plafon;
+            $total_plafon += $val->total;
             $total_target += $val->target;
            
             //echo $val->plafon;
@@ -65,7 +65,7 @@
           data: <?php echo $data;?>,
           xkey: 'nama_mantri',
           xLabelAngle: 60,
-          ykeys:  ['plafon', 'target'],
+          ykeys:  ['total', 'target'],
           labels: ['Realiasai', 'Target'],
 		  gridTextColor : ['black'],
 		  barColors : ['CadetBlue','DarkSalmon'] 
@@ -82,8 +82,9 @@
                     <div class="progress-group">
                       Total Realisasi Unit <?= number_format($percent_target,2),'%' ; ?>
                       <span class="float-right"><b><?= number_format($total_plafon,2,',','.'); ?></b>/<?= number_format($total_target,2,',','.') ?></span>
+                      <br></br>
                       <div class="progress progress-sm">
-                        <div class="progress-bar bg-primary" style="width:  <?= number_format($percent_target,2),'%' ; ?>"></div>
+                      <div class="progress-bar bg-primary" style="width:  <?= number_format($percent_target,2),'%' ; ?>"></div>
                       </div>
                     </div>
                     <!-- /.progress-group -->
