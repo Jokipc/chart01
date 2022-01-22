@@ -12,13 +12,17 @@ body{
   animation-iteration-count: 1;
    animation-fill-mode: forwards;
    animation-timing-function: linear;
+
 }
 .b1{
   width: 120px;
   height: auto;
   top: 30%;
   z-index:2;
-  animation-duration: 50s;}
+  animation-duration: 50s;
+
+
+}
 .b2{
   width: 150px;
   height: auto;
@@ -30,11 +34,11 @@ body{
   height: auto;
   top: 60%;
   animation-duration: 100s;
+  
 }
 
 .c{
   position: absolute;
-  animation-duration: 75s;
 }
 
 .cloud{
@@ -74,7 +78,7 @@ body{
 }
 .c2{
   animation: run 60s linear infinite;
-  top: 20%;D
+  top: 20%;
   transform: scale(0.22);
 }
 .c3{
