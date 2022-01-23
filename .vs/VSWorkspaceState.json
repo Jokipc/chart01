@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\controllers",
+    "\\application\\config",
+    "\\application\\models",
     "\\application\\views",
-    "\\application\\views\\brimo",
-    "\\template",
-    "\\template\\dist",
-    "\\template\\dist\\css",
-    "\\tests"
+    "\\application\\views\\kunjual",
+    "\\application\\views\\pasarid",
+    "\\application\\views\\qris",
+    "\\application\\views\\stroberikasir",
+    "\\application\\views\\unit"
   ],
-  "SelectedNode": "\\application\\views\\rank.php",
+  "SelectedNode": "\\application\\models\\Home_model.php",
   "PreviewInSolutionExplorer": false
 }
