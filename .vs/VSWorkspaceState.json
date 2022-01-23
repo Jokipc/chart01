@@ -2,15 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\config",
-    "\\application\\models",
     "\\application\\views",
-    "\\application\\views\\kunjual",
-    "\\application\\views\\pasarid",
-    "\\application\\views\\qris",
-    "\\application\\views\\stroberikasir",
-    "\\application\\views\\unit"
+    "\\application\\views\\templates"
   ],
-  "SelectedNode": "\\application\\models\\Home_model.php",
+  "SelectedNode": "\\application\\views\\templates\\sidebaradmin.php",
   "PreviewInSolutionExplorer": false
 }
