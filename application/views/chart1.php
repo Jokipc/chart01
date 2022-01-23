@@ -42,7 +42,7 @@
                     $pasartarget = $this->session->userdata('pasar');
                     $pasarpersen = ($data_pasar/$pasartarget) * 100 ;
 
-					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/5 ; 
+					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/1 ; 
 ?>
 <?php $angka=10; ?>
 
