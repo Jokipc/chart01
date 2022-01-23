@@ -26,9 +26,9 @@
    
   
   <section class="content">
-  <
+  
       <div class="container-fluid" >
-      h3>4DX MANTRI </h3>
+      <h3>4DX MANTRI </h3>
         <div class="row"  >
           <div class="col-md-6"  >
           
