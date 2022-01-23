@@ -26,10 +26,11 @@
    
   
   <section class="content">
+  <h3> 4DX MANTRI </h3>
       <div class="container-fluid" >
         <div class="row"  >
           <div class="col-md-6"  >
-          <h3> 4DX MANTRI </h3>
+          
             <!-- Total Pencapaian CHART -->
             <div class="card card-primarp"  >
               <div class="card-header">
