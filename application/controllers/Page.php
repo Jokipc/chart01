@@ -10,7 +10,7 @@ class Page extends CI_Controller{
   function index(){
     //Allowing akses to admin only
       if($this->session->userdata('id_level')==='1'){
-          $this->load->view('brimo/brimo_list');
+          $this->load->view('saving/saving_list');
       }else{
           echo "Access Denied";
       }
@@ -20,7 +20,7 @@ class Page extends CI_Controller{
   function user(){
     //Allowing akses to staff only
     if($this->session->userdata('id_level')==='2'){
-      $this->load->view('brimo/brimo_list');
+      $this->load->view('home');
 
     }else{
         echo "Access Denied";
