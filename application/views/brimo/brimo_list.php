@@ -1,12 +1,8 @@
-<!doctype html>
+<?php if($this->session->userdata('id_level')==='1'):?> <!doctype html>
 <html>
     <head>
 <?php $this->load->view('templates/header'); ?>
-<?php if($this->session->userdata('id_level')==='1'):?> 
 <?php $this->load->view('templates/sidebaradmin'); ?>
-<?php else: ?>
-<?php $this->load->view('templates/sidebar'); ?>
-<?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
 <?php $this->load->view('templates/js'); ?>
     </head>
@@ -18,7 +14,7 @@
      <h2 style="margin-top:0px">Brimo List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <?php echo anchor(site_url('brimo/create'),'Create', 'class="btn btn-primary"'); ?>
+                
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -64,10 +60,7 @@
 			<td><?php echo $brimo->norek ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
-				echo anchor(site_url('brimo/read/'.$brimo->id),'Read'); 
-				echo ' | '; 
-				echo anchor(site_url('brimo/update/'.$brimo->id),'Update'); 
-				echo ' | '; 
+				 
 				echo anchor(site_url('brimo/delete/'.$brimo->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				?>
 			</td>
@@ -90,3 +83,11 @@
         </div>
 </html>
 <?php $this->load->view('templates/footer'); ?>
+<?php else: ?>
+<br>
+<br>
+<center>
+<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
+
+<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
+<?php endif;?>

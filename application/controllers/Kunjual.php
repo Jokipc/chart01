@@ -41,6 +41,7 @@ class Kunjual extends CI_Controller
             'start' => $start,
         );
         $this->load->view('kunjual/kunjual_list', $data);
+        
     }
 
     public function read($id) 
@@ -94,7 +95,7 @@ class Kunjual extends CI_Controller
 
             $this->Kunjual_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('kunjual'));
+            redirect(site_url('home'));
         }
     }
     

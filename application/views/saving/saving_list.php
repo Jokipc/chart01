@@ -1,12 +1,10 @@
-<!doctype html>
-<?php $this->load->view('templates/header'); ?>
-<?php $this->load->view('templates/sidebar'); ?>
-<?php $this->load->view('templates/meta'); ?>
-<?php $this->load->view('templates/js'); ?>
+<?php if($this->session->userdata('id_level')==='1'):?> <!doctype html>
 <html>
     <head>
-        
-      
+<?php $this->load->view('templates/header'); ?>
+<?php $this->load->view('templates/sidebaradmin'); ?>
+<?php $this->load->view('templates/meta'); ?>
+<?php $this->load->view('templates/js'); ?>
     </head>
 
     <body>
@@ -20,7 +18,7 @@
         <h2 style="margin-top:0px">Saving List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <?php echo anchor(site_url('saving/create'),'Create', 'class="btn btn-primary"'); ?>
+                
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -67,10 +65,7 @@
 			<td><?php echo $saving->norek ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
-				echo anchor(site_url('saving/read/'.$saving->id),'Read'); 
-				echo ' | '; 
-				echo anchor(site_url('saving/update/'.$saving->id),'Update'); 
-				echo ' | '; 
+				
 				echo anchor(site_url('saving/delete/'.$saving->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				?>
 			</td>
@@ -96,3 +91,11 @@
 </html>
 
 <?php $this->load->view('templates/footer'); ?>
+<?php else: ?>
+<br>
+<br>
+<center>
+<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
+
+<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
+<?php endif;?>

@@ -1,12 +1,15 @@
 <!doctype html>
+<?php if($this->session->userdata('id_level')==='2'):?> 
+<head>
 <?php $this->load->view('templates/header'); ?>
+<?php if($this->session->userdata('id_level')==='1'):?> 
+<?php $this->load->view('templates/sidebaradmin'); ?>
+<?php else: ?>
 <?php $this->load->view('templates/sidebar'); ?>
+<?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
 <?php $this->load->view('templates/js'); ?>
-
-
-<html>
-    <head>
+     
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Datepicker - Default functionality</title>
@@ -28,22 +31,24 @@
     <br>
     <ul>
     <section class="content">
-        <h2 style="margin-top:0px">Saving <?php echo $button ?></h2>
+        <h2 style="margin-top:0px">Akusisi Pembukaan Rekening</h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
-            <label for="int">Personal Number <?php echo form_error('pn') ?></label>
-            <input type="text" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $pn; ?>" />
+            
+            <label for="int"><?php echo $this->session->userdata('pn');?> <?php echo form_error('pn') ?></label>
+            <label for="int"><?php echo $this->session->userdata('nama_mantri');?><?php echo form_error('pn') ?></label>
+            <input type="text" class="form-control" name="pn" id="pn" autocomplete="off" hidden value="<?php echo $this->session->userdata('pn');?>" />
         </div>
 	    <div class="form-group">
             <label for="date">Tanggal <?php echo form_error('tgl') ?></label>
-            <input type="text" class="form-control" name="tgl" id="datepicker" placeholder="Tgl" value="<?php echo $tgl; ?>" />
+            <input type="text" class="form-control" name="tgl" id="datepicker" placeholder="yyyy-mm-dd" autocomplete="off" value="<?php echo $tgl; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Rekening <?php echo form_error('norek') ?></label>
-            <input type="text" class="form-control" name="norek" id="norek" placeholder="Norek" value="<?php echo $norek; ?>" />
+            <input type="text" class="form-control" name="norek" id="norek" placeholder="000000000000000" maxlength="15" autocomplete="off" value="<?php echo $norek; ?>" />
         </div>
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
-	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	     <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('saving') ?>" class="btn btn-default">Cancel</a>
 	</form>
   
@@ -54,3 +59,12 @@
 
 </div>
 <?php $this->load->view('templates/footer'); ?>
+
+<?php else: ?>
+<br>
+<br>
+<center>
+<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
+
+<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
+<?php endif;?>

@@ -40,7 +40,8 @@ class Brimo extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('brimo/brimo_list', $data);
+       $this->load->view('brimo/brimo_list', $data);
+        
     }
 
     public function read($id) 
@@ -88,7 +89,7 @@ class Brimo extends CI_Controller
 
             $this->Brimo_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('brimo'));
+            redirect(site_url('home'));
         }
     }
     

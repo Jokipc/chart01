@@ -40,7 +40,8 @@ class Qris extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('qris/qris_list', $data);
+         $this->load->view('qris/qris_list', $data);
+        
     }
 
     public function read($id) 
@@ -94,7 +95,7 @@ class Qris extends CI_Controller
 
             $this->Qris_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('qris'));
+            redirect(site_url('home'));
         }
     }
     

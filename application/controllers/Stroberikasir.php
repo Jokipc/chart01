@@ -40,7 +40,8 @@ class Stroberikasir extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('stroberikasir/stroberikasir_list', $data);
+         $this->load->view('stroberikasir/stroberikasir_list', $data);
+        
     }
 
     public function read($id) 
@@ -72,7 +73,8 @@ class Stroberikasir extends CI_Controller
 	    'nama_toko' => set_value('nama_toko'),
 	    'hp' => set_value('hp'),
 	);
-        $this->load->view('stroberikasir/stroberikasir_form', $data);
+        $this->load->view('templates/home', $data);
+        redirect(site_url('home'));
     }
     
     public function create_action() 
@@ -91,7 +93,7 @@ class Stroberikasir extends CI_Controller
 
             $this->Stroberikasir_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('stroberikasir'));
+            redirect(site_url('home'));
         }
     }
     

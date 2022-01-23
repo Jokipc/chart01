@@ -6,7 +6,7 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="<?php echo base_url() ;?>template/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
-
+  <?php if($this->session->userdata('id_level')==='2'):?> 
   <!-- Navbar -->
  <?php $this->load->view('templates/meta') ?>
  
@@ -23,7 +23,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><?php echo $page_url ;?></h1>
+           <b style="color:orange" > Pencapaian</b>
           </div>
           </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -32,12 +32,76 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
+      <div class="container-fluid"" >
         <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6" >
+            <!-- small box -->
+            <div class="small-box bg-info" style="height:92px;" >
+              <div class="inner">
+                <h3>112%
+                </h3>
+
+                <p>Akuisisi Rekening</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+             </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6" >
+            <!-- small box -->
+            <div class="small-box bg-info" style="height:92px;" >
+              <div class="inner">
+                <h3>112%
+                </h3>
+
+                <p>Akuisisi Rekening</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+             </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6" >
+            <!-- small box -->
+            <div class="small-box bg-info" style="height:92px;" >
+              <div class="inner">
+                <h3>112%
+                </h3>
+
+                <p>Akuisisi Rekening</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+             </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6" >
+            <!-- small box -->
+            <div class="small-box bg-info" style="height:92px;" >
+              <div class="inner">
+                <h3>112%
+                </h3>
+
+                <p>Akuisisi Rekening</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+             </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-info" style="height:92px">
               <div class="inner">
                 <h3>112
                 </h3>
@@ -47,57 +111,58 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-info" style="height:92px">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>112
+                </h3>
 
-                <p>Bounce Rate</p>
+                <p>Mantri</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-info" style="height:92px">
               <div class="inner">
-                <h3>44</h3>
+                <h3>112
+                </h3>
 
-                <p>User Registrations</p>
+                <p>Mantri</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-info" style="height:92px">
               <div class="inner">
-                <h3>65</h3>
+                <h3>112
+                </h3>
 
-                <p>Unique Visitors</p>
+                <p>Mantri</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              
             </div>
           </div>
-          <!-- ./col -->
         </div>
-        <!-- /.row -->
      
         
     <div id="graph" style="position: relative; height: 420px; "> </div>
@@ -105,15 +170,16 @@
     <script src="<?php echo base_url().'assets/js/raphael-min.js'?>"></script>
     <script src="<?php echo base_url().'assets/js/morris.min.js'?>"></script>
     <script>
+        
         Morris.Bar({
           element: 'graph',
           data: <?php echo $data;?>,
-          xkey: 'unit',
-          xLabelAngle: 60,
-          ykeys:  ['purchase', 'sale'],
-          labels: ['Realiasai', 'Target'],
+          xkey: 'nama_mantri',
+          xLabelAngle: 0,
+          ykeys:  ['saving', 'qris'],
+          labels: ['saving', 'qris'],
 		  gridTextColor : ['black'],
-		  barColors : ['CadetBlue','DarkSalmon'] 
+		  barColors : ['CadetBlue','orange','blue','red','yello','black','orange'] 
         });
     </script>
 
@@ -121,6 +187,7 @@
     </section>
     <!-- /.content -->
   </div>
+
   <!-- /.content-wrapper -->
  
 
@@ -130,3 +197,7 @@
 <?php $this->load->view('templates/js') ?>
 </body>
 </html>
+<?php else: ?>
+<?php redirect(site_url('login')); ?>
+
+<?php endif;?>

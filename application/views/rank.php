@@ -1,4 +1,6 @@
-<?php if($this->session->userdata('id_level')==='1'):?> 
+<?php if($this->session->userdata('id_level')>='0'):?> 
+
+
 
 
 <html lang="en"	dir="ltr">
@@ -66,5 +68,12 @@
 	
 </html>
 <?php else: ?>
-<?= "Bukan Hak Akses Anda !!" ?>
+<br>
+<br>
+<center>
+<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
+
+<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
+
+
 <?php endif;?>

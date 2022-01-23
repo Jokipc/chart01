@@ -14,7 +14,7 @@ class Rank extends CI_Controller{
       $x['data'] = $db;
     
 
-      $this->load->view("Rank", $x);
+      $this->load->view("rank", $x);
       $this->load->view('mantri/mantri_list');
       
  }

@@ -13,6 +13,7 @@ class Home extends CI_Controller{
       
       
       $db = $this->Home_model->get_data()->result();
+      $db = $this->Home_model->get_data()->result();
      
       $x['data'] = json_encode($db);
       

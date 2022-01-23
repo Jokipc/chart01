@@ -41,6 +41,7 @@ class Saving extends CI_Controller
             'start' => $start,
         );
         $this->load->view('saving/saving_list', $data);
+        
     }
 
     public function read($id) 
@@ -88,7 +89,7 @@ class Saving extends CI_Controller
 
             $this->Saving_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('saving'));
+            redirect(site_url('home'));
         }
     }
     
