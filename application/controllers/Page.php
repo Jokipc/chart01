@@ -20,7 +20,7 @@ class Page extends CI_Controller{
   function user(){
     //Allowing akses to staff only
     if($this->session->userdata('id_level')==='2'){
-      $this->load->view('saving/saving_form');
+      $this->load->view('templates/home');
 
     }else{
         echo "Access Denied";

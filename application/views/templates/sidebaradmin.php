@@ -54,7 +54,7 @@
                 </a>
                 </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('unit?kode=3409') ?>" class="nav-link">
+                <a href="<?php echo site_url('home?kode=3409') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Unit Kota</p>
                 </a>
