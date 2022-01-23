@@ -96,14 +96,14 @@
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi Qris <?= number_format($qrismopersen,2),'%' ; ?></span>
+                      <span class="progress-text">Total Akuisisi Qris <?= number_format($qrispersen,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_qris); ?></b>/<?php echo $this->session->userdata('qris');?></span>
                       <div class="progress progress-sm">
                        <div class="progress-bar bg-success" style="width:<?= number_format($qrispersen,2),'%' ;R ?>"></div>
                       </div></div>                   
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi kunjual <?= number_format($kunjualmopersen,2),'%' ; ?></span>
+                      <span class="progress-text">Total Akuisisi kunjual <?= number_format($kunjualpersen,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_kunjual); ?></b>/<?php echo $this->session->userdata('kunjual');?></span>
                       <div class="progress progress-sm">
                       <div class="progress-bar bg-success" style="width:<?= number_format($kunjualpersen,2),'%' ;R ?>"></div>

@@ -36,13 +36,13 @@
                     $kunjualtarget = $this->session->userdata('kunjual');
                     $kunjualpersen = ($data_kunjual/$kunjualtarget) * 100 ;
 
-                    $stroberitarget = $this->session->userdata('stroberikasri');
+                    $stroberitarget = $this->session->userdata('stroberikasir');
                     $stroberipersen = ($data_stroberi/$stroberitarget) * 100 ;
                   
                     $pasartarget = $this->session->userdata('pasar');
                     $pasarpersen = ($data_pasar/$pasartarget) * 100 ;
 
-					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/1 ; 
+					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/6 ; 
 ?>
 <?php $angka=10; ?>
 
@@ -55,7 +55,7 @@
 				backgroundColor: ['#ff0000', 'orange','#ffff00', '#008000'],
 				borderWidth: 0,
 				gaugeData: {
-					value: <?php echo $total; ?>,
+					value: <?php echo number_format($total,1); ?>,
 					valueColor: "#ff7143"
 				},
 				gaugeLimits: [0, 25, 50, 75, 100]
