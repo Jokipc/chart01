@@ -36,7 +36,7 @@
                 <div class="card-tools">
                 </div>
               </div>
-              <div class="card-body" style="padding:0px;border:5px;background-color:yelow">
+              <div class="card-body">
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                   <?php $this->load->view('chart1') ?>
                 </div>
