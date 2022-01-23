@@ -55,7 +55,7 @@
 				backgroundColor: ['#ff0000', 'orange','#ffff00', '#008000'],
 				borderWidth: 0,
 				gaugeData: {
-					value: <?php echo $total; ?>,
+					value: <?php echo $savingpersen; ?>,
 					valueColor: "#ff7143"
 				},
 				gaugeLimits: [0, 25, 50, 75, 100]
