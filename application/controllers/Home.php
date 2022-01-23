@@ -19,7 +19,7 @@ class Home extends CI_Controller{
       
       
       $x['page_url']= "DASHBOARD";
-      $this->load->view("templates/Home",$x);
+      $this->load->view("templates/home",$x);
         
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
