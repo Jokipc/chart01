@@ -79,7 +79,7 @@
 
                     ?>
                     <div class="progress-group">
-                      Total Akuisisi Saving <?= number_format($savingpersen,2),'%' ; ?>
+                      Total Akuisisi saving <?= number_format($savingpersen,2),'%' ; ?>
                       <span class="float-right"><b><?= number_format($data_saving); ?></b>/ <?php echo $this->session->userdata('saving');?></span>                 
                       <div class="progress progress-sm">
                       <div class="progress-bar bg-primary" style="width:  <?= number_format($savingpersen,2),'%' ;R ?>"></div>
