@@ -20,7 +20,7 @@ class Page extends CI_Controller{
   function user(){
     //Allowing akses to staff only
     if($this->session->userdata('id_level')==='2'){
-     redirect('page/User');
+      $this->load->view('templates/Home');
 
     }else{
         echo "Access Denied";
