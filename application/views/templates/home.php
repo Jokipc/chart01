@@ -16,7 +16,7 @@
 
   <!-- Main Sidebar Container -->
 <?php if($this->session->userdata('id_level')==='1'):?> 
-<?php $this->load->view('templates/sidebar'); ?>
+<?php $this->load->view('templates/sidebaradmin'); ?>
 <?php else: ?>
 <?php $this->load->view('templates/sidebar'); ?>
 <?php endif;?>
@@ -57,7 +57,7 @@
               </div>
               <div class="card-body">
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-               <?echo $this->session->userdata('qris');   ?>
+               
                 <?php
                     $savingtarget = $this->session->userdata('saving');
                     $savingpersen = ($data_saving/$savingtarget) * 100 ;
