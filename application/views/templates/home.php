@@ -57,7 +57,8 @@
               </div>
               <div class="card-body">
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                    <?php
+               <?echo $this->session->userdata('saving');   ?>
+                <?php
                     $savingtarget = $this->session->userdata('saving');
                     $savingpersen = ($data_saving/$savingtarget) * 100 ;
 
