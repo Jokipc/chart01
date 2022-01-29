@@ -5,7 +5,7 @@
 <?php $this->load->view('templates/header'); ?>
 <?php $this->load->view('templates/sidebaradmin'); ?>
 <?php $this->load->view('templates/meta'); ?>
-<?php $this->load->view('templates/js'); ?>
+
     </head>
 
     <body>
