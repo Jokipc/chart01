@@ -1,8 +1,4 @@
 <?php if($this->session->userdata('id_level')>='0'):?> 
-
-
-
-
 <html lang="en"	dir="ltr">
 	<head>
 		<meta charset="utf-8">
@@ -10,27 +6,17 @@
 		<title>Air Balons</title>
 	</head>
 	
-	
-	
 	<body>
-	
 	<br></br>
 	<h3 style= "color : blue"><center>PERANGKAT MANTRI</center></h3>
 	<?php
 		$number = 0;
 		foreach( $data as $val){
 		$number++;
-			print '<img src="'.base_url().'template/dist/img/a.png" class="b b'.$number.'" alt="">';
-			
-			
-			
-
-			print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
-			
+			print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" class="b b'.$number.'" alt="">';
+			print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';		
 		}
 	?>
-	
-	
 	<div class="c c1">
 		<div class="cloud">
 		</div>
@@ -61,11 +47,7 @@
 		<span></span>
 		<span></span>
 	</div>
-	
-	 
 	</body>
-	
-	
 </html>
 <?php else: ?>
 <br>
