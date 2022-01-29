@@ -26,8 +26,7 @@
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $saving->pn ?></td>
 			<td><?php echo $saving->tgl ?></td>
-			<td><?php echo $saving->norek ?></td>
-            <td><?php echo $saving->norek ?></td>
+			<td><?php echo $saving->norek ?></td>            
 			<td style="text-align:center" width="200px">
 				<?php 
 				
