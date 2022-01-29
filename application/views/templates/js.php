@@ -29,7 +29,7 @@
 <script src="<?php echo base_url() ;?>template/dist/js/adminlte.js"></script>
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url() ;?>template/dist/js/pages/dashboard.js"></script>
+<script src="<?php echo base_url() ;?>assets/js/dashboard.js"></script>
 <!-- moris -->
 <link rel="stylesheet" href="<?php echo base_url().'assets/css/morris.css'?>">
 <script src="<?php echo base_url().'assets/js/jquery.min.js'?>"></script>

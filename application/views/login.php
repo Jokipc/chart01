@@ -6,12 +6,17 @@
     <link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
   </head>
   <body>
-
-      <div class="container">
-       <div class="col-md-4 col-md-offset-4">
+ 
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+      <div class="content">
+       
          <form class="form-signin" action="<?php echo site_url('login/auth');?>" method="post">
-           <h2 class="form-signin-heading">Please sign in</h2>
+           <h4><b>Please sign in</b></h4>
+
            <?php echo $this->session->flashdata('msg');?>
+           <br>
            <label for="pn" class="sr-only">Personal Number</label>
            <input type="pn" name="pn" class="form-control" autocomplete="off" placeholder="Personal Number" required autofocus>
            <label for="password" class="sr-only">Password</label>
@@ -26,6 +31,7 @@
        </div>
        </div> <!-- /container -->
 
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url().'assets/login.css'?>">
+    
   </body>
 </html>

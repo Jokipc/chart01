@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\application",
+    "\\application\\config",
     "\\application\\views",
     "\\application\\views\\templates"
   ],
-  "SelectedNode": "\\application\\views\\templates\\sidebaradmin.php",
+  "SelectedNode": "\\application\\config\\database.php",
   "PreviewInSolutionExplorer": false
 }
