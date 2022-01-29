@@ -10,15 +10,16 @@
     <body>
     <div class="content-wrapper" style="min-height: 955.807px;"> 
     <section class="content">
-     <?php $this->load->view('templates/footer'); ?> 
+      
       
  
   
     </section>
+    </div>
     </body>
 </html>
 
-
+<?php $this->load->view('templates/footer'); ?>
 <?php else: ?>
 <br>
 <br>
