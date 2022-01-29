@@ -9,6 +9,8 @@
 
     <body>
     <div class="content-wrapper" style="min-height: 955.807px;"> 
+    
+      
     <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <tr>
                 <th>No</th>
@@ -38,13 +40,10 @@
             }
             ?>
     </table>
-    <section class="content">
-      
-    
       
  
   
-    </section>
+   
     </div>
     </body>
 </html>
