@@ -27,8 +27,7 @@
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
                 </div>
             </div>
-            <div class="col-md-1 text-right">
-            </div>
+           
             <div class="col-md-3 text-right" style="overflow-x:auto;">
                 <form action="<?php echo site_url('saving/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
@@ -52,7 +51,7 @@
 		<th>Tanggal</th>
 		<th>No Rek</th>
 		<th>Action</th>
-		<
+		
 		
             </tr><?php
             foreach ($saving_data as $saving)
