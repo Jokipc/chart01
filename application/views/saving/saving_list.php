@@ -9,14 +9,13 @@
 
     <body>
     <div class="content-wrapper" style="min-height: 955.807px;"> 
-    
+    <section class="content">
       
     <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <tr>
                 <th>No</th>
 		        <th>Pn</th>
 		        <th>Tgl</th>
-		        <th>Norek</th>
 		        <th>Norek</th>
 				<th>Action</th>
             </tr><?php
@@ -43,8 +42,8 @@
       
  
   
-   
-    </div>
+    </section>
+    
     </body>
 </html>
 
