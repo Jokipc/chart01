@@ -45,9 +45,7 @@
                           <button class="btn btn-primary" type="submit">Search</button>
                         </span>
                     </div>
-                </form>
-            </div>
-            <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                    <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <tr>
         <th>No</th>
 		<th>Pn</th>
@@ -78,7 +76,9 @@
             }
             ?>
         </table>
-        </div>
+                </form>
+            </div>
+
             
         
 
