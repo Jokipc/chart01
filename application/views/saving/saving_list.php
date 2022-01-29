@@ -18,6 +18,8 @@
         
 
         <h2 style="margin-top:0px">Saving List</h2>
+        
+        <div class="row" style="margin-bottom: 10px">
           <div class="col-md-3 text-right" style="overflow-x:auto;">
                 <form action="<?php echo site_url('saving/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
@@ -66,9 +68,7 @@
             ?>
         </table>
                 </form>
-            </div>
-        <div class="row" style="margin-bottom: 10px">
-            
+            </div>    
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
