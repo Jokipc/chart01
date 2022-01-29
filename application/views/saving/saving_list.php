@@ -7,7 +7,7 @@
 <?php $this->load->view('templates/js'); ?>
     </head>
 
-    <body>
+    <body class="sidebar-mini sidebar-closed sidebar-collapse" style="height: auto;">
     <div class="content-wrapper" style="min-height: 955.807px;"> 
     <section class="content">
       
