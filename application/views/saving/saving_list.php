@@ -26,55 +26,7 @@
                 </div>
             </div>
            
-            <div class="col-md-3 text-right" style="overflow-x:auto;">
-                <form action="<?php echo site_url('saving/index'); ?>" class="form-inline" method="get">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
-                        <span class="input-group-btn">
-                            <?php 
-                                if ($q <> '')
-                                {
-                                    ?>
-                                    <a href="<?php echo site_url('saving'); ?>" class="btn btn-default">Reset</a>
-                                    <?php
-                                }
-                            ?>
-                          <button class="btn btn-primary" type="submit">Search</button>
-                        </span>
-                    </div>
-                    <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
-            <tr>
-        <th>No</th>
-		<th>Pn</th>
-		<th>Tanggal</th>
-		<th>No Rek</th>
-		<th>Action</th>
-		
-		
-            </tr><?php
-            foreach ($saving_data as $saving)
-            {
-                ?>
-                <tr>
-			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $saving->pn ?></td>
-			<td><?php echo $saving->tgl ?></td>
-			<td><?php echo $saving->norek ?></td>
-			
-			
-			<td style="text-align:center" width="200px">
-				<?php 
-				
-				echo anchor(site_url('saving/delete/'.$saving->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-				?>
-			</td>
-		</tr>
-                <?php
-            }
-            ?>
-        </table>
-                </form>
-            </div>
+          
 
             
         
