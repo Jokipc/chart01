@@ -52,6 +52,30 @@
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
+$(function () {
+    $("#jsGrid1").jsGrid({
+        height: "100%",
+        width: "100%",
+
+        sorting: true,
+        paging: true,
+
+        data: db.clients,
+
+        fields: [
+            { name: "Name", type: "text", width: 150 },
+            { name: "Age", type: "number", width: 50 },
+            { name: "Address", type: "text", width: 200 },
+            { name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
+            { name: "Married", type: "checkbox", title: "Is Married" }
+        ]
+    });
+  });
+</script>
+
+
+
+
     <div class="content-wrapper" style="min-height: 955.807px;"> 
     <section class="content">
       
