@@ -28,9 +28,7 @@
                 </div>
             </div>
             <div class="col-md-1 text-right">
-            </div>
-            <div class="col-md-3 text-right" style="overflow-x:auto;">
-                <form action="<?php echo site_url('saving/index'); ?>" class="form-inline" method="get">
+             <form action="<?php echo site_url('saving/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
@@ -46,6 +44,9 @@
                         </span>
                     </div>
                     <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+            </div>
+            <div class="col-md-3 text-right" style="overflow-x:auto;">
+               
             <tr>
         <th>No</th>
 		<th>Pn</th>
