@@ -72,6 +72,7 @@
             }
             ?>
         </table>
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
