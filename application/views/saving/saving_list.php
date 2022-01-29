@@ -14,11 +14,12 @@
       
  
   
-    </section>
+    
     </body>
 </html>
 
 <?php $this->load->view('templates/footer'); ?>
+</section>
 <?php else: ?>
 <br>
 <br>
