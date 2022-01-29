@@ -57,6 +57,8 @@
 		<th>Tgl</th>
 		<th>Norek</th>
 		<th>Action</th>
+		<th>Action</th>
+		<th>Action</th>
             </tr><?php
             foreach ($saving_data as $saving)
             {
