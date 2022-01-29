@@ -49,7 +49,7 @@
             <tr>
         <th>No</th>
 		<th>Pn</th>
-		<th>Tanggal</th>
+		<th style="width:200px;">Tanggal</th>
 		<th>No Rek</th>
 		<th>Action</th>
 		<
