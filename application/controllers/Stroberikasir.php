@@ -73,7 +73,7 @@ class Stroberikasir extends CI_Controller
 	    'nama_toko' => set_value('nama_toko'),
 	    'hp' => set_value('hp'),
 	);
-        $this->load->view('Stroberikasir/stroberikasir_form', $data);
+        $this->load->view('stroberikasir/stroberikasir_form', $data);
     }
     
     public function create_action() 
