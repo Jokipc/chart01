@@ -1,4 +1,5 @@
 
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
  
 
@@ -11,23 +12,13 @@
           <img src="<?php echo base_url() ;?>template/dist/img/<?php echo $this->session->userdata('ico');?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-        <h5 style="color:white;"> Dashboard </h5>
+        <h5 style="color:white;"> Dashboard 4DX Mantri </h5>
           <a href="#" style="color:orange" class="d-block"><?php echo $this->session->userdata('nama_mantri');?></a>
 
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+     
 
       <!-- Sidebar Menu -->
       <li class="nav-item">

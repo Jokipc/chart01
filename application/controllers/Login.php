@@ -18,11 +18,24 @@ class Login extends CI_Controller{
         $pn  = $data['pn'];
         $nama_mantri  = $data['nama_mantri'];
         $ico = $data['ico'];
+        $saving = $data['saving'];
+        $brimo = $data['brimo'];
+        $qris = $data['qris'];
+        $stroberikasir = $data['stroberikasir'];
+        $kunjual = $data['kunjual'];
+        $pasarid = $data['pasar_id'];
+        
         $level = $data['id_level'];
         $sesdata = array(
             'pn'  => $pn,
             'nama_mantri'     => $nama_mantri,
             'ico'     => $ico,
+            'saving'     => $saving,
+            'qris'     => $qris,
+            'brimo'     => $brimo,
+            'stroberikasir'     => $stroberikasir,
+            'kunjual'     => $kunjual,
+            'pasar_id'     => $pasarid,
             'id_level'     => $level,
             'logged_in' => TRUE
         );
@@ -47,7 +60,7 @@ class Login extends CI_Controller{
 
   function logout(){
       $this->session->sess_destroy();
-      redirect('login');
+      $this->load->view('login');
   }
 
 }

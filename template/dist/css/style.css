@@ -15,18 +15,16 @@ body{
 
 }
 .b1{
-  width: 120px;
+  width: 150px;
   height: auto;
-  top: 30%;
+  top: 10%;
   z-index:2;
   animation-duration: 50s;
-
-
 }
 .b2{
   width: 150px;
   height: auto;
-  top:10%;
+  top:30%;
   animation-duration: 75s;
 }
 .b3{
@@ -104,7 +102,7 @@ body{
 
 @keyframes run {
   0%{
-    margin-left: -400px;
+    margin-left: -10px;
   }
   100% {
     margin-left: 100%;

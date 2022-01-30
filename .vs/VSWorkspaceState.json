@@ -2,14 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\controllers",
+    "\\application\\config",
     "\\application\\views",
-    "\\application\\views\\brimo",
-    "\\template",
-    "\\template\\dist",
-    "\\template\\dist\\css",
-    "\\tests"
+    "\\application\\views\\templates"
   ],
-  "SelectedNode": "\\application\\views\\rank.php",
+  "SelectedNode": "\\application\\config\\database.php",
   "PreviewInSolutionExplorer": false
 }

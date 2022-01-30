@@ -1,4 +1,5 @@
 <?php
+
 class Home extends CI_Controller{
     function __construct(){
       parent::__construct();
@@ -10,16 +11,28 @@ class Home extends CI_Controller{
     }
 
     function index(){
+      $kode = $this->input->get('kode');
+      $pn = $this->session->userdata('pn');
       
-      
-      $db = $this->Home_model->get_data()->result();
-      $db = $this->Home_model->get_data()->result();
+      $db = $this->Home_model->get_data($kode)->result();
+      $qris = $this->Home_model->qris($pn)->num_rows();
+      $brimo = $this->Home_model->brimo($pn)->num_rows();
+      $saving = $this->Home_model->saving($pn)->num_rows();
+      $stroberikasir = $this->Home_model->stroberikasir($pn)->num_rows();
+      $kunjual = $this->Home_model->kunjual($pn)->num_rows();
      
       $x['data'] = json_encode($db);
+      $x['data_unit'] = $db;
+     
+      $x['data_qris'] = $qris;
+      $x['data_brimo'] = $brimo;
+      $x['data_stroberikasir'] = $stroberikasir;
+      $x['data_saving'] = $saving;
+      $x['data_kunjual'] = $kunjual;
       
       
-      $x['page_url']= "DASHBOARD";
-      $this->load->view("templates/home",$x);
+      $x['page_url']= "UNIT BAE";
+      $this->load->view("templates/home", $x);
         
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
@@ -47,13 +60,14 @@ class Home extends CI_Controller{
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('mantri/mantri_list', $data);
-        $this->load->view('templates/footer');
+        //$this->load->view('mantri/mantri_list', $data);
+        //$this->load->view('templates/footer');
 
         
     }
    
       
- }
+}
+
 
    
