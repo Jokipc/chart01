@@ -15,7 +15,7 @@
 	<body>
 	
 	<br></br>
-	<h3 style= "color : blue"><center>PERANGKAT MANTRI</center></h3>
+	<h3 style= "color : blue"><center>PERINGKAT MANTRI</center></h3>
 	<?php
 		$number = 0;
 		foreach( $data as $val){
