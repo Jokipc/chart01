@@ -29,10 +29,10 @@
                 <li class="nav-item"> 
               
          <a href="<?php echo site_url('home') ?>" class="">
-         <i class="far fa-circle nav-icon"></i>&nbsp; PENCAPAIAN
+         <i class="far fa-circle nav-icon"></i> &nbsp; PENCAPAIAN
          </a>
-         <a href="<?php echo site_url('rank') ?>" class="">
-         <i class="far fa-circle nav-icon"></i>RANK
+         <a href="<?php echo site_url('rank') ?>" class="nav-link ">
+         <i class="far fa-circle nav-icon"></i>&nbsp; RANK
          </a>
          
           <li class="nav-item">
