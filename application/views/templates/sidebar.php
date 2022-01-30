@@ -28,11 +28,11 @@
                with font-awesome or any other icon font library -->
                 <li class="nav-item"> 
               
-         <a href="<?php echo site_url('home') ?>" class="nav-link active">
-         <i class="far fa-circle nav-icon"></i>PENCAPAIAN
+         <a href="<?php echo site_url('home') ?>" class="nav-link ">
+         <i class="far fa-circle nav-icon"></i> &nbsp; PENCAPAIAN
          </a>
-         <a href="<?php echo site_url('rank') ?>" class="nav-link active">
-         <i class="far fa-circle nav-icon"></i>RANK
+         <a href="<?php echo site_url('rank') ?>" class="nav-link ">
+         <i class="far fa-circle nav-icon"></i>&nbsp; RANK
          </a>
          
           <li class="nav-item">
