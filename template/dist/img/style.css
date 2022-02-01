@@ -1,10 +1,5 @@
-
-
-
-
 body{
-  background: rgb(147,213,238);
-background: radial-gradient(circle, rgba(147,213,238,1) 0%, rgba(96,194,188,1) 100%);
+  background: #60c2bc;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -24,7 +19,7 @@ background: radial-gradient(circle, rgba(147,213,238,1) 0%, rgba(96,194,188,1) 1
   height: auto;
   top: 30%;
   z-index:2;
-  animation-duration: 15s;
+  animation-duration: 50s;
 
 
 }
@@ -32,13 +27,13 @@ background: radial-gradient(circle, rgba(147,213,238,1) 0%, rgba(96,194,188,1) 1
   width: 150px;
   height: auto;
   top:10%;
-  animation-duration: 20s;
+  animation-duration: 75s;
 }
 .b3{
   width: 150px;
   height: auto;
   top: 60%;
-  animation-duration: 25s;
+  animation-duration: 100s;
   
 }
 
@@ -114,6 +109,4 @@ background: radial-gradient(circle, rgba(147,213,238,1) 0%, rgba(96,194,188,1) 1
   100% {
     margin-left: 100%;
   }
-
-
 }

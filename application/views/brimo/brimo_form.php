@@ -49,7 +49,8 @@
             <input type="text" class="form-control" name="norek" id="norek" placeholder="000000000000000" maxlength="15" autocomplete="off" value="<?php echo $norek; ?>" />
         </div>
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
-	    <button type="submit" onclick="this.disabled = true" class="btn btn-primary"><?php echo $button ?></button> 
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	   
 	    <a href="<?php echo site_url('brimo') ?>" class="btn btn-default">Cancel</a>
 	</form>
      </section>

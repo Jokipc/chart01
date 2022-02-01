@@ -1,15 +1,16 @@
 <?php if($this->session->userdata('id_level')>='0'):?> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html lang="en"	dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
+		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
 		<title>Air Balons</title>
 	</head>
 	
 	<body>
 	<br></br>
-	<h3 style= "color : blue"><center>PERINGKAT MANTRI</center></h3>
+	
 	<?php
 		// print_r($data);
 		$number = 0;
@@ -17,6 +18,7 @@
 			$number++;
 			if ($number <= 3 ){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
+				
 				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
 			}
 		}
@@ -47,18 +49,21 @@
 	</div>
 	
 	<div class="ground">
-		<div class+"t t1">
+		<div class="t t1">
 		<span></span>
 		<span></span>
 	</div>
 
-	<div class="container-table">
+	<center><div class="container-table">
+	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI</b></H3>
 		<table class="table table-sm table-bordered">
+		
 			<?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
 					print '<tr style="width: 50px">
+								
 								<td class="td-number align-middle">'.$num.'</td>
 								<td class="td-image">
 									<img
@@ -71,7 +76,7 @@
 				}
 			?>
 		</table>
-	</div>
+	</div></center>
 	</body>
 </html>
 <?php else: ?>
@@ -93,6 +98,14 @@
 			$(this).delay(index*500).show(1000);
 		});
 	})
+	$("h3").hide();
+	var balon = document.getElementById("balon3");
+	balon.addEventListener('webkitAnimationEnd', () => {
+		console.log('anumation end');
+		$("h3").each(function(index){
+			$(this).delay(index*500).show(1000);
+		});
+	})
 </script>
 
 <style>
@@ -100,32 +113,39 @@
       width: 40%;
       margin: 10px;
       border-radius: 5px;
+	 
+
+	  
     }
     .table > tbody > tr > td {
       vertical-align: middle;
       text-align: middle;
+
+	   
     }
     .td-number {
       width: 5%;
-      background-color: black;
-      opacity: 0.3;
+      background-color: #1c87af;
       color: white;
-      text-align: 'center';
+      text-align: center;
+	  
+
     }
+
     .td-image {
       width: 5%;
     }
+
     .td-name {
       width: 50%;
-      background-color: black;
+      background-color: #1c87af;
       color: white;
     }
     .td-value {
       width: 5%;
-      background-color: black;
-      opacity: 0.3;
+      background-color: #1c87af;
       color: white;
-      text-align: 'center';
+      text-align:center;
     }
     img {
       width: 40px;
@@ -133,4 +153,8 @@
       border-radius: 50%;
       /* object-fit: contain; */
     }
+	h3{
+	color: #046a90;
+	
+	}
   </style>
