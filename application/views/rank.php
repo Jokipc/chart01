@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
-		<title>Air Balons</title>
+		<title>Rank</title>
 	</head>
 	
 	<body>
