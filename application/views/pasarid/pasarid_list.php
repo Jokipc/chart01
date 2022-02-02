@@ -21,6 +21,7 @@
         </style>
     </head>
     <body>
+     <div class="content-wrapper" style="min-height: 955.807px;">
         <h2 style="margin-top:0px">Pasarid List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
@@ -94,6 +95,7 @@
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
             </div>
+        </div>
         </div>
     </body>
 </html>
