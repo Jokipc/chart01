@@ -57,8 +57,6 @@
 		<th>Pn</th>
 		<th>Tgl</th>
 		<th>Nama Toko</th>
-		<th>Nama Toko</th>
-		<th>Nama Toko</th>
 		<th>Action</th>
             </tr><?php
             foreach ($pasarid_data as $pasarid)
@@ -69,8 +67,6 @@
 			<td><?php echo $pasarid->pn ?></td>
 			<td><?php echo $pasarid->tgl ?></td>
 			<td ><?php echo $pasarid->nama_toko ?></td>
-			<td><?php echo $pasarid->nama_toko ?></td>
-			<td><?php echo $pasarid->nama_toko ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('pasarid/read/'.$pasarid->id),'Read'); 
