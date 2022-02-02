@@ -5,6 +5,8 @@
 <?php $this->load->view('templates/sidebaradmin'); ?>
 <?php $this->load->view('templates/meta'); ?>
 <?php $this->load->view('templates/js'); ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
      <body>
      <div class="content-wrapper" style="min-height: 955.807px;">
@@ -42,7 +44,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="border:0px; heigth:70%; overflow:auto; float:left; width:50%">
+        <table class="table table-bordered" style="border:0px; heigth:1000%; overflow:auto; float:left; width:100%">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
