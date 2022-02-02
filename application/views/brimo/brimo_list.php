@@ -9,7 +9,7 @@
 
     </head>
      <body>
-     <div class="content-wrapper" style="min-height: 955.807px;">
+     <div class="content-wrapper" style="min-height: 955.807px;" style="border:0px; heigth:1000%; overflow:auto; float:left; width:100%">
      <br>
      
      <ul>   
@@ -44,7 +44,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="border:0px; heigth:1000%; overflow:auto; float:left; width:100%">
+        <table class="table table-bordered" >
             <tr>
                 <th>No</th>
 		<th>Pn</th>
