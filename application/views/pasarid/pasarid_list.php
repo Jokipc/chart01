@@ -67,7 +67,7 @@
             {
                 ?>
                 <tr>
-			<td width="80px"><?php echo ++$start ?></td>
+			<td width="80%"><?php echo ++$start ?></td>
 			<td><?php echo $pasarid->pn ?></td>
 			<td><?php echo $pasarid->tgl ?></td>
 			<td><?php echo $pasarid->nama_toko ?></td>
