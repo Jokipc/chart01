@@ -13,6 +13,7 @@
         <style>
             body{
                 padding: 15px;
+                width: 90%;
             }
 
      
