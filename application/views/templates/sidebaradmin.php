@@ -29,10 +29,10 @@
                 <li class="nav-item"> 
               
          <a href="#" class="nav-link ">
-         <i class="far fa-circle nav-icon"></i> &nbsp; &nbsp; By Unit
+         <i class="far fa-circle nav-icon"></i> &nbsp; By Unit
          </a>
          <a href="<?php echo site_url('rank') ?>" class="nav-link ">
-         <i class="far fa-circle nav-icon"></i>&nbsp; &nbsp By Mantri
+         <i class="far fa-circle nav-icon"></i>&nbsp; By Mantri
          </a>
          
           <li class="nav-item">
