@@ -5,6 +5,14 @@
 <?php $this->load->view('templates/sidebaradmin'); ?>
 <?php $this->load->view('templates/meta'); ?>
 <?php $this->load->view('templates/js'); ?>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
     </head>
 
     <body>
