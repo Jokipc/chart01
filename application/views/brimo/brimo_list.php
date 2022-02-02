@@ -44,7 +44,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" >
+        <table class="table table-bordered" style="vertical-align: middle; text-align: middle;">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
