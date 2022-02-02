@@ -78,7 +78,7 @@ class Rank_model extends CI_Model{
     $this->db->join("($query_count_brimo) as count_brimo", 'mantri.pn = count_brimo.pn', 'left');
     $this->db->join("($query_count_qris) as count_qris", 'mantri.pn = count_qris.pn', 'left');
     $this->db->join("($query_count_stroberikasir) as count_stroberikasir", 'mantri.pn = count_stroberikasir.pn', 'left');
-    $this->db->join("account.branch = unit.branch', 'left');
+    $this->db->join("account.branch = mantri.branch', 'left');
       
       //$this->db->select_sum('tbl_real.plafon');
       $this->db->order_by('scores','DESC');
