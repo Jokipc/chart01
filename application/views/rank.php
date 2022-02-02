@@ -10,7 +10,7 @@
 	</head>
 	
 	<body>
-	<marquee><?php
+	<marquee loop="1000" scrolldelay="100" style="color:blue"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
