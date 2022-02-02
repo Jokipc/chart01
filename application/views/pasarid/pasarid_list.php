@@ -37,7 +37,7 @@
                
             </div>
         </div>
-        <table class="table " style="width:80%;  margin-top: 7px">
+        <table class="table" style="width:80%;  margin-top: 7px">
         <tr>
          <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
                     <div class="input-group" style="width:80%" >
@@ -72,13 +72,16 @@
 			<td><?php echo $pasarid->tgl ?></td>
 			<td ><?php echo $pasarid->nama_toko ?></td>
 			<td style="text-align:center" width="200px">
-				<?php 
+				<?php
+                echo '[';
 				echo anchor(site_url('pasarid/read/'.$pasarid->id),'Read'); 
-				echo '  '; 
+				echo ' ][ '; 
 				echo anchor(site_url('pasarid/update/'.$pasarid->id),'Update'); 
-				echo ''; 
+				echo ']['; 
 				echo anchor(site_url('pasarid/delete/'.$pasarid->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-				?>
+				echo '][';
+                
+                ?>
 			</td>
 		</tr>
                 <?php
