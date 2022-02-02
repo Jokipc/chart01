@@ -20,13 +20,13 @@
         </style>
     </head>
     <body class="sidebar-mini layout-fixed; " >
-     <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
+     <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:90%">
         <h2 style="margin-top:0px">Pasarid List</h2>
-        <div class="row" style="margin-bottom: 10px width:80%">
+        <div class="row" style="margin-bottom: 10px>
             <div class="col-md-4">
                 <?php echo anchor(site_url('pasarid/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
-            <div class="col-md-4 text-center" style="width:60px">
+            <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
                 </div>
