@@ -26,9 +26,11 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 			?>	
 </marquee></h5>
 	
-	<a class="nav-link" data-widget="fullscreen" href="#" role="button">
+	<li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
-    </a>
+        </a>
+      </li>
 	<?php
 		// print_r($data);
 		$number = 0;
