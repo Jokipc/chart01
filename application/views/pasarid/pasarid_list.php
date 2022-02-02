@@ -53,7 +53,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="width:100px"">
+        <table class="table table-bordered" style="width:800px"">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
