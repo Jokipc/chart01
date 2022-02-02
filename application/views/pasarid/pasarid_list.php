@@ -21,9 +21,6 @@
         </style>
     </head>
     <body>
-    <div class="col-md-4">
-               
-            </div>
         <h2 style="margin-top:0px">Pasarid List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
@@ -55,7 +52,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="margin-bottom: 10px ;border:0px; heigth:70%; overflow:auto; float:left; width:50%"">
+        <table class="table table-bordered" style="margin-bottom: 10px ;border:0px; heigth:70%; overflow:auto; float:left; width:50%">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
