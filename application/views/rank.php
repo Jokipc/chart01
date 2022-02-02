@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en"	dir="ltr">
 	<head>
+	<meta http-equiv="refresh" content="30" >
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
