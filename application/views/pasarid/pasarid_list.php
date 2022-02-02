@@ -26,7 +26,7 @@
             <div class="col-md-4">
                 <?php echo anchor(site_url('pasarid/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
-            <div class="col-md-4 text-center" style="width:60%">
+            <div class="col-md-4 text-center" style="width:60px">
                 <div style="margin-top: 8px" id="message">
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
                 </div>
