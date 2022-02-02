@@ -67,10 +67,10 @@
             {
                 ?>
                 <tr>
-			<td width="80%"><?php echo ++$start ?></td>
+			<td ><?php echo ++$start ?></td>
 			<td><?php echo $pasarid->pn ?></td>
 			<td><?php echo $pasarid->tgl ?></td>
-			<td><?php echo $pasarid->nama_toko ?></td>
+			<td width="80%"><?php echo $pasarid->nama_toko ?></td>
 			<td><?php echo $pasarid->nama_toko ?></td>
 			<td><?php echo $pasarid->nama_toko ?></td>
 			<td style="text-align:center" width="200px">
