@@ -34,7 +34,12 @@
             <div class="col-md-1 text-right">
             </div>
             <div class="col-md-3 text-right">
-                <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
+               
+            </div>
+        </div>
+        <table class="table table-bordered" style="width:80%;  margin-top: 7px">
+        <tr>
+         <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
                     <div class="input-group" style="width:80%" >
                         <input type="text"  class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
@@ -50,11 +55,9 @@
                         </span>
                     </div>
                 </form>
-            </div>
-        </div>
-        <table class="table table-bordered" style="width:80%;  margin-top: 7px">
-            <tr>
-                <th>No</th>
+        </tr>
+        <tr>
+        <th>No</th>
 		<th>Pn</th>
 		<th>Tgl</th>
 		<th>Nama Toko</th>
