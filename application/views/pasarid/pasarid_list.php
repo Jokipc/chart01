@@ -20,9 +20,9 @@
         </style>
     </head>
     <body class="sidebar-mini layout-fixed; " >
-     <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:90%">
+     <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
         <h2 style="margin-top:0px">Pasarid List</h2>
-        <div class="row" style="margin-bottom: 10px>
+        <div class="row" style="margin-bottom: 10px ">
             <div class="col-md-4">
                 <?php echo anchor(site_url('pasarid/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
@@ -31,8 +31,9 @@
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
                 </div>
             </div>
-           
-            <div class="col-md-3 text-left">
+            <div class="col-md-1 text-right">
+            </div>
+            <div class="col-md-3 text-right">
                 <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
                     <div class="input-group" style="width:80%" >
                         <input type="text"  class="form-control" name="q" value="<?php echo $q; ?>">
@@ -57,6 +58,8 @@
 		<th>Pn</th>
 		<th>Tgl</th>
 		<th>Nama Toko</th>
+		<th>Nama Toko</th>
+		<th>Nama Toko</th>
 		<th>Action</th>
             </tr><?php
             foreach ($pasarid_data as $pasarid)
@@ -67,6 +70,8 @@
 			<td><?php echo $pasarid->pn ?></td>
 			<td><?php echo $pasarid->tgl ?></td>
 			<td ><?php echo $pasarid->nama_toko ?></td>
+			<td><?php echo $pasarid->nama_toko ?></td>
+			<td><?php echo $pasarid->nama_toko ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('pasarid/read/'.$pasarid->id),'Read'); 
