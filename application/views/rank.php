@@ -85,9 +85,9 @@
 					$num++;
 					print '<tr style="width: 50px">
 								
-								<td class="td-number align-middle">'.$num.'</td>
-								<td class="td-name">'.$val->nama_mantri.'</td>
-								<td class="td-value">'.$val->scores.'</td>
+								<td>'.$num.'.</td>
+								<td>'.$val->nama_mantri.'</td>
+								<td>'.$val->scores.'</td>
 							</tr>';
 				}
 			?>	
