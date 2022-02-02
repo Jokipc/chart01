@@ -24,7 +24,7 @@
 				}
 			?>	
 </marquee></h6>
-	<br></br>
+	
 	
 	<?php
 		// print_r($data);
@@ -71,7 +71,7 @@
 
 	<center><div class="container-table">
 	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI</b></H3>
-		<table class="table table-sm table-bordered" style="width=40%">
+		<table class="table table-sm table-bordered">
 		
 			<?php
 				$num = 0;
