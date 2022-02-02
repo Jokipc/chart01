@@ -53,7 +53,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="width:100%"">
+        <table class="" style="width:100%"">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
@@ -70,7 +70,7 @@
 			<td ><?php echo ++$start ?></td>
 			<td><?php echo $pasarid->pn ?></td>
 			<td><?php echo $pasarid->tgl ?></td>
-			<td width="80%"><?php echo $pasarid->nama_toko ?></td>
+			<td ><?php echo $pasarid->nama_toko ?></td>
 			<td><?php echo $pasarid->nama_toko ?></td>
 			<td><?php echo $pasarid->nama_toko ?></td>
 			<td style="text-align:center" width="200px">
