@@ -8,7 +8,7 @@
 <?php $this->load->view('templates/sidebar'); ?>
 <?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
- <title>harviacode.com - codeigniter crud generator</title>
+ <title></title>
         
 
      
