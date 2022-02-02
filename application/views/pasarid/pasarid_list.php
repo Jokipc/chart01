@@ -4,14 +4,12 @@
     <head>
 <?php $this->load->view('templates/header'); ?>
 <?php $this->load->view('templates/sidebaradmin'); ?>
-<?php $this->load->view('templates/meta'); ?>
+
 <?php $this->load->view('templates/js'); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    </head>
-<html>
-    <head>
+   
         <title>harviacode.com - codeigniter crud generator</title>
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <style>
