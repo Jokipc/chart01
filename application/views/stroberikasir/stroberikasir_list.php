@@ -8,7 +8,7 @@
     </head>
 
     <body>
-     <div class="content-wrapper" style="min-height: 955.807px;">
+     <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
      <ul>
         <h2 style="margin-top:0px">Stroberi Kasir List</h2>
         <div class="row" style="margin-bottom: 10px">
