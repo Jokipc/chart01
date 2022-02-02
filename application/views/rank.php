@@ -18,9 +18,8 @@
 								
 								<td>'.$num.'.</td>
 								<td>'.$val->nama_mantri.'</td>
-								<td>'.$val->scores.'</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
+								<td>'.$val->scores.'&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								
 							</tr>';
 				}
 			?>	
