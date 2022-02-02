@@ -80,10 +80,11 @@
 	    </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
-            </div>
+          </div>
         </div>
-   </section>
+    </section>
         </body>
+        </div>
       
 
 </html>
