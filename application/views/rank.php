@@ -78,7 +78,7 @@
 		</table>
 	</div></center>
 	</body>
-	<?php <$this->load->view('mantri/mantri_list'); ?>
+	
 </html>
 <?php else: ?>
 <br>
