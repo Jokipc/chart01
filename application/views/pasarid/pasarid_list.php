@@ -5,6 +5,9 @@
 <?php $this->load->view('templates/header'); ?>
 <?php $this->load->view('templates/sidebaradmin'); ?>
 <?php $this->load->view('templates/meta'); ?>
+<?php $this->load->view('templates/js'); ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     </head>
 <html>
@@ -17,7 +20,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="border:0px; heigth:70%; overflow:auto; float:left; width:50%">
         <h2 style="margin-top:0px">Pasarid List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
