@@ -18,7 +18,7 @@
 								
 								<td>'.$num.'.</td>
 								<td>'.$val->nama_mantri.'</td>
-								<td>'.$val->scores.%'</td>
+								<td>'.$val->scores.'%</td>
 								<td></td>
 							</tr>';
 				}
