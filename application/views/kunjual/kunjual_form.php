@@ -57,7 +57,7 @@
         </div>
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('kunjual') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('home') ?>" class="btn btn-default">Cancel</a>
 	</form>
    </section>
         </body>

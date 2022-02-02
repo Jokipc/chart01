@@ -8,6 +8,7 @@
                 padding: 15px;
             }
         </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <h2 style="margin-top:0px">Mantri <?php echo $button ?></h2>
@@ -26,7 +27,7 @@
         </div>
 	    <input type="hidden" name="id_pn" value="<?php echo $id_pn; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('mantri') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('home') ?>" class="btn btn-default">Cancel</a>
 	</form>
     </body>
 </html>

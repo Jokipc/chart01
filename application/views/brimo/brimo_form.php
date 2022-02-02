@@ -9,6 +9,7 @@
 <?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
 <?php $this->load->view('templates/js'); ?>
+
      
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +26,7 @@
 });
   } );
   </script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
      <div class="content-wrapper" style="min-height: 955.807px;">
@@ -51,7 +53,7 @@
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	   
-	    <a href="<?php echo site_url('brimo') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('home') ?>" class="btn btn-default">Cancel</a>
 	</form>
      </section>
         </body>

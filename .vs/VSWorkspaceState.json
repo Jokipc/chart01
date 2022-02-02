@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\controllers",
+    "\\application\\config",
+    "\\application\\models",
     "\\application\\views",
-    "\\application\\views\\brimo",
-    "\\application\\views\\stroberikasir",
     "\\application\\views\\templates",
+    "\\template",
     "\\template\\dist",
+    "\\template\\dist\\css",
     "\\template\\dist\\js",
     "\\template\\dist\\js\\pages"
   ],
-  "SelectedNode": "\\application\\views\\brimo\\brimo_form.php",
+  "SelectedNode": "\\application\\config\\database.php",
   "PreviewInSolutionExplorer": false
 }
