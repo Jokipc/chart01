@@ -32,7 +32,7 @@
 <script src="<?php echo base_url() ;?>assets/js/dashboard.js"></script>
 <!-- moris -->
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
         
