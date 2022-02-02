@@ -32,7 +32,7 @@
                 </div>
             </div>
            
-            <div class="col-md-3 text-right">
+            <div class="col-md-3 text-left">
                 <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
                     <div class="input-group" style="width:80%" >
                         <input type="text"  class="form-control" name="q" value="<?php echo $q; ?>">
