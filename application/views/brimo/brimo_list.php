@@ -1,4 +1,4 @@
-<?php if($this->session->userdata('id_level')!='1' && '3'):?> <!doctype html>
+<?php if($this->session->userdata('id_level')=='1' && $this->session->userdata('id_level')=='3'):?> <!doctype html>
 <html>
     <head>
 <?php $this->load->view('templates/header'); ?>
