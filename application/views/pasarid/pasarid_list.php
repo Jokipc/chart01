@@ -73,13 +73,13 @@
 			<td ><?php echo $pasarid->nama_toko ?></td>
 			<td style="text-align:center" width="200px">
 				<?php
-                echo '[';
+                echo '';
 				echo anchor(site_url('pasarid/read/'.$pasarid->id),'Read'); 
-				echo ' ][ '; 
+				echo ' /'; 
 				echo anchor(site_url('pasarid/update/'.$pasarid->id),'Update'); 
-				echo ']['; 
+				echo '/'; 
 				echo anchor(site_url('pasarid/delete/'.$pasarid->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-				echo ']';
+				echo '';
                 
                 ?>
 			</td>
