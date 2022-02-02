@@ -15,7 +15,7 @@ class Rank extends CI_Controller{
     
 
       $this->load->view("rank", $x);
-      $this->load->view('mantri/mantri_list');
+      $this->load->view('mantri/mantri_list',$x);
       
  }
 }
