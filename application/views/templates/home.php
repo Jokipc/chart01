@@ -116,13 +116,7 @@
                       <div class="progress-bar bg-success" style="width:<?= number_format($stroberipersen,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi pasar <?= number_format($pasarmopersen,2),'%' ; ?></span>
-                      <span class="float-right"><b><?= number_format($data_pasar); ?></b>/<?php echo $this->session->userdata('pasar_id');?></span>
-                      <div class="progress progress-sm">
-                      <div class="progress-bar bg-success" style="width:<?= number_format($pasarpersen,2),'%' ;R ?>"></div>
-                      </div></div>
-                      <br>
+                    
     </section>
      <?php
      

@@ -28,11 +28,11 @@
                with font-awesome or any other icon font library -->
                 <li class="nav-item"> 
               
-         <a href="<?php echo site_url('home') ?>" class="nav-link ">
+         <a href="#" class="nav-link ">
          <i class="far fa-circle nav-icon"></i> &nbsp; By Unit
          </a>
          <a href="<?php echo site_url('rank') ?>" class="nav-link ">
-         <i class="far fa-circle nav-icon"></i>&nbsp;By Mantri
+         <i class="far fa-circle nav-icon"></i>&nbsp By Mantri
          </a>
          
           <li class="nav-item">
@@ -54,25 +54,25 @@
               <li class="nav-item">
                 <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Qris</p>
+                  <p>Data Qris</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Brimo</p>
+                  <p>Data Brimo</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo site_url();?>kunjual" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Kunjual</p>
+                  <p>Data Kunjual</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>stroberikasir class="nav-link">
+                <a href="<?php echo site_url();?>stroberikasir" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Stroberi Kasir<p>
+                  <p>Data Stroberi<p>
                 </a>
               </li>
             </ul>
