@@ -29,10 +29,10 @@
                 <li class="nav-item"> 
               
          <a href="<?php echo site_url('home') ?>" class="nav-link ">
-         <i class="far fa-circle nav-icon"></i> &nbsp; PENCAPAIAN
+         <i class="far fa-circle nav-icon"></i> &nbsp; By Unit
          </a>
          <a href="<?php echo site_url('rank') ?>" class="nav-link ">
-         <i class="far fa-circle nav-icon"></i>&nbsp; RANK
+         <i class="far fa-circle nav-icon"></i>&nbsp;By Mantri
          </a>
          
           <li class="nav-item">
@@ -46,31 +46,31 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo site_url();?>saving/create" class="nav-link">
+                <a href="<?php echo site_url();?>saving" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Saving</p>
+                  <p>Data Saving</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>qris/create" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Qris</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>brimo/create" class="nav-link">
+                <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Brimo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>kunjual/create" class="nav-link">
+                <a href="<?php echo site_url();?>kunjual" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kunjual</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>stroberikasir/create" class="nav-link">
+                <a href="<?php echo site_url();?>stroberikasir class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Stroberi Kasir<p>
                 </a>
