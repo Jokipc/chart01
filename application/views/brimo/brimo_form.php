@@ -8,7 +8,12 @@
 <?php $this->load->view('templates/sidebar'); ?>
 <?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
-
+ <title>harviacode.com - codeigniter crud generator</title>
+        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
+        <style>
+            body{
+                padding: 15px;
+            }
 
      
       <meta charset="utf-8">
