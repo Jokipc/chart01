@@ -4,19 +4,19 @@ class Rank_model extends CI_Model{
   function get_rank()
 	{
     $query_count_saving = "SELECT saving.pn as pn, count(saving.pn) as tot_saving FROM saving
-      ----WHERE YEAR(saving.tgl) = 2022 AND MONTH(saving.tgl) = 2
+      
       GROUP BY saving.pn";
     $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
       FROM brimo
-      ----WHERE YEAR(brimo.tgl) = 2022 AND MONTH(brimo.tgl) = 2
+      
       GROUP BY brimo.pn";
     $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
       FROM qris
-      ----WHERE YEAR(qris.tgl) = 2022 AND MONTH(qris.tgl) = 2
+      
       GROUP BY qris.pn";
     $query_count_stroberikasir = "SELECT stroberikasir.pn as pn, IFNULL(count(stroberikasir.pn), 0) as tot_stroberikasir
       FROM stroberikasir
-      ----WHERE YEAR(stroberikasir.tgl) = 2022 AND MONTH(stroberikasir.tgl) = 2
+      
       GROUP BY stroberikasir.pn";
 
 	  $this->db->select('mantri.nama_mantri,
