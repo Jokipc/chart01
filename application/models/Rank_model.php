@@ -73,7 +73,7 @@ class Rank_model extends CI_Model{
       ((SELECT(tot_q))/mantri.qris) as real_qris,
       ((SELECT(tot_str))/mantri.stroberikasir) as real_stroberikasir,
       ROUND(((SELECT(real_saving + real_brimo + real_qris + real_stroberikasir)/4) * 100), 2) as scores');
-    $this->db->from('mantri');
+    $this->db->from('mantri','account');
     $this->db->join("($query_count_saving) as count_saving", 'mantri.pn = count_saving.pn', 'left');
     $this->db->join("($query_count_brimo) as count_brimo", 'mantri.pn = count_brimo.pn', 'left');
     $this->db->join("($query_count_qris) as count_qris", 'mantri.pn = count_qris.pn', 'left');
