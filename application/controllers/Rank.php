@@ -4,7 +4,6 @@ class Rank extends CI_Controller{
       parent::__construct();
     
     $this->load->model('Rank_model');
-    $this->load->model('Mantri_model');
     }
 
     function index(){
@@ -14,15 +13,9 @@ class Rank extends CI_Controller{
      
       $x['data'] = $db;
     
-      $data = array(
-            'mantri_data' => $mantri,
-            'q' => $q,
-            'pagination' => $this->pagination->create_links(),
-            'total_rows' => $config['total_rows'],
-            'start' => $start,
-        );
+
       $this->load->view("rank", $x);
-      $this->load->view('mantri/mantri_list',$data);
+      $this->load->view('mantri/mantri_list');
       
  }
 }
