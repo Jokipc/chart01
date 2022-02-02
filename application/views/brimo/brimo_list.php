@@ -1,11 +1,12 @@
-<?php if($this->session->userdata('id_level')=='1' ):?> <!doctype html>
+<?php if($this->session->userdata('id_level')=='1' || $this->session->userdata('id_level')=='3' ):?> <!doctype html>
 <html>
     <head>
 <?php $this->load->view('templates/header'); ?>
-<?php if($this->session->userdata('id_level')==='1'):?> 
+<?php if($this->session->userdata('id_level')=='1'): ?>
 <?php $this->load->view('templates/sidebaradmin'); ?>
-<?php elseif($this->session->userdata('id_level')==='3'): ?>
+<?php else: ?>
 <?php $this->load->view('templates/sidebaradminutama'); ?>
+<?php endif;?>
 
 <?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
