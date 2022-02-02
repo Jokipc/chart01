@@ -72,7 +72,6 @@
 									/>
 								</td>
 								<td class="td-name">'.$val->nama_mantri.'</td>
-								
 								<td class="td-value">'.$val->scores.'</td>
 							</tr>';
 				}
