@@ -12,7 +12,7 @@
           <img src="<?php echo base_url() ;?>template/dist/img/<?php echo $this->session->userdata('ico');?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-        <h3style="color:white;"> Dashboard 4DX Admin </h3>
+        <h3 style="color:white;"> Dashboard 4DX Admin </h3>
           <a href="#" style="color:orange" class="d-block"><?php echo $this->session->userdata('nama_mantri');?></a>
 
         </div>
