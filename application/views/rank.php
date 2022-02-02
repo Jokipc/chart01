@@ -16,9 +16,9 @@
 					$num++;
 					print '<tr>
 								
-								<td>'.$num.'.</td>
+								<td>'.$num.'.&nbsp;</td>
 								<td>'.$val->nama_mantri.'</td>
-								<td>'.$val->scores.&nbsp;'</td>
+								<td>'.$val->scores.'</td>
 								<td></td>
 							</tr>';
 				}
