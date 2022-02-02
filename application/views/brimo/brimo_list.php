@@ -42,7 +42,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="margin-bottom: 10px">
+        <table class="table table-bordered" style="border:0px; heigth:70%; overflow:auto; float:left; width:50%">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
