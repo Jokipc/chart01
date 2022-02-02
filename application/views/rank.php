@@ -68,7 +68,7 @@
 								<td class="td-number align-middle">'.$num.'</td>
 								<td class="td-image">
 									<img
-										src=" base_url()template/dist/img/avatar4.png"
+										src="base_url()/template/dist/img/kanca.png"
 									/>
 								</td>
 								<td class="td-name">'.$val->nama_mantri.'</td>
