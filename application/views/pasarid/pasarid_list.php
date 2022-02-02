@@ -20,7 +20,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="sidebar-mini layout-fixed" >
      <div class="content-wrapper" style="min-height: 955.807px;">
         <h2 style="margin-top:0px">Pasarid List</h2>
         <div class="row" style="margin-bottom: 10px">
