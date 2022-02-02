@@ -4,6 +4,7 @@ class Rank extends CI_Controller{
       parent::__construct();
     
     $this->load->model('Rank_model');
+    $this->load->model('Mantri_model');
     }
 
     function index(){
