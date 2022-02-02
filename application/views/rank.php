@@ -10,7 +10,7 @@
 	</head>
 	
 	<body>
-	<h6><marquee loop="1000" scrolldelay="100"><?php
+	<h5 style="color:blue"><marquee loop="1000" scrolldelay="300"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -23,7 +23,7 @@
 							</tr>';
 				}
 			?>	
-</marquee></h6>
+</marquee></h5>
 	
 	
 	<?php
