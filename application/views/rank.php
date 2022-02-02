@@ -79,7 +79,19 @@
 		</table>
 	</div></center>
 	</body>
-	
+<marquee><?php
+				$num = 0;
+				foreach( $data as $val){
+					$num++;
+					print '<tr style="width: 50px">
+								
+								<td class="td-number align-middle">'.$num.'</td>
+								<td class="td-name">'.$val->nama_mantri.'</td>
+								<td class="td-value">'.$val->scores.'</td>
+							</tr>';
+				}
+			?>	
+</marquee>
 </html>
 <?php else: ?>
 <br>
