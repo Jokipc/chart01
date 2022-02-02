@@ -4,6 +4,7 @@
     <head>
 <?php $this->load->view('templates/header'); ?>
 <?php $this->load->view('templates/sidebaradmin'); ?>
+<?php $this->load->view('templates/meta'); ?>
 
 <?php $this->load->view('templates/js'); ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
