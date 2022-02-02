@@ -10,7 +10,7 @@
 	</head>
 	
 	<body>
-	<marquee loop="1000" scrolldelay="100" style="color:blue"><?php
+	<h6><marquee loop="1000" scrolldelay="100"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -23,7 +23,7 @@
 							</tr>';
 				}
 			?>	
-</marquee>
+</marquee></h6>
 	<br></br>
 	
 	<?php
@@ -71,7 +71,7 @@
 
 	<center><div class="container-table">
 	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI</b></H3>
-		<table class="table table-sm table-bordered">
+		<table class="table table-sm table-bordered" style="width=40%">
 		
 			<?php
 				$num = 0;
