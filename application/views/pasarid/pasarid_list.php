@@ -52,7 +52,7 @@
                 </form>
             </div>
         </div>
-        <table class="table table-bordered" style="width:80%">
+        <table class="table table-bordered" style="width:80%;  margin-top: 7px">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
