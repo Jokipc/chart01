@@ -10,6 +10,19 @@
 	</head>
 	
 	<body>
+	<marquee><?php
+				$num = 0;
+				foreach( $data as $val){
+					$num++;
+					print '<tr>
+								
+								<td>'.$num.'.</td>
+								<td>'.$val->nama_mantri.'</td>
+								<td>'.$val->scores.'</td>
+							</tr>';
+				}
+			?>	
+</marquee>
 	<br></br>
 	
 	<?php
@@ -79,19 +92,7 @@
 		</table>
 	</div></center>
 	</body>
-<marquee><?php
-				$num = 0;
-				foreach( $data as $val){
-					$num++;
-					print '<tr style="width: 50px">
-								
-								<td>'.$num.'.</td>
-								<td>'.$val->nama_mantri.'</td>
-								<td>'.$val->scores.'</td>
-							</tr>';
-				}
-			?>	
-</marquee>
+
 </html>
 <?php else: ?>
 <br>
