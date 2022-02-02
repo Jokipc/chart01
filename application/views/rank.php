@@ -63,7 +63,7 @@
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
-					print '<tr style="width: 50px">
+					print '<tr style="width: 50%x">
 								
 								<td class="td-number align-middle">'.$num.'</td>
 								<td class="td-image">
