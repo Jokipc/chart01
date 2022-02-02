@@ -10,7 +10,8 @@
 	</head>
 	
 	<body>
-	<h5 style="color:white ;background-color: black; horisontal-align: center; height:20px "><marquee loop="1000" scrolldelay="150"><?php
+	<h5 style="color:white ;background-color: black; horisontal-align: center; height:20px background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,21,106,0.9476832969515931) 50%, rgba(222,149,123,1) 100%);"><marquee loop="1000" scrolldelay="150"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
