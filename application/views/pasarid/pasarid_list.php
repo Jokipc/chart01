@@ -79,7 +79,7 @@
 				echo anchor(site_url('pasarid/update/'.$pasarid->id),'Update'); 
 				echo ']['; 
 				echo anchor(site_url('pasarid/delete/'.$pasarid->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-				echo '][';
+				echo ']';
                 
                 ?>
 			</td>
