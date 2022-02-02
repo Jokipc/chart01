@@ -8,7 +8,7 @@
 <?php $this->load->view('templates/sidebar'); ?>
 <?php endif;?>
 <?php $this->load->view('templates/meta'); ?>
-<?php $this->load->view('templates/js'); ?>
+
 
      
       <meta charset="utf-8">
@@ -27,12 +27,7 @@
   } );
   </script>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
+
     </head>
     <body>
      <div class="content-wrapper" style="min-height: 955.807px;">
