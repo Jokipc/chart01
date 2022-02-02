@@ -22,7 +22,7 @@
     <body class="sidebar-mini layout-fixed; " >
      <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
         <h2 style="margin-top:0px">Pasarid List</h2>
-        <div class="row" style="margin-bottom: 10px">
+        <div class="row" style="margin-bottom: 10px width:80%">
             <div class="col-md-4">
                 <?php echo anchor(site_url('pasarid/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-1 text-right">
             </div>
-            <div class="col-md-3 text-left" style="width:80%">
+            <div class="col-md-3 text-right">
                 <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
                     <div class="input-group" style="width:80%" >
                         <input type="text"  class="form-control" name="q" value="<?php echo $q; ?>">
