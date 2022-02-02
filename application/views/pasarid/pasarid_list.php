@@ -37,7 +37,7 @@
                
             </div>
         </div>
-        <table class="table" style="width:80%;  margin-top: 7px">
+        <table class="table" >
         <tr>
          <form action="<?php echo site_url('pasarid/index'); ?>" class="form-inline" method="get">
                     <div class="input-group" style="width:80%" >
