@@ -9,7 +9,7 @@
 		<title>Rank</title>
 	</head>
 	
-	<body><p>
+	<body>
 	<h5 style="color:white ;background-color: black; horisontal-align: center; height:20px "><marquee loop="1000" scrolldelay="150"><?php
 				$num = 0;
 				foreach( $data as $val){
