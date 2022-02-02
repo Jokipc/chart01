@@ -9,7 +9,7 @@
     </head>
 
     <body>
-     <div class="content-wrapper" style="min-height: 955.807px;">
+     <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
      <ul>
         <h2 style="margin-top:0px">Kunjual List</h2>
         <div class="row" style="margin-bottom: 10px">
@@ -81,7 +81,7 @@
 	    </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
-            </div>
+             </div>
         </div>
     </section>
         </body>
