@@ -1,4 +1,4 @@
-<?php if($this->session->userdata('id_level')!='2'):?> <!doctype html>
+<?php if($this->session->userdata('id_level')!='2'>'0'):?> <!doctype html>
 <html>
     <head>
 <?php $this->load->view('templates/header'); ?>
