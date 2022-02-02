@@ -9,8 +9,8 @@
 		<title>Rank</title>
 	</head>
 	
-	<body><br>
-	<h5 style="color:white ;background-color: black; "><marquee loop="1000" scrolldelay="200"><?php
+	<body><p>
+	<h5 style="color:white ;background-color: black; "><marquee loop="1000" scrolldelay="80"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
