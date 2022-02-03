@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en"	dir="ltr">
 	<head>
-	<meta http-equiv="refresh" content="50" >
+	<meta http-equiv="refresh" content="100" >
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
@@ -11,7 +11,7 @@
 	
 	<body>
 	<h5 style="color:white ;background-color: black; horisontal-align: center; height:20px background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,21,106,0.9476832969515931) 50%, rgba(222,149,123,1) 100%);"><marquee loop="1000" scrolldelay="150"><?php
+background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,21,106,0.9476832969515931) 50%, rgba(222,149,123,1) 100%);"><marquee loop="1000" scrolldelay="110"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -87,7 +87,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 				$num = 0;
 				foreach( $data as $val){
 					$num++ ;
-					if ($num < 5 ){
+					if ($num < 11 ){
 					print '<tr style="width: 50px">
 								
 								<td class="td-number align-middle">'.$num.'</td>
