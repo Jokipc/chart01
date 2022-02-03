@@ -37,12 +37,11 @@
                     $kunjualpersen = ($data_kunjual/$kunjualtarget) * 100 ;
 
                     $stroberitarget = $this->session->userdata('stroberikasir');
-                    $stroberipersen = ($data_stroberi/$stroberitarget) * 100 ;
+                    $stroberipersen = ($data_stroberikasir/$stroberitarget) * 100 ;
                   
-                    $pasartarget = $this->session->userdata('pasar');
-                    $pasarpersen = ($data_pasar/$pasartarget) * 100 ;
+                   
 
-					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/6 ; 
+					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/5 ; 
 ?>
 <?php $angka=10; ?>
 

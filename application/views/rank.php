@@ -21,6 +21,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 								<td>'.$val->nama_mantri.'</td>
 								<td>'.$val->scores.'&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								
+								
 							</tr>';
 				}
 			?>	
@@ -88,6 +89,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 								</td>
 								<td class="td-name">'.$val->nama_mantri.'</td>
 								<td class="td-value">'.$val->scores.'</td>
+								<td class="td-value">'.$val->unit.'</td>
 							</tr>';
 				}
 			?>
