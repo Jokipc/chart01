@@ -86,7 +86,8 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 			<?php
 				$num = 0;
 				foreach( $data as $val){
-					$num++>10;
+					$num++ ;
+					if ($num < 5 ){
 					print '<tr style="width: 50px">
 								
 								<td class="td-number align-middle">'.$num.'</td>
@@ -99,6 +100,10 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 								<td class="td-value">'.$val->scores.'</td>
 								
 							</tr>';
+					}
+					else {}
+
+
 				}
 			?>
 		</table>
