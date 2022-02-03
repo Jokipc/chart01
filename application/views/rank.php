@@ -18,8 +18,8 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 					print '<tr>
 								
 								<td>'.$num.'.</td>
-								<td>'.$val->nama_mantri.'</td>
-								<td>'.$val->scores.'&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td>'.$val->nama_mantri.'&nbsp;&nbsp;</td>
+								<td>'.$val->scores.'&nbsp;&nbsp;</td>
 								
 								
 							</tr>';
@@ -37,10 +37,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				print '<p>';
 				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
-				print '<p>';
-				print '<p>';
-				print '<p>';
-				print '<div class="b '.$number.'" style="color: blue;"><br><br><center>'.$val->unit.'</center></br></br></div>';
+				
 			}
 		}
 	?>
