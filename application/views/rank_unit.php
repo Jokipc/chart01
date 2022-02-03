@@ -18,7 +18,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 					print '<tr>
 								
 								<td>'.$num.'.</td>
-								<td>'.$val->nama_mantri.'</td>
+								<td>'.$val->unit.'</td>
 								<td>'.$val->scores.'&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								
 								
@@ -36,7 +36,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 			if ($number <= 3 ){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				
-				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->unit.'</center></br></br></div>';
 			}
 		}
 	?>
@@ -74,13 +74,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 	<center><div class="container-table">
 	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI</b></H3>
 		<table class="table table-sm table-bordered">
-		<tr style="width: 50px">
-		<td class="td-number align-middle">No</td>
-		<td></td>
-		<td class="td-name">Nama</td>
-		<td class="td-value"> Nilai</td>
-		<td class="td-value"> Unit</td>
-		</tr>
+		
 			<?php
 				$num = 0;
 				foreach( $data as $val){
@@ -93,9 +87,9 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 										src="'.base_url().'template/dist/img/kanca.png"
 									/>
 								</td>
-								<td class="td-name">'.$val->nama_mantri.'</td>
+								<td class="td-name">'.$val->unit.'</td>
 								<td class="td-value">'.$val->scores.'</td>
-								<td class="td-value">'.$val->unit.'</td>
+								
 							</tr>';
 				}
 			?>

@@ -2,11 +2,10 @@
 <?php if($this->session->userdata('id_level')==='2'):?> 
 <head>
 <?php $this->load->view('templates/header'); ?>
-<?php if($this->session->userdata('id_level')==='1'):?> 
-<?php $this->load->view('templates/sidebaradmin'); ?>
-<?php else: ?>
+
 <?php $this->load->view('templates/sidebar'); ?>
-<?php endif;?>
+<?php $this->load->view('templates/js'); ?>
+
 <?php $this->load->view('templates/meta'); ?>
  <title></title>
         

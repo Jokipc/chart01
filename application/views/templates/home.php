@@ -92,7 +92,7 @@
                       Total Akuisisi Brimo <?= number_format($brimopersen,2),'%' ; ?>
                       <span class="float-right"><b><?= number_format($data_brimo); ?></b>/<?php echo $this->session->userdata('brimo');?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-danger" style="width:<?= number_format($brimopersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar " style="width:<?= number_format($brimopersen,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
@@ -106,14 +106,14 @@
                       <span class="progress-text">Total Akuisisi kunjual <?= number_format($kunjualpersen,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_kunjual); ?></b>/<?php echo $this->session->userdata('kunjual');?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-success" style="width:<?= number_format($kunjualpersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-warning" style="width:<?= number_format($kunjualpersen,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi stroberi <?= number_format($stroberipersen,2),'%' ; ?></span>
+                      <span class="progress-text">Total Akuisisi Stroberi <?= number_format($stroberipersen,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_stroberikasir); ?></b>/<?php echo $this->session->userdata('stroberikasir');?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-success" style="width:<?= number_format($stroberipersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-danger" style="width:<?= number_format($stroberipersen,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
                     

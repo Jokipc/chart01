@@ -1,5 +1,13 @@
+<?php if($this->session->userdata('id_level')==='1'):?> <!doctype html>
+<html>
+    <head>
+    <?php $this->load->view('templates/js'); ?>
+<?php $this->load->view('templates/header'); ?>
+<?php $this->load->view('templates/sidebaradmin'); ?>
+<?php $this->load->view('templates/meta'); ?>
 
-<?php $this->load->view('templates/header') ?>
+
+    </head>
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -7,14 +15,7 @@
     <img class="animation__shake" src="<?php echo base_url() ;?>template/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
-  <!-- Navbar -->
- <?php $this->load->view('templates/meta') ?>
  
-
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-   <?php $this->load->view('templates/sidebar') ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -180,3 +181,13 @@ chart.render();
 <?php $this->load->view('templates/js') ?>
 </body>
 </html>
+<?php $this->load->view('templates/footer'); ?>
+
+<?php else: ?>
+<br>
+<br>
+<center>
+<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
+
+<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
+<?php endif;?>
