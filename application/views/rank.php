@@ -37,6 +37,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				
 				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: orange;"><br><br><center>'.$val->unit.'</center></br></br></div>';
 			}
 		}
 	?>
@@ -79,7 +80,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 		<td></td>
 		<td class="td-name">Nama</td>
 		<td class="td-value"> Nilai</td>
-		<td class="td-value"> Unit</td>
+		
 		</tr>
 			<?php
 				$num = 0;
@@ -95,7 +96,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 								</td>
 								<td class="td-name">'.$val->nama_mantri.'</td>
 								<td class="td-value">'.$val->scores.'</td>
-								<td class="td-value">'.$val->unit.'</td>
+								
 							</tr>';
 				}
 			?>
