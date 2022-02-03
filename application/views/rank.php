@@ -40,7 +40,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 				print '<p>';
 				print '<p>';
 				print '<p>';
-				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->unit.'</center></br></br></div>';
+				print '<center>'.$val->unit.'</center>';
 			}
 		}
 	?>
