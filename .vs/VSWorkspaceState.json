@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\application",
-    "\\application\\models",
     "\\application\\views",
-    "\\application\\views\\errors",
-    "\\application\\views\\real",
-    "\\application\\views\\saving",
-    "\\application\\views\\stroberikasir",
-    "\\application\\views\\templates",
-    "\\application\\views\\trxpasarid"
+    "\\application\\views\\mantri",
+    "\\css",
+    "\\template",
+    "\\template\\dist",
+    "\\template\\dist\\css",
+    "\\template\\img",
+    "\\template\\js",
+    "\\template\\pages"
   ],
-  "SelectedNode": "\\application\\models\\Rank_model.php",
+  "SelectedNode": "\\template\\dist\\css\\style.css",
   "PreviewInSolutionExplorer": false
 }
