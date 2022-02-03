@@ -18,8 +18,9 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 					print '<tr>
 								
 								<td>'.$num.'.</td>
-								<td>'.$val->nama_mantri.'&nbsp;&nbsp;</td>
+								<td>'.$val->nama_mantri.'&nbsp;</td>
 								<td>'.$val->scores.'&nbsp;&nbsp;</td>
+								<td>'.$val->unit.'&nbsp;&nbsp;</td>
 								
 								
 							</tr>';
