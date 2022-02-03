@@ -35,9 +35,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 			$number++;
 			if ($number <= 3 ){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
-				print '<div class="b b'.$number.'" style="color: orange;"><br><br><center>'.$val->unit.'</center></br></br></div>';
-				print '<tr></tr>';
-				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'&nbsp;&nbsp;&nbsp;'.$val->unit.'</center></br></br></div>';
 				
 			}
 		}
