@@ -8,10 +8,15 @@
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
 		<title>Rank</title>
 	</head>
+	<style>body {
+  	background-image: url(template/dist/img/bag.jpg);
+	  background-size: 120% 100%;
 	
+	}
+	</style>
 	<body>
-	<h4 style="color:white ;background-color: black; horisontal-align: center; height:25px background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,21,106,0.9476832969515931) 50%, rgba(222,149,123,1) 100%);"><marquee loop="1000" scrolldelay="70"><?php
+	<h4 style="color:purple ;background: rgb(19,200,42);
+background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" scrolldelay="70"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -37,7 +42,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 			if ($number <= 3 ){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				print '<p>';
-				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: purple;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
 				
 			}
 		}
@@ -58,14 +63,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 		<div class="cloud">
 		</div>
 	</div>
-	<div class="c c5">
-		<div class="cloud">
-		</div>
-	</div>
-	<div class="c c6">
-		<div class="cloud">
-		</div>
-	</div>
+
 	
 	<div class="ground">
 		<div class="t t1">
@@ -186,7 +184,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
       /* object-fit: contain; */
     }
 	h3{
-	color: #046a90;
+	color: white;
 	
 	}
   </style>
