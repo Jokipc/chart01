@@ -32,4 +32,17 @@ class Rank extends CI_Controller{
      
       
  }
+ function bintang(){
+   
+      
+  $db = $this->Rank_model->get_rank_unit()->result();
+ 
+  $x['data'] = $db;
+
+
+  $this->load->view("bintang", $x);
+
+ 
+  
+}
 }

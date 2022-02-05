@@ -103,7 +103,7 @@ class Rank_model extends CI_Model{
     IFNULL(count_stroberikasir.p_stroberi, 0) as tot_str,
     IFNULL(count_kunjual.p_kunjual, 0) as tot_k,
 
-    ((SELECT(tot_s))/tsaving) as real_saving,
+    (((SELECT(tot_s))/tsaving)*100) as real_saving,
     ((SELECT(tot_b))/tbrimo) as real_brimo,
     ((SELECT(tot_q))/tqris) as real_qris,
     ((SELECT(tot_str))/tstroberikasir) as real_stroberikasir,
