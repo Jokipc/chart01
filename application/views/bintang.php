@@ -19,16 +19,15 @@
  
 <!-- table -->
 <section>
-<div>
+
 
   <!--for demo wrap-->
   <h1>Table UNit 4DX</h1>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
+  <div class="tbl-header table-responsive-sm">
+    <table class="table-responsive-sm" cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th></th>
-          <th></th>
+          
           <th>No</th>
           <th>Unit</th>
           <th>Brimo</th>
@@ -50,8 +49,7 @@
 					$num++;
          
 					print 
-          '<th></th>
-          <th></th>
+          '
           <td>'.$num.'</td>
           <td>'.$val->unit.'</td>
           <td>
@@ -110,7 +108,7 @@
       </tbody>
     </table>
   </div>
-  </div> 
+  
 </section>
 
 
