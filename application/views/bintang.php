@@ -19,7 +19,7 @@
  
 <!-- table -->
 <section>
-<div class="d-flex flex-column bd-highlight mb-3" style="background-color:blue,1">
+<div>
 
   <!--for demo wrap-->
   <h1>Table UNit 4DX</h1>
