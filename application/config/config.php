@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://arkudus.online/';
-//$config['base_url'] = 'http://localhost/chart/';
+// $config['base_url'] = 'http://localhost/chart/';
 
 /*
 |--------------------------------------------------------------------------
