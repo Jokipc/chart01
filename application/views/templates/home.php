@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div class="card-body">
-              <b>Bobot Qris</b>
+              
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                   <?php $this->load->view('chart1') ?>
                 </div>
