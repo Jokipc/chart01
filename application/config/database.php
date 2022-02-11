@@ -83,6 +83,7 @@ $db['default'] = array(
 	// 'username' => 'root',
 	// 'password' => '',
 	// 'database' => 'chart_db',
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
