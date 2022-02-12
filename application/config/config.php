@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://arkudus.online/';
+$config['base_url'] = 'https://kancakudus4dx.com/';
 // $config['base_url'] = 'http://localhost/chart/';
 
 /*
