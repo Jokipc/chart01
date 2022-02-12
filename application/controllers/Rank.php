@@ -45,4 +45,13 @@ class Rank extends CI_Controller{
  
   
 }
+function live(){
+   
+      
+
+  $this->load->view("view_live");
+
+ 
+  
+}
 }

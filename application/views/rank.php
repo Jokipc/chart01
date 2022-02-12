@@ -1,8 +1,9 @@
-<?php if($this->session->userdata('id_level')>='0'):?> 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en"	dir="ltr">
 	<head>
-	<meta http-equiv="refresh" content="100" >
+	
+	
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
@@ -15,8 +16,10 @@
 	}
 	</style>
 	<body>
-	<h4 style="color:purple ;background: rgb(19,200,42);
-background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" scrolldelay="70"><?php
+	
+	<!-- <meta http-equiv="refresh"  content="2; url=<?php echo base_url() ;?>rank/unit"/> -->
+	<h2 style="color:#4169E1 ;background: rgb(19,200,42);
+background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" ><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -31,7 +34,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 							</tr>';
 				}
 			?>	
-</marquee></h4>
+</marquee></h2>
 	
 	
 	<?php
@@ -42,7 +45,8 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 			if ($number <= 3 ){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				print '<p>';
-				print '<div class="b b'.$number.'" style="color: purple;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: purple;style="color: #FFF0F5;
+				text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
 				
 			}
 		}
@@ -109,15 +113,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	</body>
 
 </html>
-<?php else: ?>
-<br>
-<br>
-<center>
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
 
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>    
-
-<?php endif;?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   $("table tr").hide();
@@ -186,5 +182,6 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	h3{
 	color: white;
 	
+
 	}
   </style>
