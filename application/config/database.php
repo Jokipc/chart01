@@ -76,6 +76,7 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+
 	// 'username' => 'u259880211_root',
 	// 'password' => 'Brikudus2',
 	// 'database' => 'u259880211_chart',
@@ -83,6 +84,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'chart_db',
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

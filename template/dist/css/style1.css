@@ -1,4 +1,7 @@
 body {
+
+  background: rgb(250, 199, 133);
+>>>>>>> fb928abaaffb6bced74ec1a2ddcae8bf08e02b8f:template/dist/css/style1.css
 }
 .b {
   height: auto;
@@ -9,23 +12,27 @@ body {
   animation-timing-function: linear;
 }
 .b1 {
-  width: 250px;
+
+  width: 210px;
   height: auto;
-  top: 55%;
+  top: 70%;
   z-index: 2;
-  animation-duration: 60s;
+  animation-duration: 15s;
+
 }
 .b2 {
-  width: 200px;
+  width: 150px;
   height: auto;
+
   top: 40%;
-  animation-duration: 70s;
+  animation-duration: 20s;
 }
 .b3 {
-  width: 400px;
+  width: 300px;
   height: auto;
   top: 50%;
-  animation-duration: 90s;
+  animation-duration: 25s;
+
 }
 
 .c {
@@ -34,6 +41,7 @@ body {
 
 .cloud {
   background: #ebffff;
+
   background: linear-gradient(top, #a8dcd9 5%, #f1f1f1 100%);
   border-radius: 100%;
   box-shadow: 0 8px 5px rgba(0, 0, 0, 0, 1);
@@ -45,6 +53,7 @@ body {
 .cloud::before {
   content: "";
   background: #ebffff;
+
   position: absolute;
   z-index: -1;
 }
