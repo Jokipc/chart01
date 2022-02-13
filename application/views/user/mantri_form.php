@@ -1,8 +1,9 @@
-
+<?php if($this->session->userdata('id_level')==='2'):?> 
+<head>
 <html>
     <head>
 <?php $this->load->view('templates/header'); ?>
-<?php $this->load->view('templates/sidebaradmin'); ?>
+<?php $this->load->view('templates/sidebar'); ?>
 <?php $this->load->view('templates/meta'); ?>
 <?php $this->load->view('templates/js'); ?>
 <!doctype html>
@@ -22,15 +23,19 @@
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
             <label for="int">Branch <?php echo form_error('branch') ?></label>
-            <input type="text" class="form-control" name="branch" id="branch" placeholder="Branch"  value="<?php echo $branch; ?>" />
+            <input type="text" class="form-control" name="branch" id="branch" placeholder="Branch" disabled value="<?php echo $branch; ?>" />
+            <input type="text" hidden class="form-control" name="branch" id="branch" placeholder="Branch"  value="<?php echo $branch; ?>" />
+            
         </div>
 	    <div class="form-group">
             <label for="int">Pn <?php echo form_error('pn') ?></label>
-            <input type="text" class="form-control" name="pn" id="pn" placeholder="Pn"  value="<?php echo $pn; ?>" />
+            <input type="text" class="form-control" name="pn" id="pn" placeholder="Pn" disabled value="<?php echo $pn; ?>" />
+            <input type="text" hidden class="form-control" name="pn" id="pn" placeholder="Pn"  value="<?php echo $pn; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Nama Mantri <?php echo form_error('nama_mantri') ?></label>
-            <input type="text" class="form-control" name="nama_mantri" id="nama_mantri"  placeholder="Nama Mantri" value="<?php echo $nama_mantri; ?>" />
+            <input type="text" class="form-control" name="nama_mantri" id="nama_mantri" disabled  placeholder="Nama Mantri" value="<?php echo $nama_mantri; ?>" />
+            <input type="text" hidden class="form-control" name="nama_mantri" id="nama_mantri"  placeholder="Nama Mantri" value="<?php echo $nama_mantri; ?>" />
         </div>
 	  
 	    <div class="form-group">
@@ -45,3 +50,11 @@
     </div>
     </body>
 </html>
+<?php else: ?>
+<br>
+<br>
+<center>
+<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
+
+<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
+<?php endif;?>

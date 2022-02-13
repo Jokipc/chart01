@@ -83,6 +83,22 @@
             </ul>
           </li>
           
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                User
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>user/update/<?php echo $this->session->userdata('id_pn');?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ubah Password</p>
+                </a>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

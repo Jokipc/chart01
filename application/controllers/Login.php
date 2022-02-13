@@ -15,6 +15,7 @@ class Login extends CI_Controller{
     $validate = $this->login_model->validate($pn,$password);
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
+        $idpn  = $data['id_pn'];
         $pn  = $data['pn'];
         $nama_mantri  = $data['nama_mantri'];
         $ico = $data['ico'];
@@ -33,6 +34,7 @@ class Login extends CI_Controller{
         
         $level = $data['id_level'];
         $sesdata = array(
+          'id_pn'  => $idpn,
             'pn'  => $pn,
             'nama_mantri'     => $nama_mantri,
             'ico'     => $ico,
