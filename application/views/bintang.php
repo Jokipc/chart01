@@ -11,16 +11,8 @@
 <?php $this->load->view('templates/sidebaradmin'); ?>
 
 
-
-
-
-
-
 <?php else: ?>
-<br>
-<br>
-<center>
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
-</center
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
 <?php endif;?>
+
+
+
