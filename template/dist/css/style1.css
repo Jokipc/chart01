@@ -1,7 +1,6 @@
 body {
-
   background: rgb(250, 199, 133);
-
+}
 .b {
   height: auto;
   position: absolute;
@@ -11,13 +10,11 @@ body {
   animation-timing-function: linear;
 }
 .b1 {
-
   width: 210px;
   height: auto;
   top: 70%;
   z-index: 2;
   animation-duration: 15s;
-
 }
 .b2 {
   width: 150px;
@@ -31,7 +28,6 @@ body {
   height: auto;
   top: 50%;
   animation-duration: 25s;
-
 }
 
 .c {
