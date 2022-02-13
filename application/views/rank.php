@@ -2,25 +2,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en"	dir="ltr">
 	<head>
-<<<<<<< HEAD
 	
 	
-=======
-		<!-- <meta http-equiv="refresh" content="100" > -->
->>>>>>> fb928abaaffb6bced74ec1a2ddcae8bf08e02b8f
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
-		<!-- <link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/img/style1.css"> -->
 		<title>Rank</title>
 	</head>
-	<body >
-	<div class="show" >
-	</div>
-	<div class="body-mantri">
-	<h4 style="color:purple ;background: rgb(19,200,42);
-background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" scrolldelay="70"><?php
->>>>>>> fb928abaaffb6bced74ec1a2ddcae8bf08e02b8f
+	<style>body {
+  	background-image: url(template/dist/img/bag.jpg);
+	  background-size: 120% 100%;
+	
+	}
+	</style>
+	<body>
+	
+	<!-- <meta http-equiv="refresh"  content="2; url=<?php echo base_url() ;?>rank/unit"/> -->
+	<h2 style="color:#4169E1 ;background: rgb(19,200,42);
+background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" ><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -111,10 +110,6 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 			?>
 		</table>
 	</div></center>
-	</div>
-	<div class="body-unit" >
-		<?php $this->load->view('unit_live'); ?>
-	</div>
 	</body>
 
 </html>
@@ -130,60 +125,16 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		});
 	})
 	$("h3").hide();
-	let showMantri = true;
-	$(".body-unit").hide();
-	// $(".body-mantri").hide();
-	setInterval(() => {
-		console.log('setTimeout ');
-		if (showMantri) {
-			$(".show").replaceWith($(".body-unit"));
-			$(".body-unit").show();
-			$(".body-mantri").hide();
-			showMantri = false;
-			$("table tr").hide();
-			var balon = document.getElementById("balon3");
-			balon.addEventListener('webkitAnimationEnd', () => {
-				console.log('anumation end');
-				$("table tr").each(function(index){
-					$(this).delay(index*500).show(1000);
-				});
-			})
-		} else {
-			$(".show").replaceWith($(".body-mantri"));
-			$(".body-unit").hide();
-			$(".body-mantri").show();
-			showMantri = true;
-			$("table tr").hide();
-			var balon = document.getElementById("balon3");
-			balon.addEventListener('webkitAnimationEnd', () => {
-				console.log('anumation end');
-				$("table tr").each(function(index){
-					$(this).delay(index*500).show(1000);
-				});
-			})
-		}
-	}, 50000);
+	var balon = document.getElementById("balon3");
+	balon.addEventListener('webkitAnimationEnd', () => {
+		console.log('anumation end');
+		$("h3").each(function(index){
+			$(this).delay(index*500).show(1000);
+		});
+	})
 </script>
 
 <style>
-	.body-unit {
-		width: 100%;
-		height: 100%;
-  	background-image: url(template/dist/img/ombak1.gif);
-		margin: 0;
-  	padding: 0;
-		background-color: aqua;
-		background-size: cover;
-	}
-	.body-mantri {
-		width: 100%;
-		height: 100%;
-  	background-image: url(template/dist/img/bag.jpg);
-		margin: 0;
-  	padding: 0;
-		background-color: aqua;
-		background-size: cover;
-	}
     .container-table {
       width: 40%;
       margin: 10px;
