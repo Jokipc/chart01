@@ -30,6 +30,7 @@ class Login extends CI_Controller{
         $bqris = $data['bqris'];
         $bstroberikasir = $data['bstroberikasir'];
         $bkunjual = $data['bkunjual'];
+        $side = $data['side'];
        
         
         $level = $data['id_level'];
@@ -48,6 +49,7 @@ class Login extends CI_Controller{
             'bbrimo'     => $bbrimo,
             'bstroberikasir'     => $bstroberikasir,
             'bkunjual'     => $bkunjual,
+            'side'     => $side,
             
 
             'id_level'     => $level,

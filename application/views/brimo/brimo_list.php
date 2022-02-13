@@ -1,10 +1,15 @@
-<?php if($this->session->userdata('id_level')==='1'):?> <!doctype html>
+<!doctype html>
 <html>
-    <head>
-<?php $this->load->view('templates/header'); ?>
-<?php $this->load->view('templates/sidebaradmin'); ?>
-<?php $this->load->view('templates/meta'); ?>
+<head>
 <?php $this->load->view('templates/js'); ?>
+<?php $this->load->view('templates/header'); ?>
+<?php $this->load->view('templates/meta'); ?>
+<?php if($this->session->userdata('side')==='3' ):?> 
+<?php $this->load->view('templates/sidebaradminunit'); ?>
+<?php elseif($this->session->userdata('id_level')==='1' ): ?>
+<?php $this->load->view('templates/sidebaradmin'); ?>
+<?php else: ?>
+<?php endif;?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
@@ -85,11 +90,3 @@
         </div>
 </html>
 <?php $this->load->view('templates/footer'); ?>
-<?php else: ?>
-<br>
-<br>
-<center>   
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
-
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
-<?php endif;?>
