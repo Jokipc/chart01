@@ -81,9 +81,9 @@ $db['default'] = array(
 	'password' => 'Brikudus2',
 	'database' => 'u259880211_chart',
 	
-	// 'username' => 'root',
-	// 'password' => '',
-	// 'database' => 'chart_db',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'chart_db',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
