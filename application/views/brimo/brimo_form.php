@@ -2,15 +2,12 @@
 <?php if($this->session->userdata('id_level')==='2'):?> 
 <head>
 <?php $this->load->view('templates/header'); ?>
-
 <?php $this->load->view('templates/sidebar'); ?>
 <?php $this->load->view('templates/js'); ?>
-
 <?php $this->load->view('templates/meta'); ?>
  <title></title>
         
-
-     
+    
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Datepicker - Default functionality</title>

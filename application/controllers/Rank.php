@@ -28,7 +28,8 @@ class Rank extends CI_Controller{
     
 
       $this->load->view("rank_unit", $x);
-      
+
+     
       
  }
 }

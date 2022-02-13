@@ -17,7 +17,7 @@
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 
-            </div>
+            </div> 
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
@@ -88,7 +88,7 @@
 <?php else: ?>
 <br>
 <br>
-<center>
+<center>   
 <h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
 
 <a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
