@@ -35,12 +35,12 @@ class Rank_model extends CI_Model{
       IFNULL(count_kunjual.tot_kunjual, 0) as tot_k,
 
 
-      ((SELECT(tot_s))/mantri.saving) as real_saving,
-      ((SELECT(tot_b))/mantri.brimo) as real_brimo,
-      ((SELECT(tot_q))/mantri.qris) as real_qris,
-      ((SELECT(tot_str))/mantri.stroberikasir) as real_stroberikasir,
-      ((SELECT(tot_k))/mantri.kunjual) as real_kunjual,
-      ROUND(((SELECT(real_saving + real_brimo + real_qris + real_stroberikasir + real_kunjual )/5) * 100), 2) as scores');
+      ((SELECT(tot_s))/mantri.saving) * mantri.bsaving as real_saving,
+      ((SELECT(tot_b))/mantri.brimo) * mantri.bbrimo as real_brimo,
+      ((SELECT(tot_q))/mantri.qris) * mantri.bqris  as real_qris,
+      ((SELECT(tot_str))/mantri.stroberikasir) * mantri.bstroberikasir as real_stroberikasir,
+      ((SELECT(tot_k))/mantri.kunjual) * mantri.bkunjual as real_kunjual,
+      ROUND(((SELECT(real_saving + real_brimo + real_qris + real_stroberikasir + real_kunjual  )/1) * 1), 2) as scores');
     $this->db->from('mantri');
     $this->db->join("($query_count_saving) as count_saving", 'mantri.pn = count_saving.pn', 'left');
     $this->db->join("($query_count_brimo) as count_brimo", 'mantri.pn = count_brimo.pn', 'left');
@@ -86,12 +86,22 @@ class Rank_model extends CI_Model{
   join kunjual on kunjual.pn = mantri.pn
   GROUP by branch";
 
+  $query_count_mantri = "select branch, count(mantri.pn)-1 as jmlmantri 
+  
+  from mantri GROUP by branch";
+
   $query_count_target = "select account.branch, 
   sum(mantri.brimo) as tbrimo, 
   sum(mantri.saving) as tsaving, 
   sum(mantri.kunjual) as tkunjual, 
   sum(mantri.qris) as tqris, 
-  sum(mantri.stroberikasir) as tstroberikasir 
+  sum(mantri.stroberikasir) as tstroberikasir,
+  sum(mantri.bbrimo) as bbrimo, 
+  sum(mantri.bsaving) as bsaving, 
+  sum(mantri.bkunjual) as bkunjual, 
+  sum(mantri.bqris) as bqris, 
+  sum(mantri.bstroberikasir) as bstroberikasir
+  
   from account join mantri on mantri.branch = account.branch 
   GROUP by branch";
 
@@ -103,20 +113,20 @@ class Rank_model extends CI_Model{
     IFNULL(count_stroberikasir.p_stroberi, 0) as tot_str,
     IFNULL(count_kunjual.p_kunjual, 0) as tot_k,
 
-    ((SELECT(tot_s))/tsaving) as real_saving,
-    ((SELECT(tot_b))/tbrimo) as real_brimo,
-    ((SELECT(tot_q))/tqris) as real_qris,
-    ((SELECT(tot_str))/tstroberikasir) as real_stroberikasir,
-    ((SELECT(tot_k))/tkunjual) as real_kunjual,
-    ROUND(((SELECT(real_saving + real_brimo + real_qris + real_stroberikasir + real_kunjual )/5) * 100), 2) as scores');
+    (((SELECT(tot_s))/tsaving)) * bsaving as real_saving,
+    ((SELECT(tot_b))/tbrimo)* bbrimo as real_brimo,
+    ((SELECT(tot_q))/tqris)* bqris as real_qris,
+    ((SELECT(tot_str))/tstroberikasir)* bstroberikasir as real_stroberikasir,
+    ((SELECT(tot_k))/tkunjual) * bkunjual as real_kunjual,
+    ROUND(((SELECT(real_saving + real_brimo + real_qris + real_kunjual + real_stroberikasir )/jmlmantri ) * 1), 2) as scores');
   $this->db->from('account');
   $this->db->join("($query_count_saving) as count_saving", 'account.branch = count_saving.branch', 'left');
   $this->db->join("($query_count_brimo) as count_brimo", 'account.branch = count_brimo.branch', 'left');
   $this->db->join("($query_count_qris) as count_qris", 'account.branch = count_qris.branch', 'left');
   $this->db->join("($query_count_stroberikasir) as count_stroberikasir", 'account.branch = count_stroberikasir.branch', 'left');
   $this->db->join("($query_count_kunjual) as count_kunjual", 'account.branch = count_kunjual.branch', 'left'); 
-  $this->db->join("($query_count_target) as count_target", 'account.branch = count_target.branch', 'left'); 
-    
+   $this->db->join("($query_count_target) as count_target", 'account.branch = count_target.branch', 'left'); 
+   $this->db->join("($query_count_mantri) as count_mantri", 'account.branch = count_mantri.branch', 'left');  
     //$this->db->select_sum('tbl_real.plafon');
     $this->db->order_by('scores','DESC');
     //$this->db->limit(10);

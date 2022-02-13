@@ -35,11 +35,12 @@
             <!-- Total Pencapaian CHART -->
             <div class="card card-primarp"  >
               <div class="card-header">
-                <h3 class="card-title">Total Pencapaian</h3>
+                <h3 class="card-title"><b>Total Pencapaian </b></h3>
                 <div class="card-tools">
                 </div>
               </div>
               <div class="card-body">
+              
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                   <?php $this->load->view('chart1') ?>
                 </div>
@@ -63,57 +64,65 @@
                
                 <?php
                     $savingtarget = $this->session->userdata('saving');
-                    $savingpersen = ($data_saving/$savingtarget) * 100 ;
+                    $bsaving = $this->session->userdata('bsaving');
+                    $savingpersen = ($data_saving/$savingtarget)*($bsaving/$savingtarget) ;
+                    $savingbar = ($data_saving/$savingtarget)*100 ;
 
                     $brimotarget = $this->session->userdata('brimo');
-                    $brimopersen = ($data_brimo/$brimotarget) * 100 ;
+                    $bbrimo = $this->session->userdata('bbrimo');
+                    $brimopersen = ($data_brimo/$brimotarget)*($bbrimo/$brimotarget) ;
+                    $brimobar = ($data_brimo/$brimotarget)*100 ;
 
                     $qristarget = $this->session->userdata('qris');
-                    $qrispersen = ($data_qris/$qristarget) * 100 ;
+                    $bqris = $this->session->userdata('bqris');
+                    $qrispersen = ($data_qris/$qristarget)*($bqris/$qristarget) ;
+                    $qrisbar = ($data_qris/$qristarget)*100 ;
 
                     $kunjualtarget = $this->session->userdata('kunjual');
-                    $kunjualpersen = ($data_kunjual/$kunjualtarget) * 100 ;
+                    $bkunjual = $this->session->userdata('bkunjual');
+                    $kunjualpersen = ($data_kunjual/$kunjualtarget)*($bkunjual/$kunjualtarget) ;
+                    $kunjualbar = ($data_kunjual/$kunjualtarget)*100 ;
 
                     $stroberitarget = $this->session->userdata('stroberikasir');
-                    $stroberipersen = ($data_stroberikasir/$stroberitarget) * 100 ;
-                  
-                    $pasartarget = $this->session->userdata('pasar');
-                    $pasarpersen = ($data_pasar/$pasartarget) * 100 ;
+                    $bstroberikasir = $this->session->userdata('bstroberikasir');
+                    $stroberipersen = ($data_stroberikasir/$stroberitarget)*($bstroberikasir/$stroberitarget) ;
+                    $stroberibar = ($data_stroberikasir/$stroberitarget)*100 ;
 
+                   
                     ?>
                     <div class="progress-group">
-                      Total Akuisisi saving <?= number_format($savingpersen,2),'%' ; ?>
+                      Total Akuisisi saving <?= number_format($savingbar,2),'%' ; ?> 
                       <span class="float-right"><b><?= number_format($data_saving); ?></b>/ <?php echo $this->session->userdata('saving');?></span>                 
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-primary" style="width:  <?= number_format($savingpersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-primary" style="width:  <?= number_format($savingbar,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Total Akuisisi Brimo <?= number_format($brimopersen,2),'%' ; ?>
+                      Total Akuisisi Brimo <?= number_format($brimobar,2),'%' ; ?>
                       <span class="float-right"><b><?= number_format($data_brimo); ?></b>/<?php echo $this->session->userdata('brimo');?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar " style="width:<?= number_format($brimopersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-info " style="width:<?= number_format($brimobar,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi Qris <?= number_format($qrispersen,2),'%' ; ?></span>
+                      <span class="progress-text">Total Akuisisi Qris <?= number_format($qrisbar,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_qris); ?></b>/<?php echo $this->session->userdata('qris');?></span>
                       <div class="progress progress-sm">
-                       <div class="progress-bar bg-success" style="width:<?= number_format($qrispersen,2),'%' ;R ?>"></div>
+                       <div class="progress-bar bg-success" style="width:<?= number_format($qrisbar,2),'%' ;R ?>"></div>
                       </div></div>                   
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi kunjual <?= number_format($kunjualpersen,2),'%' ; ?></span>
+                      <span class="progress-text">Total Akuisisi kunjual <?= number_format($kunjualbar,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_kunjual); ?></b>/<?php echo $this->session->userdata('kunjual');?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-warning" style="width:<?= number_format($kunjualpersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-warning" style="width:<?= number_format($kunjualbar,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi Stroberi <?= number_format($stroberipersen,2),'%' ; ?></span>
+                      <span class="progress-text">Total Akuisisi Stroberi <?= number_format($stroberibar,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_stroberikasir); ?></b>/<?php echo $this->session->userdata('stroberikasir');?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-danger" style="width:<?= number_format($stroberipersen,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-danger" style="width:<?= number_format($stroberibar,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
                     

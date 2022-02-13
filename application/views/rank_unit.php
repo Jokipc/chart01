@@ -1,8 +1,8 @@
-<?php if($this->session->userdata('id_level')>='0'):?> 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en"	dir="ltr">
 	<head>
-	<meta http-equiv="refresh" content="50" >
+	<!-- <meta http-equiv="refresh"  content="10; url=<?php echo base_url() ;?>rank"/> -->
 		<meta charset="utf-8">
 		
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/img/style1.css">
@@ -18,8 +18,8 @@
 	</style>
 	<body>
 		
-	<h4 style="color:Blue ;background: rgb(223,97,39);
-background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%, rgba(175,241,255,1) 100%);"><marquee loop="1000" scrolldelay="150"><?php
+	<h2 style="color:#4169E1; background: rgb(223,97,39);
+background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%, rgba(175,241,255,1) 100%);"><marquee loop="1000" ><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -34,7 +34,7 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 							</tr>';
 				}
 			?>	
-</marquee></h4>
+</marquee></h2>
 	
 	
 	<?php
@@ -45,7 +45,8 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 			if ($number <= 3 ){
 				print '<img src="'.base_url().'template/dist/img/k'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				
-				print '<div class="b b'.$number.'" style="color: orange;"><br><br><center>'.$val->unit.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: #FFF0F5;
+				text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size:30px;"><br><br><center>'.$val->unit.'</center></br></br></div>';
 			}
 		}
 	?>
@@ -93,15 +94,7 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 	</body>
 
 </html>
-<?php else: ?>
-<br>
-<br>
-<center>
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
 
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>    
-
-<?php endif;?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   $("table tr").hide();
@@ -134,13 +127,14 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
     .table > tbody > tr > td {
       vertical-align: middle;
       text-align: middle;
+	  color:blue;
 
 	   
     }
     .td-number {
       width: 5%;
-      background-color: rgb(228, 132, 6);
-      color: white;
+      background-color: rgb(250, 199, 133);
+      color:blue;
       text-align: center;
 	  
 
@@ -152,14 +146,15 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 
     .td-name {
       width: 50%;
-      background-color: rgb(228, 132, 6);
+      background-color: rgb(250, 199, 133);
+	  color:blue;
 	  
       color: white;
     }
     .td-value {
       width: 5%;
-      background-color: rgb(228, 132, 6);
-      color: white;
+      background-color: rgb(250, 199, 133);
+      color:blue;
       text-align:center;
     }
     img {
@@ -168,8 +163,8 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
       border-radius: 50%;
       /* object-fit: contain; */
     }
-	h3{
-	color: rgb(228, 132, 6);
+	h4{
+	color: rgb(250, 199, 133);
 	
 	}
   </style>

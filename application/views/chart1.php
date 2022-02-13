@@ -15,33 +15,55 @@
 		<script src="<?php echo base_url().'assets/js/Gauge.js'?>"></script>
 	</head>
 	<body>
+	
 		<div class="container">
+			
+		
+
 			<div class="row" align="center">
 				<canvas id="canvas" width="95" height="90"></canvas>
 			</div>
+			
 		</div>
+		<table width=100% >Bobot :
+			
+			<td style="background-color:#007bff">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bsaving'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:#17a2b8">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bbrimo'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:#28a745">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bqris'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:#ffc107">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bkunjual'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:#dc3545">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bstroberikasir'); ?>%</td><td>&nbsp;&nbsp;</td>
+		
+		</table>	
 	</body>
 </html>
 
 <?php
                     $savingtarget = $this->session->userdata('saving');
-                    $savingpersen = ($data_saving/$savingtarget) * 100 ;
-
-                    $brimotarget = $this->session->userdata('brimo');
-                    $brimopersen = ($data_brimo/$brimotarget) * 100 ;
-
-                    $qristarget = $this->session->userdata('qris');
-                    $qrispersen = ($data_qris/$qristarget) * 100 ;
-
-                    $kunjualtarget = $this->session->userdata('kunjual');
-                    $kunjualpersen = ($data_kunjual/$kunjualtarget) * 100 ;
-
-                    $stroberitarget = $this->session->userdata('stroberikasir');
-                    $stroberipersen = ($data_stroberikasir/$stroberitarget) * 100 ;
-                  
+                    $bsaving = $this->session->userdata('bsaving');
+                    $savingpersen = ($data_saving/$savingtarget)*$bsaving ;
                    
 
-					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen)/5 ; 
+                    $brimotarget = $this->session->userdata('brimo');
+                    $bbrimo = $this->session->userdata('bbrimo');
+                    $brimopersen = ($data_brimo/$brimotarget)*$bbrimo ;
+                    
+
+                    $qristarget = $this->session->userdata('qris');
+                    $bqris = $this->session->userdata('bqris');
+                    $qrispersen = ($data_qris/$qristarget)*$bqris ;
+                    
+                    $kunjualtarget = $this->session->userdata('kunjual');
+                    $bkunjual = $this->session->userdata('bkunjual');
+                    $kunjualpersen = ($data_kunjual/$kunjualtarget)*$bkunjual;
+                
+
+                    $stroberitarget = $this->session->userdata('stroberikasir');
+                    $bstroberikasir = $this->session->userdata('bstroberikasir');
+                    $stroberipersen = ($data_stroberikasir/$stroberitarget)*$bstroberikasir;
+                   
+                   
+
+					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen,1) ; 
 ?>
 <?php $angka=10; ?>
 
