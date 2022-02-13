@@ -9,23 +9,23 @@ body {
   animation-timing-function: linear;
 }
 .b1 {
-  width: 250px;
+  width: 210px;
   height: auto;
-  top: 55%;
+  top: 70%;
   z-index: 2;
-  animation-duration: 60s;
+  animation-duration: 15s;
 }
 .b2 {
-  width: 200px;
+  width: 150px;
   height: auto;
   top: 40%;
-  animation-duration: 70s;
+  animation-duration: 20s;
 }
 .b3 {
-  width: 400px;
+  width: 300px;
   height: auto;
   top: 50%;
-  animation-duration: 90s;
+  animation-duration: 25s;
 }
 
 .c {
