@@ -2,37 +2,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en"	dir="ltr">
 	<head>
-	<meta http-equiv="refresh" content="50" >
+	<meta http-equiv="refresh" content="100" >
 		<meta charset="utf-8">
 		
-		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/img/style1.css">
-		<title>Rank Unit</title>
+		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
+		<title>Rank</title>
 	</head>
 	<style>body {
-  	background-image: url(../template/dist/img/ombak1.gif);
-	margin: 0;
-  	padding: 0;
-	background-color: aqua;
-	background-size: cover;
+  	background-image: url(template/dist/img/bag.jpg);
+	  background-size: 120% 100%;
+	
 	}
 	</style>
 	<body>
-		
-<<<<<<< HEAD
-	<h4 style="color:Blue ;background: rgb(223,97,39);
-=======
-	<h4 style="color:blue ;background: rgb(223,97,39);
->>>>>>> 3c331685a27ced61153371585a4f6e90aa7e9933
-background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%, rgba(175,241,255,1) 100%);"><marquee loop="1000" scrolldelay="150"><?php
+	<h4 style="color:purple ;background: rgb(19,200,42);
+background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" scrolldelay="70"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
 					print '<tr>
 								
 								<td>'.$num.'.</td>
-								<td>'.$val->unit.'</td>
-								<td>'.$val->scores.'&nbsp; % &nbsp;&nbsp;&nbsp;&nbsp;</td>
-								
+								<td>'.$val->nama_mantri.'&nbsp;</td>
+								<td>'.$val->scores.'&nbsp;&nbsp;</td>
+								<td>'.$val->unit.'&nbsp;&nbsp;</td>
 								
 								
 							</tr>';
@@ -47,9 +40,10 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 		foreach( $data as $val){
 			$number++;
 			if ($number <= 3 ){
-				print '<img src="'.base_url().'template/dist/img/k'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
+				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
+				print '<p>';
+				print '<div class="b b'.$number.'" style="color: purple;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
 				
-				print '<div class="b b'.$number.'" style="color: orange;"><br><br><center>'.$val->unit.'</center></br></br></div>';
 			}
 		}
 	?>
@@ -61,8 +55,15 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 		<div class="cloud">
 		</div>
 	</div>
+	<div class="c c3">
+		<div class="cloud">
+		</div>
+	</div>
+	<div class="c c4">
+		<div class="cloud">
+		</div>
+	</div>
 
-	
 	
 	<div class="ground">
 		<div class="t t1">
@@ -71,13 +72,20 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 	</div>
 
 	<center><div class="container-table">
-	<H3 class="animated infinite hinge"><b>Total Pencapaian</b></H3>
+	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI</b></H3>
 		<table class="table table-sm table-bordered">
+		<tr style="width: 50px">
+		<td class="td-number align-middle">No</td>
+		<td></td>
+		<td class="td-name">Nama</td>
+		<td class="td-value"> Nilai</td>
 		
+		</tr>
 			<?php
 				$num = 0;
 				foreach( $data as $val){
-					$num++;
+					$num++ ;
+					if ($num < 11 ){
 					print '<tr style="width: 50px">
 								
 								<td class="td-number align-middle">'.$num.'</td>
@@ -86,10 +94,15 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 										src="'.base_url().'template/dist/img/kanca.png"
 									/>
 								</td>
-								<td class="td-name">'.$val->unit.'</td>
+								<td class="td-name">'.$val->nama_mantri.'</td>
 								<td class="td-value">'.$val->scores.'</td>
 								
+								
 							</tr>';
+					}
+					else {}
+
+
 				}
 			?>
 		</table>
@@ -138,19 +151,13 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
     .table > tbody > tr > td {
       vertical-align: middle;
       text-align: middle;
-	  color:blue;
 
 	   
     }
     .td-number {
       width: 5%;
-<<<<<<< HEAD
-      background-color: rgb(228, 132, 6);
+      background-color: #1c87af;
       color: white;
-=======
-      background-color: rgb(250, 199, 133);
-      color:blue;
->>>>>>> 3c331685a27ced61153371585a4f6e90aa7e9933
       text-align: center;
 	  
 
@@ -162,24 +169,13 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
 
     .td-name {
       width: 50%;
-<<<<<<< HEAD
-      background-color: rgb(228, 132, 6);
-=======
-      background-color: rgb(250, 199, 133);
-	  color:blue;
->>>>>>> 3c331685a27ced61153371585a4f6e90aa7e9933
-	  
+      background-color: #1c87af;
       color: white;
     }
     .td-value {
       width: 5%;
-<<<<<<< HEAD
-      background-color: rgb(228, 132, 6);
+      background-color: #1c87af;
       color: white;
-=======
-      background-color: rgb(250, 199, 133);
-      color:blue;
->>>>>>> 3c331685a27ced61153371585a4f6e90aa7e9933
       text-align:center;
     }
     img {
@@ -188,13 +184,8 @@ background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%,
       border-radius: 50%;
       /* object-fit: contain; */
     }
-<<<<<<< HEAD
 	h3{
-	color: rgb(228, 132, 6);
-=======
-	h4{
-	color: rgb(250, 199, 133);
->>>>>>> 3c331685a27ced61153371585a4f6e90aa7e9933
+	color: white;
 	
 	}
   </style>

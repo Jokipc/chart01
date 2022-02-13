@@ -23,7 +23,13 @@ class Login extends CI_Controller{
         $qris = $data['qris'];
         $stroberikasir = $data['stroberikasir'];
         $kunjual = $data['kunjual'];
-        $pasarid = $data['pasar_id'];
+        
+        $bsaving = $data['bsaving'];
+        $bbrimo = $data['bbrimo'];
+        $bqris = $data['bqris'];
+        $bstroberikasir = $data['bstroberikasir'];
+        $bkunjual = $data['bkunjual'];
+       
         
         $level = $data['id_level'];
         $sesdata = array(
@@ -35,7 +41,13 @@ class Login extends CI_Controller{
             'brimo'     => $brimo,
             'stroberikasir'     => $stroberikasir,
             'kunjual'     => $kunjual,
-            'pasar_id'     => $pasarid,
+            'bsaving'     => $bsaving,
+            'bqris'     => $bqris,
+            'bbrimo'     => $bbrimo,
+            'bstroberikasir'     => $bstroberikasir,
+            'bkunjual'     => $bkunjual,
+            
+
             'id_level'     => $level,
             'logged_in' => TRUE
         );
