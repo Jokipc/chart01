@@ -5,13 +5,21 @@
 	<meta http-equiv="refresh" content="50" >
 		<meta charset="utf-8">
 		
-		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
-		<title>Rank</title>
+		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/img/style1.css">
+		<title>Rank Unit</title>
 	</head>
-	
+	<style>body {
+  	background-image: url(../template/dist/img/ombak1.gif);
+	margin: 0;
+  	padding: 0;
+	background-color: aqua;
+	background-size: cover;
+	}
+	</style>
 	<body>
-	<h5 style="color:white ;background-color: black; horisontal-align: center; height:20px background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,21,106,0.9476832969515931) 50%, rgba(222,149,123,1) 100%);"><marquee loop="1000" scrolldelay="150"><?php
+		
+	<h4 style="color:Blue ;background: rgb(223,97,39);
+background: linear-gradient(90deg, rgba(223,97,39,1) 0%, rgba(242,193,95,1) 35%, rgba(175,241,255,1) 100%);"><marquee loop="1000" scrolldelay="150"><?php
 				$num = 0;
 				foreach( $data as $val){
 					$num++;
@@ -19,13 +27,14 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 								
 								<td>'.$num.'.</td>
 								<td>'.$val->unit.'</td>
-								<td>'.$val->scores.'&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td>'.$val->scores.'&nbsp; % &nbsp;&nbsp;&nbsp;&nbsp;</td>
+								
 								
 								
 							</tr>';
 				}
 			?>	
-</marquee></h5>
+</marquee></h4>
 	
 	
 	<?php
@@ -34,9 +43,9 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 		foreach( $data as $val){
 			$number++;
 			if ($number <= 3 ){
-				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
+				print '<img src="'.base_url().'template/dist/img/k'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				
-				print '<div class="b b'.$number.'" style="color: blue;"><br><br><center>'.$val->unit.'</center></br></br></div>';
+				print '<div class="b b'.$number.'" style="color: orange;"><br><br><center>'.$val->unit.'</center></br></br></div>';
 			}
 		}
 	?>
@@ -48,22 +57,8 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 		<div class="cloud">
 		</div>
 	</div>
-	<div class="c c3">
-		<div class="cloud">
-		</div>
-	</div>
-	<div class="c c4">
-		<div class="cloud">
-		</div>
-	</div>
-	<div class="c c5">
-		<div class="cloud">
-		</div>
-	</div>
-	<div class="c c6">
-		<div class="cloud">
-		</div>
-	</div>
+
+	
 	
 	<div class="ground">
 		<div class="t t1">
@@ -72,7 +67,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 	</div>
 
 	<center><div class="container-table">
-	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI</b></H3>
+	<H3 class="animated infinite hinge"><b>Total Pencapaian</b></H3>
 		<table class="table table-sm table-bordered">
 		
 			<?php
@@ -144,7 +139,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
     }
     .td-number {
       width: 5%;
-      background-color: #1c87af;
+      background-color: rgb(228, 132, 6);
       color: white;
       text-align: center;
 	  
@@ -157,12 +152,13 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
 
     .td-name {
       width: 50%;
-      background-color: #1c87af;
+      background-color: rgb(228, 132, 6);
+	  
       color: white;
     }
     .td-value {
       width: 5%;
-      background-color: #1c87af;
+      background-color: rgb(228, 132, 6);
       color: white;
       text-align:center;
     }
@@ -173,7 +169,7 @@ background: linear-gradient(90deg, rgba(2,0,36,0.7123891793045343) 0%, rgba(21,2
       /* object-fit: contain; */
     }
 	h3{
-	color: #046a90;
+	color: rgb(228, 132, 6);
 	
 	}
   </style>
