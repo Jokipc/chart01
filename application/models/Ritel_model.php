@@ -1,0 +1,161 @@
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Ritel_model extends CI_Model
+{
+
+    public $table = 'ritel';
+    public $id = '';
+    public $order = 'DESC';
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    // get all
+    function get_all()
+    {
+        $this->db->order_by($this->id, $this->order);
+        return $this->db->get($this->table)->result();
+    }
+
+    // get data by id
+    function get_by_id($id)
+    {
+        $this->db->where($this->id, $id);
+        return $this->db->get($this->table)->row();
+    }
+    
+    // get total rows
+    function total_rows($q = NULL) {
+        $this->db->like('', $q);
+	$this->db->or_like('id', $q);
+	$this->db->or_like('branch', $q);
+	$this->db->or_like('pn', $q);
+	$this->db->or_like('nama_rm', $q);
+	$this->db->or_like('koderm', $q);
+	$this->db->or_like('rm_segemen', $q);
+	$this->db->or_like('t_ibbiz', $q);
+	$this->db->or_like('b_ibbiz', $q);
+	$this->db->or_like('t_bristore', $q);
+	$this->db->or_like('b_bristore', $q);
+	$this->db->or_like('t_bankgaransi', $q);
+	$this->db->or_like('b_bankgaransi', $q);
+	$this->db->or_like('t_penyalurankur', $q);
+	$this->db->or_like('b_penyalurankur', $q);
+	$this->db->or_like('t_realkeci', $q);
+	$this->db->or_like('b_realkecil', $q);
+	$this->db->or_like('t_pemi', $q);
+	$this->db->or_like('b_premi', $q);
+	$this->db->or_like('t_ekstrakom', $q);
+	$this->db->or_like('b_ekstrakom', $q);
+	$this->db->or_like('t_britama', $q);
+	$this->db->or_like('b_britama', $q);
+	$this->db->or_like('t_payrol', $q);
+	$this->db->or_like('b_payrol', $q);
+	$this->db->or_like('t_edc', $q);
+	$this->db->or_like('b_edc', $q);
+	$this->db->or_like('t_giro', $q);
+	$this->db->or_like('b_giro', $q);
+	$this->db->or_like('t_tabungan', $q);
+	$this->db->or_like('b_tabungan', $q);
+	$this->db->or_like('t_brimola', $q);
+	$this->db->or_like('b_brimola', $q);
+	$this->db->or_like('t_digitalsav', $q);
+	$this->db->or_like('b_digitalsav', $q);
+	$this->db->or_like('t_kpr', $q);
+	$this->db->or_like('b_kpr', $q);
+	$this->db->or_like('t_debkpr', $q);
+	$this->db->or_like('b_debkpr', $q);
+	$this->db->or_like('t_kk', $q);
+	$this->db->or_like('b_kk', $q);
+	$this->db->or_like('t_briguna', $q);
+	$this->db->or_like('b_briguna', $q);
+	$this->db->or_like('t_debbriguna', $q);
+	$this->db->or_like('b_debbriguna', $q);
+	$this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+    // get data with limit and search
+    function get_limit_data($limit, $start = 0, $q = NULL) {
+        $this->db->order_by($this->id, $this->order);
+        $this->db->like('', $q);
+	$this->db->or_like('id', $q);
+	$this->db->or_like('branch', $q);
+	$this->db->or_like('pn', $q);
+	$this->db->or_like('nama_rm', $q);
+	$this->db->or_like('koderm', $q);
+	$this->db->or_like('rm_segemen', $q);
+	$this->db->or_like('t_ibbiz', $q);
+	$this->db->or_like('b_ibbiz', $q);
+	$this->db->or_like('t_bristore', $q);
+	$this->db->or_like('b_bristore', $q);
+	$this->db->or_like('t_bankgaransi', $q);
+	$this->db->or_like('b_bankgaransi', $q);
+	$this->db->or_like('t_penyalurankur', $q);
+	$this->db->or_like('b_penyalurankur', $q);
+	$this->db->or_like('t_realkeci', $q);
+	$this->db->or_like('b_realkecil', $q);
+	$this->db->or_like('t_pemi', $q);
+	$this->db->or_like('b_premi', $q);
+	$this->db->or_like('t_ekstrakom', $q);
+	$this->db->or_like('b_ekstrakom', $q);
+	$this->db->or_like('t_britama', $q);
+	$this->db->or_like('b_britama', $q);
+	$this->db->or_like('t_payrol', $q);
+	$this->db->or_like('b_payrol', $q);
+	$this->db->or_like('t_edc', $q);
+	$this->db->or_like('b_edc', $q);
+	$this->db->or_like('t_giro', $q);
+	$this->db->or_like('b_giro', $q);
+	$this->db->or_like('t_tabungan', $q);
+	$this->db->or_like('b_tabungan', $q);
+	$this->db->or_like('t_brimola', $q);
+	$this->db->or_like('b_brimola', $q);
+	$this->db->or_like('t_digitalsav', $q);
+	$this->db->or_like('b_digitalsav', $q);
+	$this->db->or_like('t_kpr', $q);
+	$this->db->or_like('b_kpr', $q);
+	$this->db->or_like('t_debkpr', $q);
+	$this->db->or_like('b_debkpr', $q);
+	$this->db->or_like('t_kk', $q);
+	$this->db->or_like('b_kk', $q);
+	$this->db->or_like('t_briguna', $q);
+	$this->db->or_like('b_briguna', $q);
+	$this->db->or_like('t_debbriguna', $q);
+	$this->db->or_like('b_debbriguna', $q);
+	$this->db->limit($limit, $start);
+        return $this->db->get($this->table)->result();
+    }
+
+    // insert data
+    function insert($data)
+    {
+        $this->db->insert($this->table, $data);
+    }
+
+    // update data
+    function update($id, $data)
+    {
+        $this->db->where($this->id, $id);
+        $this->db->update($this->table, $data);
+    }
+
+    // delete data
+    function delete($id)
+    {
+        $this->db->where($this->id, $id);
+        $this->db->delete($this->table);
+    }
+
+}
+
+/* End of file Ritel_model.php */
+/* Location: ./application/models/Ritel_model.php */
+/* Please DO NOT modify this information : */
+/* Generated by Harviacode Codeigniter CRUD Generator 2022-02-13 06:51:08 */
+/* http://harviacode.com */
