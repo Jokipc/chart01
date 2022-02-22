@@ -14,12 +14,31 @@ class Kunjual extends CI_Controller
 
     public function index()
     {
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='3'):;
+        $this->load->view('templates/sidebarritel');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        else:;
+        endif;
+
+        $this->load->view('templates/meta');
+        
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'kunjual/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'kunjual/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'kunjual/index.html?q=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'kunjual/index.html?q=' . urlencode($pn);
         } else {
             $config['base_url'] = base_url() . 'kunjual/index.html';
             $config['first_url'] = base_url() . 'kunjual/index.html';
@@ -27,20 +46,21 @@ class Kunjual extends CI_Controller
 
         $config['per_page'] = 10;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Kunjual_model->total_rows($q);
-        $kunjual = $this->Kunjual_model->get_limit_data($config['per_page'], $start, $q);
+        $config['total_rows'] = $this->Kunjual_model->total_rows($pn);
+        $kunjual = $this->Kunjual_model->get_limit_data($config['per_page'], $start, $pn);
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
             'kunjual_data' => $kunjual,
-            'q' => $q,
+            'q' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
         $this->load->view('kunjual/kunjual_list', $data);
+        $this->load->view('templates/footer');
         
     }
 
@@ -75,7 +95,7 @@ class Kunjual extends CI_Controller
 	    'nik' => set_value('nik'),
 	    'hp' => set_value('hp'),
 	);
-        $this->load->view('kunjual/kunjual_form', $data);
+    $this->load->view('kunjual/kunjual_list', $data);
     }
     
     public function create_action() 
@@ -95,7 +115,7 @@ class Kunjual extends CI_Controller
 
             $this->Kunjual_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('home'));
+            redirect(site_url('kunjual'));
         }
     }
     

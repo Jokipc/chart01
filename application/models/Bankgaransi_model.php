@@ -74,6 +74,13 @@ class Bankgaransi_model extends CI_Model
         $this->db->delete($this->table);
     }
 
+    function get_tampil($pn=0){
+       
+        $this->db->select('pn');
+        $this->db->where('pn',$pn);
+        $result = $this->db->get('bankgaransi');
+        return $result;
+    }
 }
 
 /* End of file Bankgaransi_model.php */

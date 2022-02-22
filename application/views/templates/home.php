@@ -1,4 +1,4 @@
-<?php if($this->session->userdata('id_level')>'0'):?>
+<?php $this->load->view('templates/js') ?>
 <?php $this->load->view('templates/header') ?>
 
 
@@ -15,11 +15,9 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-<?php if($this->session->userdata('id_level')==='1'):?> 
-<?php $this->load->view('templates/sidebaradmin'); ?>
-<?php else: ?>
+
 <?php $this->load->view('templates/sidebar'); ?>
-<?php endif;?>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="background-color:white";>
@@ -143,14 +141,6 @@
      ?>
 
     
-<?php $this->load->view('templates/js') ?>
+
 </body>
 </html>
-<?php else: ?>
-<br>
-<br>
-<center>
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
-
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
-<?php endif;?>

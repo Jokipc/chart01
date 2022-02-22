@@ -42,7 +42,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		$number = 0;
 		foreach( $data as $val){
 			$number++;
-			if ($number <= 3 ){
+			if ($number <= 6 ){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.png" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				print '<p>';
 				print '<div class="b b'.$number.'" style="color: purple;style="color: #FFF0F5;

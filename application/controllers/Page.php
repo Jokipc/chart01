@@ -29,8 +29,8 @@ class Page extends CI_Controller{
 
   function author(){
     //Allowing akses to author only
-    if($this->session->userdata('level')==='3'){
-      $this->load->view('dashboard_view');
+    if($this->session->userdata('id_level')==='3'){
+      redirect('home/ritel');
     }else{
         echo "Access Denied";
     }

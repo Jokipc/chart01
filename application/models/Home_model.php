@@ -1,55 +1,117 @@
 <?php
 class Home_model extends CI_Model{
 
-  //get data from database
-  function get_data($kode=5921){
-       
-      $this->db->select('tbl_real.*, mantri.target, account.branch, mantri.nama_mantri, sum(tbl_real.plafon) as total');
-      $this->db->from('tbl_real','account');
-      $this->db->join('mantri', 'tbl_real.pn = mantri.pn');
-      $this->db->join('account', 'tbl_real.branch = account.branch');
-      $this->db->where('tbl_real.branch', $kode);
-      $this->db->group_by('tbl_real.pn');
-      //$this->db->order_by('');
-      $result = $this->db->get();
 
-      //foreach ($result as $val)
-
-      return $result;
-  }
-  function brimo($pn=271055){
+  function brimo($pn=271055)
+  {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
   $result = $this->db->get('brimo');
   return $result;
   }
-  function qris($pn=271055){
+
+  function qris($pn=271055)
+  {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
   $result = $this->db->get('qris');
   return $result;
   }
-   function kunjual($pn=271055){
-   $this->db->select('pn');
+
+  function kunjual($pn=271055)
+  {
+  $this->db->select('pn');
   $this->db->where('pn',$pn);
   $result = $this->db->get('kunjual');
   return $result;
   }
-  function saving($pn=271055){
-   $this->db->select('pn');
+
+  function saving($pn=271055)
+  {
+  $this->db->select('pn');
   $this->db->where('pn',$pn);
   $result = $this->db->get('saving');
   return $result;
   }
-  function stroberikasir($pn=271055){
-   $this->db->select('pn');
+  function stroberikasir($pn=271055)
+  {
+  $this->db->select('pn');
   $this->db->where('pn',$pn);
   $result = $this->db->get('stroberikasir');
   return $result;
   }
 
+  function bankgaransi($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('bankgaransi');
+  return $result;
+  }
 
+  function bristore($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('bristore');
+  return $result;
+  }
 
+  function ibbiz($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('ibbiz');
+  return $result;
+  }
 
-   
+  function britamabisnis($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('britamabisnis');
+  return $result;
+  }
+
+  function premi($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('premi');
+  return $result;
+  }
+
+  function penyalurankur($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('penyalurankur');
+  return $result;
+  }
+
+  function realkecil($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('realkecil');
+  return $result;
+  }
+
+  function ekstrakom($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('ekstrakom');
+  return $result;
+  }
+
+  function target($pn=271055)
+  {
+  $this->db->select('mantri.*,  ritel.*');
+  $this->db->from('mantri');
+  $this->db->join('ritel','ritel.id_target = mantri.side');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get();
+  return $result;
+  }
 }

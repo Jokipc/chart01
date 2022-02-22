@@ -1,10 +1,7 @@
 
 <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
-<center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
 <section class="conten-header">
-<div class="col-md-6">
 <h2 style="margin-top:0px">Bank Garansi List</h2>
-</div>
 </section>
 <section class="content">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
@@ -16,6 +13,7 @@
 		    <th>Norek</th>
 		    <th>Nama</th>
 		    <th>Plafond</th>
+            <th>Action</th>
         </tr>
         </tr><?php
             foreach ($bankgaransi_data as $bankgaransi)
@@ -28,19 +26,24 @@
 			<td><?php echo $bankgaransi->norek ?></td>
 			<td><?php echo $bankgaransi->nama ?></td>
 			<td><?php echo $bankgaransi->plafond ?></td>
-      <?php if($this->session->userdata('id_level')==='1' ):; ?>
-      <td>
-      <?php
-      			echo anchor(site_url('bankgaransi/delete/'.$bankgaransi->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
-            else:;   
-      ?>
-      </td>
-      <?php endif; ?>
+			<td style="text-align:center" width="200px">
+				<?php 
+				echo anchor(site_url('bankgaransi/read/'.$bankgaransi->id),'Read'); 
+				echo ' | '; 
+				echo anchor(site_url('bankgaransi/update/'.$bankgaransi->id),'Update'); 
+				echo ' | '; 
+				echo anchor(site_url('bankgaransi/delete/'.$bankgaransi->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				?>
+			</td>
 		</tr>
                 <?php
             }
             ?>
         </table>
+        </section>
+
+       
+        
         <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
@@ -51,9 +54,8 @@
             </div>
         </div>
         </div>
-</section>
-       
-<!-- datepicker -->
+    </body>
+</html>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
@@ -79,24 +81,23 @@
       <form action="<?php echo base_url()?>bankgaransi/create_action" method="post">
 	    <div class="form-group">
             <label for="int">Pn <?php echo form_error('pn') ?></label>
-            <input type="text" class="form-control" name="pn" disabled id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
-            <input type="hidden" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
+            <input type="text" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
         </div>
 	    <div class="form-group">
             <label for="date">Tgl <?php echo form_error('tgl') ?></label>
-            <input type="text" class="form-control" name="tgl" required id="datepicker" autocomplete="off" placeholder="Tgl" value="" />
+            <input type="text" class="form-control" name="tgl" id="datepicker" autocomplete="off" placeholder="Tgl" value="" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Norek <?php echo form_error('norek') ?></label>
-            <input type="text" class="form-control" pattern="[0-9]+" required name="norek" id="norek" autocomplete="off" placeholder="Norek" value="" />
+            <input type="text" class="form-control" name="norek" id="norek" autocomplete="off" placeholder="Norek" value="" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Nama <?php echo form_error('nama') ?></label>
-            <input type="text" class="form-control" name="nama" id="nama" required autocomplete="off" placeholder="Nama" value="" />
+            <input type="text" class="form-control" name="nama" id="nama" autocomplete="off" placeholder="Nama" value="" />
         </div>
 	    <div class="form-group">
             <label for="int">Plafond <?php echo form_error('plafond') ?></label>
-            <input type="text" pattern="[0-9]+" title="only letters" class="form-control" name="plafond" required autocomplete="off" id="plafond" placeholder="Plafond" value="" />
+            <input type="text" class="form-control" name="plafond" autocomplete="off" id="plafond" placeholder="Plafond" value="" />
         </div>
         <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Simpan</button>

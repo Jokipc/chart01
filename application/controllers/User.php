@@ -107,6 +107,22 @@ class User extends CI_Controller
     
     public function update($id) 
     {
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        elseif($this->session->userdata('id_level')==='3'):;
+        $this->load->view('templates/sidebarritel');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        else:;
+        endif;
+        $this->load->view('templates/meta');
         $row = $this->User_model->get_by_id($id);
 
         if ($row) {
@@ -146,7 +162,13 @@ class User extends CI_Controller
 
             $this->User_model->update($this->input->post('id_pn', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
+            if($this->session->userdata('id_level')==='1' ):;
+            redirect(site_url('rank/bintang'));
+            elseif($this->session->userdata('id_level')==='2'):;
             redirect(site_url('home'));
+            else:;
+            redirect(site_url('home/ritel'));
+            endif;
         }
     }
     

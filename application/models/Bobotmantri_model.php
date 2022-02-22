@@ -8,6 +8,7 @@ class Bobotmantri_model extends CI_Model
 
     public $table = 'mantri';
     public $id = 'id_pn';
+    
     public $order = 'DESC';
 
     function __construct()
@@ -89,10 +90,9 @@ class Bobotmantri_model extends CI_Model
     }
 
     // update data
-    function update($id, $data)
+    function update($id_level, $data)
     {
-       
-        $this->db->update($this->table, $data);
+        
     }
 
     // delete data

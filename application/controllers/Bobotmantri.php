@@ -170,7 +170,7 @@ class Bobotmantri extends CI_Controller
     public function update_action() 
     {
         $this->_rules();
-
+		
          $data = array(
 		
 		'bsaving' => $this->input->post('bsaving',TRUE),
@@ -185,7 +185,7 @@ class Bobotmantri extends CI_Controller
 		'stroberikasir' => $this->input->post('stroberikasir',TRUE),
 	    );
 
-            $this->Bobotmantri_model->update($this->input->post('id_pn', TRUE), $data);
+            $this->Bobotmantri_model->update($data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('rank/bintang'));
        

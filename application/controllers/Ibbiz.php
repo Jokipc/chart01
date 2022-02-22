@@ -14,12 +14,17 @@ class Ibbiz extends CI_Controller
 
     public function index()
     {
+        $pn = $this->session->userdata('pn');
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebarritel');
+        $this->load->view('templates/meta');
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'ibbiz/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'ibbiz/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'ibbiz/index.html?q=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'ibbiz/index.html?q=' . urlencode($pn);
         } else {
             $config['base_url'] = base_url() . 'ibbiz/index.html';
             $config['first_url'] = base_url() . 'ibbiz/index.html';
@@ -27,8 +32,8 @@ class Ibbiz extends CI_Controller
 
         $config['per_page'] = 10;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Ibbiz_model->total_rows($q);
-        $ibbiz = $this->Ibbiz_model->get_limit_data($config['per_page'], $start, $q);
+        $config['total_rows'] = $this->Ibbiz_model->total_rows($pn);
+        $ibbiz = $this->Ibbiz_model->get_limit_data($config['per_page'], $start, $pn);
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
@@ -41,6 +46,7 @@ class Ibbiz extends CI_Controller
             'start' => $start,
         );
         $this->load->view('ibbiz/ibbiz_list', $data);
+        $this->load->view('templates/footer');
     }
 
     public function read($id) 

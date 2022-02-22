@@ -51,31 +51,31 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo site_url();?>saving/create" class="nav-link">
+                <a href="<?php echo site_url();?>saving" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Saving</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>qris/create" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Qris</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>brimo/create" class="nav-link">
+                <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Brimo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>kunjual/create" class="nav-link">
+                <a href="<?php echo site_url();?>kunjual" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kunjual</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>stroberikasir/create" class="nav-link">
+                <a href="<?php echo site_url();?>stroberikasir" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Stroberi Kasir<p>
                 </a>

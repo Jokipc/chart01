@@ -17,7 +17,7 @@
           <img src="<?php echo base_url() ;?>template/dist/img/<?php echo $this->session->userdata('ico');?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-        <h6 style="color:white;"> Unit 4DX </h6>
+        <h6 style="color:white;"> Mantri 4DX </h6>
           <a href="#" style="color:orange" class="d-block"><?php echo $this->session->userdata('nama_mantri');?></a>
 
         </div>
@@ -31,88 +31,101 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item"> 
-              
-        
 
-           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Rank
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="<?php echo site_url();?>rank/bintang" class="nav-link">
+               <li class="nav-item">
+                <a href="<?php echo site_url();?>home/ritel" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
-                </a>  
-                <a href="<?php echo site_url();?>rank/live" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Live</p>
                 </a>
-              
-              <a href="<?php echo site_url();?>rank/unit" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Unit</p>
-                </a>
-                
-                 
-                  <a href="<?php echo site_url('rank') ?>" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank Mantri
-                  </a>
-                  
-              </li>
-            </ul>
-          </li>
-
          
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-edit"></i>
               <p>
-                Data Mantri 1
+                Form 1
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo site_url();?>saving" class="nav-link">
+                <a href="<?php echo site_url();?>bankgaransi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Saving</p>
+                  <p>Bank Garansi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>qris" class="nav-link">
+                <a href="<?php echo site_url();?>bristore" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Qris</p>
+                  <p>Bristore</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>IBBIZ" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>IBBIZ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Britama Bisnis Via DS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>premi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Premi PIJAR/DAVESTERA<p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Form 2
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>penyalurankur" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penyaluran Kur</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Brimo</p>
+                  <p>Brimo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>kunjual" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Kunjual</p>
+                  <p>Qris</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>stroberikasir" class="nav-link">
+                <a href="<?php echo site_url();?>realkecil" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Stroberi<p>
+                  <p>Real Kecil</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>ekstrakom" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rec Ekstrakom<p>
+                </a>
+              </li>
+              
             </ul>
           </li>
-
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -128,9 +141,6 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ubah Password</p>
                 </a>
-          
-       
-
           
         </ul>
       </nav>

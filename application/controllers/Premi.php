@@ -14,12 +14,27 @@ class Premi extends CI_Controller
 
     public function index()
     {
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='3'):;
+        $this->load->view('templates/sidebarritel');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        else:;
+        endif;
+
+        $this->load->view('templates/meta');
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'premi/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'premi/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'premi/index.html?q=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'premi/index.html?q=' . urlencode($pn);
         } else {
             $config['base_url'] = base_url() . 'premi/index.html';
             $config['first_url'] = base_url() . 'premi/index.html';
@@ -27,20 +42,21 @@ class Premi extends CI_Controller
 
         $config['per_page'] = 10;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Premi_model->total_rows($q);
-        $premi = $this->Premi_model->get_limit_data($config['per_page'], $start, $q);
+        $config['total_rows'] = $this->Premi_model->total_rows($pn);
+        $premi = $this->Premi_model->get_limit_data($config['per_page'], $start, $pn);
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
             'premi_data' => $premi,
-            'q' => $q,
+            'q' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
         $this->load->view('premi/premi_list', $data);
+        $this->load->view('templates/footer');
     }
 
     public function read($id) 
