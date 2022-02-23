@@ -1,3 +1,5 @@
+<?php $this->load->view('templates/js') ?>
+<?php $this->load->view('templates/header') ?>
 <?php
         $a = 0; 
         foreach($bankgaransi as $val) {

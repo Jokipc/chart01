@@ -26,7 +26,7 @@
       <?php if($this->session->userdata('id_level')==='1' ):; ?>
       <td>
       <?php
-      			echo anchor(site_url('bankgaransi/delete/'.$saving->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+      			echo anchor(site_url('bankgaransi/delete/'.$saving  ->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
             else:;   
       ?>
       </td>

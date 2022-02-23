@@ -29,10 +29,10 @@ class Penyalurankur extends CI_Controller
         endif;
         $this->load->view('templates/meta');
         
-        $q = urldecode($this->input->get('q', TRUE));
+        $pn = urldecode($this->input->get('pn', TRUE));
         $start = intval($this->input->get('start'));
         
-        if ($q <> '') {
+        if ($pn <> '') {
             $config['base_url'] = base_url() . 'penyalurankur/index.html?q=' . urlencode($pn);
             $config['first_url'] = base_url() . 'penyalurankur/index.html?q=' . urlencode($pn);
         } else {
@@ -50,7 +50,7 @@ class Penyalurankur extends CI_Controller
 
         $data = array(
             'penyalurankur_data' => $penyalurankur,
-            'q' => $pn,
+            'pn' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
@@ -229,6 +229,7 @@ class Penyalurankur extends CI_Controller
         xlsEOF();
         exit();
     }
+    
 
 }
 

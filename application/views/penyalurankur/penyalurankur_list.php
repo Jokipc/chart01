@@ -7,7 +7,39 @@
 </div>
 </section>
 <section class="content">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
+
+<div class="row" style="margin-bottom: 10px">
+            <div class="col-md-4">
+                <?php echo anchor(site_url('penyalurankur/create'),'Create', 'class="btn btn-primary"'); ?>
+            </div>
+            <div class="col-md-2 text-center">
+                <div style="margin-top: 8px" id="message">
+                    <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
+                </div>
+            </div>
+            <div class="col-md-1 text-right">
+            </div>
+            <div class="col-md-3 text-right">
+                <form action="<?php echo site_url('penyalurankur/index'); ?>" class="form-inline" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="pn" value="<?php echo $pn; ?>">
+                        <span class="input-group-btn">
+                            <?php 
+                                if ($pn <> '')
+                                {
+                                    ?>
+                                    <a href="<?php echo site_url('penyalurankur'); ?>" class="btn btn-default">Reset</a>
+                                    <?php
+                                }
+                            ?>
+                          <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
     <table class="table">
             <tr>
                 <th>No</th>
