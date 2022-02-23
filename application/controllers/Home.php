@@ -40,7 +40,7 @@ class Home extends CI_Controller{
    
     function ritel(){
        
-      $this->load->view('templates/meta');
+      
       $this->load->view('templates/sidebarritel');
       $this->load->view('templates/js');
       $pn = $this->session->userdata('pn');
