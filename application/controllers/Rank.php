@@ -10,9 +10,9 @@ class Rank extends CI_Controller{
    
       
       $db = $this->Rank_model->get_rank()->result();
-     
+      $db1 = $this->Rank_model->get_end()->result();
       $x['data'] = $db;
-    
+      $x['end'] = $db1;
 
       $this->load->view("rank", $x);
       
