@@ -19,7 +19,7 @@
 	<body>
 	
 	<!-- <meta http-equiv="refresh"  content="2; url=<?php echo base_url() ;?>rank/unit"/> -->
-	<h2 style="color:#4169E1 ;background: rgb(19,200,42);
+	<h4 style="color:#4169E1 ;background: rgb(19,200,42);
 background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" ><?php
 				$num = 0;
 				foreach( $data as $val){
@@ -35,7 +35,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 							</tr>';
 				}
 			?>	
-</marquee></h2>
+</marquee></h4>
 	
 	
 	<?php
