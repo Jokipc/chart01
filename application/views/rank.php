@@ -81,14 +81,14 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	<div class="col-md-1 "></div>
 	<div class="col-md-5 ">
 
-	<H3 class="animated infinite hinge"><b>PERINGKAT MANTRI 10 TERATAS</b></H3>
-		<table class="table table-sm table-bordered" style="background-color:ivory; opacity:0.7">
+	<h5 class="animated infinite hinge"><b>PERINGKAT MANTRI 15 TERATAS</b></h5>
+		<table class="table table-sm table-bordered" style="background-color:ivory; opacity:0.8">
 		<tr style="width: 50px">
-		<td class="td-number align-middle">No</td>
+		<td class="td-number align-middle"><center><b>No</b></center></td>
 		<td></td>
-		<td class="td-name">Nama</td>
-		<td class="td-name">Unit</td>
-		<td class="td-value"> Nilai</td>
+		<td class="td-name"><center><b>Nama</b></center></td>
+		<td class="td-name"><center><b>Unit</b></center></td>
+		<td class="td-value"><center><b>Nilai</b></center></td>
 
 
 		</tr>
@@ -98,7 +98,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 				
 				foreach( $data as $val){
 					$num++ ;
-					if ($num < 11 ){
+					if ($num < 16 ){
 					print '<tr style="width: 50px">
 								
 								<td class="td-number align-middle">'.$num.'</td>
@@ -122,20 +122,20 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	</div>
 	<div class="col-md-5">
 
-	<H3 class="animated infinite hinge"><b>PERINGKAT 10 TERBAWAH MANTRI</b></H3>
-		<table class="table table-sm table-bordered " style="background-color:ivory; opacity:0.7">
+	<h5 class="animated infinite hinge"><b>PERINGKAT 15 TERBAWAH MANTRI</b></h5>
+		<table class="table table-sm table-bordered " style="background-color:ivory; opacity:0.8">
 		<tr style="width: 50px">
-		<td class="td-number align-middle">No</td>
+		<td class="td-number align-middle"><center><b>No</b></center></td>
 		<td></td>
-		<td class="td-name">Nama</td>
-		<td class="td-name">Unit</td>
-		<td class="td-value"> Nilai</td>
-
+		<td class="td-name"><center><b>Nama</b></center></td>
+		<td class="td-name"><center><b>Unit</b></center></td>
+		<td class="td-value"><center><b>Nilai</b></center></td>
+	
 
 		</tr>
 			<?php
 			
-				$num = 100;
+				$num = 95;
 				
 				foreach( $end as $val1){
 					$num++ ;
@@ -178,7 +178,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 			$(this).delay(index*500).show(100);
 		});
 	})
-	$("h3").hide();
+	$("h5").hide();
 	var balon = document.getElementById("balon3");
 	balon.addEventListener('webkitAnimationEnd', () => {
 		console.log('anumation end');
@@ -198,9 +198,8 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	  
     }
     .table > tbody > tr > td {
-      vertical-align: middle;
-      text-align: middle;
-
+		padding: 0px 1px;
+		font-size: 14px
 	   
     }
     .td-number {
@@ -213,7 +212,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
     }
 
     .td-image {
-      width: 5%;
+      width: 2%;
     }
 
     .td-name {
@@ -228,12 +227,12 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
       text-align:center;
     }
     img {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       /* object-fit: contain; */
     }
-	h3{
+	h5{
 	color: white;
 	
 

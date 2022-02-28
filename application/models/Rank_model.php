@@ -110,7 +110,7 @@ class Rank_model extends CI_Model{
       $this->db->order_by('scores','desc');
       
       
-      $this->db->limit(10,100);
+      $this->db->limit(15 ,95);
       
       $result = $this->db->get();
       return $result;
