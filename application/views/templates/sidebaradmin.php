@@ -64,6 +64,10 @@
                   <a href="<?php echo site_url('rank') ?>" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>&nbsp; Rank Mantri
                   </a>
+
+                  <a href="<?php echo site_url() ?>rank/ritel" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM
+                  </a>
                   
               </li>
             </ul>

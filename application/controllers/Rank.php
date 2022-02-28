@@ -18,6 +18,18 @@ class Rank extends CI_Controller{
       
       
  }
+ function ritel(){
+   
+      
+  $db = $this->Rank_model->get_ritel()->result();
+
+  $x['data'] = $db;
+
+
+  $this->load->view("rank_ritel", $x);
+  
+  
+}
 
   function unit(){
    

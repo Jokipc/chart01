@@ -37,7 +37,9 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>
-         
+                <a href="<?php echo site_url() ?>rank/ritel" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM
+                  </a>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
