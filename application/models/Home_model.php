@@ -6,6 +6,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(brimo.tgl)',3);
   $result = $this->db->get('brimo');
   return $result;
   }
@@ -14,6 +15,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(qris.tgl)',3);
   $result = $this->db->get('qris');
   return $result;
   }
@@ -22,6 +24,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(kunjual.tgl)',3);
   $result = $this->db->get('kunjual');
   return $result;
   }
@@ -30,6 +33,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(saving.tgl)',3);
   $result = $this->db->get('saving');
   return $result;
   }
@@ -37,6 +41,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(stroberikasir.tgl)',3);
   $result = $this->db->get('stroberikasir');
   return $result;
   }
@@ -45,6 +50,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(bankgaransi.tgl)',3);
   $result = $this->db->get('bankgaransi');
   return $result;
   }
@@ -53,6 +59,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(bristore.tgl)',3);
   $result = $this->db->get('bristore');
   return $result;
   }
@@ -61,6 +68,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(ibbiz.tgl)',3);
   $result = $this->db->get('ibbiz');
   return $result;
   }
@@ -69,6 +77,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(britamabisnis.tgl)',3);
   $result = $this->db->get('britamabisnis');
   return $result;
   }
@@ -77,6 +86,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(premi.tgl)',3);
   $result = $this->db->get('premi');
   return $result;
   }
@@ -85,6 +95,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(penyalurankur.tgl)',3);
   $result = $this->db->get('penyalurankur');
   return $result;
   }
@@ -93,6 +104,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(realkecil.tgl)',3);
   $result = $this->db->get('realkecil');
   return $result;
   }
@@ -101,6 +113,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
+  $this->db->where('MONTH(ekstrakom.tgl)',3);
   $result = $this->db->get('ekstrakom');
   return $result;
   }
