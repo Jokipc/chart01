@@ -224,7 +224,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	  
     }
     .table > tbody > tr > td {
-		padding: 0px 10px;
+		padding: 0px 4px;
 		font-size: 15px
 	   
     }
