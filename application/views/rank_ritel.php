@@ -52,7 +52,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 								
 								<td>'.$num.'.</td>
 								<td>'.$val->nama_mantri.'&nbsp;</td>
-								<td>'.number_format($total,2).'&nbsp;&nbsp;</td>
+								<td>'.number_format($val->scores,2).'&nbsp;&nbsp;</td>
 								
 								
 								
@@ -176,7 +176,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 								<td class="td-value">'.number_format($h1,0).'%</td>
 								<td class="td-value">'.number_format($i1,0).'%</td>
 								<td class="td-value">'.number_format($j1,0).'%</td>
-								<td class="td-value"><b>'.number_format($total,2).'</b></td>
+								<td class="td-value"><b>'.number_format($val->scores,2).'</b></td>
 								</tr>';		
 					}
 					else {}
