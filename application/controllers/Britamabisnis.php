@@ -25,6 +25,8 @@ class Britamabisnis extends CI_Controller
         $pn = $this->session->userdata('pn');
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
         else:;
         endif;
 
@@ -69,7 +71,7 @@ class Britamabisnis extends CI_Controller
 		'tgl' => $row->tgl,
 		'norek' => $row->norek,
 		'nama' => $row->nama,
-		'plafond' => $row->plafond,
+		
 	    );
             $this->load->view('britamabisnis/britamabisnis_read', $data);
         } else {
@@ -88,7 +90,7 @@ class Britamabisnis extends CI_Controller
 	    'tgl' => set_value('tgl'),
 	    'norek' => set_value('norek'),
 	    'nama' => set_value('nama'),
-	    'plafond' => set_value('plafond'),
+	    
 	);
         $this->load->view('britamabisnis/britamabisnis_form', $data);
     }
@@ -105,7 +107,7 @@ class Britamabisnis extends CI_Controller
 		'tgl' => $this->input->post('tgl',TRUE),
 		'norek' => $this->input->post('norek',TRUE),
 		'nama' => $this->input->post('nama',TRUE),
-		'plafond' => $this->input->post('plafond',TRUE),
+		
 	    );
 
             $this->Britamabisnis_model->insert($data);
@@ -127,7 +129,7 @@ class Britamabisnis extends CI_Controller
 		'tgl' => set_value('tgl', $row->tgl),
 		'norek' => set_value('norek', $row->norek),
 		'nama' => set_value('nama', $row->nama),
-		'plafond' => set_value('plafond', $row->plafond),
+		
 	    );
             $this->load->view('britamabisnis/britamabisnis_form', $data);
         } else {
@@ -148,7 +150,7 @@ class Britamabisnis extends CI_Controller
 		'tgl' => $this->input->post('tgl',TRUE),
 		'norek' => $this->input->post('norek',TRUE),
 		'nama' => $this->input->post('nama',TRUE),
-		'plafond' => $this->input->post('plafond',TRUE),
+		
 	    );
 
             $this->Britamabisnis_model->update($this->input->post('id', TRUE), $data);
@@ -177,7 +179,7 @@ class Britamabisnis extends CI_Controller
 	$this->form_validation->set_rules('tgl', 'tgl', 'trim|required');
 	$this->form_validation->set_rules('norek', 'norek', 'trim|required');
 	$this->form_validation->set_rules('nama', 'nama', 'trim|required');
-	$this->form_validation->set_rules('plafond', 'plafond', 'trim|required');
+
 
 	$this->form_validation->set_rules('id', 'id', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
@@ -209,7 +211,7 @@ class Britamabisnis extends CI_Controller
 	xlsWriteLabel($tablehead, $kolomhead++, "Tgl");
 	xlsWriteLabel($tablehead, $kolomhead++, "Norek");
 	xlsWriteLabel($tablehead, $kolomhead++, "Nama");
-	xlsWriteLabel($tablehead, $kolomhead++, "Plafond");
+
 
 	foreach ($this->Britamabisnis_model->get_all() as $data) {
             $kolombody = 0;
@@ -220,7 +222,6 @@ class Britamabisnis extends CI_Controller
 	    xlsWriteLabel($tablebody, $kolombody++, $data->tgl);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->norek);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->nama);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->plafond);
 
 	    $tablebody++;
             $nourut++;

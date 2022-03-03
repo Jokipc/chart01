@@ -41,6 +41,7 @@ class Rank_model extends CI_Model{
       ((SELECT(tot_str))/mantri.stroberikasir) * mantri.bstroberikasir as real_stroberikasir,
       ((SELECT(tot_k))/mantri.kunjual) * mantri.bkunjual as real_kunjual,
       ROUND(((SELECT(real_saving + real_brimo + real_qris + real_stroberikasir + real_kunjual  )/1) * 1), 2) as scores');
+   
     $this->db->from('mantri');
     $this->db->join("($query_count_saving) as count_saving", 'mantri.pn = count_saving.pn', 'left');
     $this->db->join("($query_count_brimo) as count_brimo", 'mantri.pn = count_brimo.pn', 'left');
@@ -213,7 +214,7 @@ class Rank_model extends CI_Model{
       FROM ibbiz
       WHERE YEAR(ibbiz.tgl) = 2022 and MONTH(ibbiz.tgl)= 3
       GROUP BY ibbiz.pn";
-    $query_count_britamabisnis = "SELECT britamabisnis.pn as pn, IFNULL(count(britamabisnis.plafond), 0) as tot_britamabisnis
+    $query_count_britamabisnis = "SELECT britamabisnis.pn as pn, IFNULL(count(britamabisnis.norek), 0) as tot_britamabisnis
       FROM britamabisnis
       WHERE YEAR(britamabisnis.tgl) = 2022 and MONTH(britamabisnis.tgl)= 3
       GROUP BY britamabisnis.pn";
@@ -279,17 +280,16 @@ class Rank_model extends CI_Model{
       IFNULL(sum_realkecil.tot_realkecil, 0) as i,
       IFNULL(sum_ekstrakom.tot_ekstrakom, 0) as j,
 
-      ((SELECT(a))/count_targetmantri.tbankgaransi) * count_targetmantri.bbankgaransi as real_a,
-      ((SELECT(b))/count_targetmantri.tbristore) * count_targetmantri.bbristore as real_b,
-      ((SELECT(c))/count_targetmantri.tibbiz) * count_targetmantri.bibbiz as real_c,
-      ((SELECT(d))/count_targetmantri.tbritama) * count_targetmantri.bbritama as real_d,
-      ((SELECT(e))/count_targetmantri.tpemi) * count_targetmantri.bpremi as real_e,
-      ((SELECT(f))/count_targetmantri.tpenyalurankur) * count_targetmantri.bpenyalurankur  as real_f,
-      ((SELECT(g))/count_targetmantri.tbrimo) * count_targetmantri.bbrimo as real_g,
-      ((SELECT(h))/count_targetmantri.tqris) * count_targetmantri.bqris as real_h,
-      ((SELECT(i))/count_targetmantri.trealkeci) * count_targetmantri.brealkecil as real_i,
-      ((SELECT(j))/count_targetmantri.tekstrakom) * count_targetmantri.bekstrakom as real_j,
-      
+      ((SELECT(a))/count_targetmantri.tbankgaransi) * 100 as real_a,
+      ((SELECT(b))/count_targetmantri.tbristore) * 100 as real_b,
+      ((SELECT(c))/count_targetmantri.tibbiz) * 100 as real_c,
+      ((SELECT(d))/count_targetmantri.tbritama) * 100 as real_d,
+      ((SELECT(e))/count_targetmantri.tpemi) *100 as real_e,
+      ((SELECT(f))/count_targetmantri.tpenyalurankur) * 100 as real_f,
+      ((SELECT(g))/count_targetmantri.tbrimo) * 100 as real_g,
+      ((SELECT(h))/count_targetmantri.tqris) * 100 as real_h,
+      ((SELECT(i))/count_targetmantri.trealkeci) * 100 as real_i,
+      ((SELECT(j))/count_targetmantri.tekstrakom) * 100 as real_j,
       ROUND(((SELECT(real_a + real_b + real_c + real_d + real_e + real_f + real_g + real_h + real_i + real_j)/1) * 1), 2) as scores');
     $this->db->from('mantri');
     $this->db->join("($query_sum_bankgaransi) as sum_bankgaransi", 'mantri.pn = sum_bankgaransi.pn', 'left');

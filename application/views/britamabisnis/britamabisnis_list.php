@@ -15,7 +15,7 @@
 		        <th>Tgl</th>
 		        <th>Norek</th>
 		        <th>Nama</th>
-		        <th>Plafond</th>
+		        
             </tr>
             <?php
             foreach ($britamabisnis_data as $britamabisnis)
@@ -27,7 +27,7 @@
 			        <td><?php echo $britamabisnis->tgl ?></td>
 			        <td><?php echo $britamabisnis->norek ?></td>
 			        <td><?php echo $britamabisnis->nama ?></td>
-			        <td><?php echo $britamabisnis->plafond ?></td>
+			        
               <?php if($this->session->userdata('id_level')==='1' ):; ?>
       <td>
       <?php
@@ -94,10 +94,7 @@
             <label for="varchar">Nama <?php echo form_error('nama') ?></label>
             <input type="text" class="form-control" name="nama" id="nama" required autocomplete="off" placeholder="Nama" value="" />
         </div>
-	    <div class="form-group">
-            <label for="int">Plafond <?php echo form_error('plafond') ?></label>
-            <input type="text" pattern="[0-9]+" title="only letters" class="form-control" name="plafond" required autocomplete="off" id="plafond" placeholder="Plafond" value="" />
-        </div>
+	    
         <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Simpan</button>
       </form>

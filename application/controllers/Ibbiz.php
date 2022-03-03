@@ -14,10 +14,25 @@ class Ibbiz extends CI_Controller
 
     public function index()
     {
-        $pn = $this->session->userdata('pn');
         $this->load->view('templates/js');
         $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='3'):;
         $this->load->view('templates/sidebarritel');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
+        else:;
+        endif;
+
         $this->load->view('templates/meta');
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));

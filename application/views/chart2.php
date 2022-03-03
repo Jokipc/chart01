@@ -35,79 +35,82 @@
      ?>
      <?php foreach($target as $val) : ?>
 		<?php
-              $ba = $val->b_bankgaransi ;      
+			
+              $persen = 110/100 ; 
+
+			  $ba = $val->b_bankgaransi ;      
               $ta = $val->t_bankgaransi ;
               $bargaransi = ($a/$ta) * $ba; 
 			  if($bargaransi>$ba){
-					$asen = $ba ;
+					$asen = $ba * $persen ;
 				}else{ $asen = $bargaransi ;}
 
 			  $bb =	$val->b_bristore;
               $tb = $val->t_bristore;
               $barbristore= ($bristore/$tb)* $bb;
 			  if($barbristore>$bb){
-					$bsen = $bb ;
+					$bsen = $bb * $persen;
 				}else{ $bsen = $barbristore ;}
 
 			  $bc =	$val->b_ibbiz;		
               $tc = $val->t_ibbiz;
               $baribbiz = ($ibbiz/$tc)* $bc;
 			  if($baribbiz>$bc){
-					$csen = $bc ;
+					$csen = $bc * $persen;
 				}else{ $csen = $baribbiz ;}
 
 			  $bd = $val->b_britama;
               $td = $val->t_britama;
               $barbritama = ($d_hsl/$td)* $bd;
 			  if($barbritama>$bd){
-					$dsen = $bd ;
+					$dsen = $bd * $persen;
 				}else{ $dsen = $barbritama ;}
 
 			  $be = $val->b_premi;
               $te = $val->t_pemi;
               $barpremi = ($e/$te)* $be;
 			  if($barpremi>$be){
-					$esen = $be ;
+					$esen = $be * $persen;
 				}else{ $esen = $barpremi ;}
 
 			  $bf = $val->b_penyalurankur;
               $tf = $val->t_penyalurankur;
               $barkur = ($f/$tf)* $bf;
 			  if($barkur>$bf){
-					$fsen = $bf ;
+					$fsen = $bf * $persen;
 				}else{ $fsen = $barkur ;}
               
               $bg = $val->bbrimo;
 			  $tg = $val->brimo;
               $barbrimo = ($brimo/$tg)* $bg;
 			  if($barbrimo>$bg){
-					$gsen = $bg ;
+					$gsen = $bg * $persen;
 				}else{ $gsen = $barbrimo ;}
 
               $bh = $val->bqris;
 			  $th = $val->qris;
               $barqris = ($qris/$th)* $bh;
 			  if($barqris>$bh){
-					$hsen = $bh ;
+					$hsen = $bh * $persen;
 				}else{ $hsen = $barqris ;}
 
               $bi = $val->b_realkecil;
 			  $ti = $val->t_realkeci;
               $barkecil = ($i/$ti)* $bi;
 			  if($barkecil>$bi){
-					$isen = $bi ;
+					$isen = $bi * $persen;
 				}else{ $isen = $barkecil ;}
 
               $bj = $val->b_ekstrakom;
 			  $tj = $val->t_ekstrakom;
               $barekstrakom = ($j/$tj)* $bj;
 			  if($barekstrakom>$bj){
-					$jsen = $bj ;
+					$jsen = $bj * $persen;
 				}else{ $jsen = $barekstrakom ;}
 
       
 
-					$total=number_format($asen + $bsen + $csen + $dsen + $esen + $fsen + $gsen + $hsen + $isen + $jsen ,1) ; 
+					$total=number_format(($asen+$bsen+$csen+$dsen+$esen+$fsen+$gsen+$hsen+$isen+$jsen),1) ; 
 ?>
 <!DOCTYPE html>
 <html>

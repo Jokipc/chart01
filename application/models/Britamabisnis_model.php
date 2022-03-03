@@ -36,7 +36,6 @@ class Britamabisnis_model extends CI_Model
 	$this->db->or_like('tgl', $q);
 	$this->db->or_like('norek', $q);
 	$this->db->or_like('nama', $q);
-	$this->db->or_like('plafond', $q);
 	$this->db->from($this->table);
         return $this->db->count_all_results();
     }
@@ -49,7 +48,6 @@ class Britamabisnis_model extends CI_Model
 	$this->db->or_like('tgl', $q);
 	$this->db->or_like('norek', $q);
 	$this->db->or_like('nama', $q);
-	$this->db->or_like('plafond', $q);
 	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }

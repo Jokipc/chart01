@@ -116,99 +116,129 @@
        <?php
               $ta = $val->t_bankgaransi ;
               $bargaransi = ($a/$ta) * 100; 
+              if($bargaransi > 110){ 
+                $bargaransi1 = 110; }else{
+                $bargaransi1 = $bargaransi;}
 
               $tb = $val->t_bristore;
               $barbristore= ($bristore/$tb)*100;
+              if($barbristore > 110){ 
+                $barbristore1 = 110; }else{
+                $barbristore1 = $barbristore;}
 
               $tc = $val->t_ibbiz;
               $baribbiz = ($ibbiz/$tc)*100;
+              if($baribbiz > 110){ 
+                $baribbiz1 = 110; }else{
+                $baribbiz1 = $baribbiz;}
 
               $td = $val->t_britama;
               $barbritama = ($d_hsl/$td)*100;
+              if($barbritama > 110){ 
+                $barbritama1 = 110; }else{
+                $barbritama1 = $barbritama;}
 
               $te = $val->t_pemi;
               $barpremi = ($e/$te)*100;
+              if($barpremi > 110){ 
+                $barpremi1 = 110; }else{
+                $barpremi1 = $barpremi;}
 
               $tf = $val->t_penyalurankur;
               $barkur = ($f/$tf)*100;
+              if($barkur > 110){ 
+                $barkur1 = 110; }else{
+                $barkur1 = $barkur;}
               
               $tg = $val->brimo;
               $barbrimo = ($brimo/$tg)*100;
+              if($barbrimo > 110){ 
+                $barbrimo1 = 110; }else{
+                $barbrimo1 = $barbrimo;}
 
               $th = $val->qris;
               $barqris = ($qris/$th)*100;
+              if($barqris > 110){ 
+                $barqris1 = 110; }else{
+                $barqris1 = $barqris;}
 
               $ti = $val->t_realkeci;
               $barkecil = ($i/$ti)*100;
+              if($barkecil > 110){ 
+                $barkecil1 = 110; }else{
+                $barkecil1 = $barkecil;}
 
               $tj = $val->t_ekstrakom;
               $barekstrakom = ($j/$tj)*100;
+              if($barekstrakom > 110){ 
+                $barekstrakom1 = 110; }else{
+                $barekstrakom1 = $barekstrakom;}
 
        ?>
                     <div class="progress-group">
                       
-                      Total Bank Garansi <?= number_format($bargaransi,2),'%' ; ?> 
+                      Total Bank Garansi <?= number_format($bargaransi1,2),'%' ; ?> 
                       <span class="float-right"><b><?php echo number_format($a_hsl); ?></b>/<b><?php  echo $val->t_bankgaransi/1000000; ?></b> Jt</span>                 
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-primary" style="width:  <?= number_format($bargaransi,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-primary" style="width:  <?= number_format($bargaransi1,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Total Bristore <?= number_format($barbristore,2),'%' ; ?>
+                      Total Bristore <?= number_format($barbristore1,2),'%' ; ?>
                       <span class="float-right"><b><?php echo $bristore; ?></b>/<b><?php  echo $val->t_bristore; ?></b></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-info " style="width:<?= number_format($barbristore,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-info " style="width:<?= number_format($barbristore1,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total IBBIZ <?= number_format($baribbiz,2),'%' ; ?></span>
+                      <span class="progress-text">Total IBBIZ <?= number_format($baribbiz1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo $ibbiz; ?></b>/<b><?php  echo $val->t_ibbiz; ?></b></span>
                       <div class="progress progress-sm">
-                       <div class="progress-bar bg-success" style="width:<?= number_format($baribbiz,2),'%' ;R ?>"></div>
+                       <div class="progress-bar bg-success" style="width:<?= number_format($baribbiz1,2),'%' ;R ?>"></div>
                       </div></div>                   
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Britama Bisnis <?= number_format($barbritama,2),'%' ; ?></span>
+                      <span class="progress-text">Total Britama Bisnis <?= number_format($barbritama1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($d_hsl); ?></b>/<b><?php  echo $val->t_britama; ?></b></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-warning" style="width:<?= number_format($barbritama,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-warning" style="width:<?= number_format($barbritama1,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Pijar/Davestera <?= number_format($barpremi,2),'%' ; ?></span>
+                      <span class="progress-text">Total Pijar/Davestera <?= number_format($barpremi1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($e_hsl); ?></b>/<b><?php  echo $val->t_pemi/1000000; ?></b> Jt</span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar " style="background-color:gold;width:<?= number_format($barpremi,2),'%' ;R ?>"></div>
+                      <div class="progress-bar " style="background-color:gold;width:<?= number_format($barpremi1,2),'%' ;R ?>"></div>
                       </div></div>
                     <div class="progress-group">
-                      <span class="progress-text">Total Penyaluran Kur<?= number_format($barkur,2),'%' ; ?></span>
+                      <span class="progress-text">Total Penyaluran Kur<?= number_format($barkur1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($f_hsl); ?></b>/<b><?php  echo $val->t_penyalurankur/1000000; ?></b> Jt</span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar" style="background-color:darksalmon; width:<?= number_format($barkur,2),'%' ;R ?>"></div>
+                      <div class="progress-bar" style="background-color:darksalmon; width:<?= number_format($barkur1,2),'%' ;R ?>"></div>
                       </div></div>
                     <div class="progress-group">
-                      <span class="progress-text">Total Brimo<?= number_format($barbrimo,2),'%' ; ?></span>
+                      <span class="progress-text">Total Brimo<?= number_format($barbrimo1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo $brimo; ?></b>/<b><?php  echo $val->brimo; ?></b></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar " style="background-color:cadetblue; width:<?= number_format($barbrimo,2),'%' ;R ?>"></div>
+                      <div class="progress-bar " style="background-color:cadetblue; width:<?= number_format($barbrimo1,2),'%' ;R ?>"></div>
                       </div></div>  
                     <div class="progress-group">
-                      <span class="progress-text">Total Qris <?= number_format($barqris,2),'%' ; ?></span>
+                      <span class="progress-text">Total Qris <?= number_format($barqris1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo $qris; ?></b>/<b><?php  echo $val->qris; ?></b></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar " style="background-color:darkgreen;width:<?= number_format($barqris,2),'%' ;R ?>"></div>
+                      <div class="progress-bar " style="background-color:darkgreen;width:<?= number_format($barqris1,2),'%' ;R ?>"></div>
                       </div></div>  
                     <div class="progress-group">
-                      <span class="progress-text">Total Real Kecil <?= number_format($barkecil,2),'%' ; ?></span>
+                      <span class="progress-text">Total Real Kecil <?= number_format($barkecil1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($i_hsl); ?></b>/<b><?php  echo $val->t_realkeci/1000000; ?></b> Jt</span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar " style="background-color:greenyellow;width:<?= number_format($barkecil,2),'%' ;R ?>"></div>
+                      <div class="progress-bar " style="background-color:greenyellow;width:<?= number_format($barkecil1,2),'%' ;R ?>"></div>
                       </div></div>  
                     <div class="progress-group">
-                      <span class="progress-text">Total Rec Ektrakom <?= number_format($barekstrakom,2),'%' ; ?></span>
+                      <span class="progress-text">Total Rec Ektrakom <?= number_format($barekstrakom1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($j_hsl); ?></b>/<b><?php  echo $val->t_ekstrakom/1000000; ?></b> Jt</span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar " style="background-color:sandybrown;width:<?= number_format($barekstrakom,2),'%' ;R ?>"></div>
+                      <div class="progress-bar " style="background-color:sandybrown;width:<?= number_format($barekstrakom1,2),'%' ;R ?>"></div>
                       </div></div>  
                        <!-- /.progress-group -->
 

@@ -51,6 +51,7 @@ class Penyalurankur_model extends CI_Model
 	$this->db->or_like('nama', $pn);
 	$this->db->or_like('plafond', $pn);
 	$this->db->limit($limit, $start);
+    $this->db->where('pn',14670);
         return $this->db->get($this->table)->result();
     }
 

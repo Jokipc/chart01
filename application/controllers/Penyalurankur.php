@@ -20,19 +20,25 @@ class Penyalurankur extends CI_Controller
         $this->load->view('templates/sidebaradminunit');
         elseif($this->session->userdata('id_level')==='1'):;
         $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn = $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==='3'):;
         $this->load->view('templates/sidebarritel');
         $pn = $this->session->userdata('pn');
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
         else:;
         endif;
+
         $this->load->view('templates/meta');
         
-        $pn = urldecode($this->input->get('pn', TRUE));
+        $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
         
-        if ($pn <> '') {
+        if ($q <> '') {
             $config['base_url'] = base_url() . 'penyalurankur/index.html?q=' . urlencode($pn);
             $config['first_url'] = base_url() . 'penyalurankur/index.html?q=' . urlencode($pn);
         } else {
@@ -50,7 +56,7 @@ class Penyalurankur extends CI_Controller
 
         $data = array(
             'penyalurankur_data' => $penyalurankur,
-            'pn' => $pn,
+            'q' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,

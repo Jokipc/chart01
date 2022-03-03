@@ -28,7 +28,10 @@ class Saving extends CI_Controller
         $pn = $this->session->userdata('pn');
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
         else:;
+ 
         endif;
 
         $this->load->view('templates/meta');

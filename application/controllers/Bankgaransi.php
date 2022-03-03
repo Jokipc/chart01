@@ -25,6 +25,8 @@ class Bankgaransi extends CI_Controller
         $pn = $this->session->userdata('pn');
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
         else:;
         endif;
         $this->load->view('templates/meta');
@@ -32,7 +34,7 @@ class Bankgaransi extends CI_Controller
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
         
-        if ($q <> '') {
+        if ($pn <> '') {
             $config['base_url'] = base_url() . 'bankgaransi/index.html?q=' . urlencode($pn);
             $config['first_url'] = base_url() . 'bankgaransi/index.html?q=' . urlencode($pn);
         } else {
@@ -50,7 +52,7 @@ class Bankgaransi extends CI_Controller
 
         $data = array(
             'bankgaransi_data' => $bankgaransi,
-            'q' => $q,
+            'pn' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
