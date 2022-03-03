@@ -176,7 +176,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 								<td class="td-value">'.number_format($h1,0).'%</td>
 								<td class="td-value">'.number_format($i1,0).'%</td>
 								<td class="td-value">'.number_format($j1,0).'%</td>
-								<td class="td-value"><b>'.number_format(sort($total,2)).'</b></td>
+								<td class="td-value"><b>'.number_format($total,2).'</b></td>
 								</tr>';		
 					}
 					else {}
@@ -224,7 +224,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	  
     }
     .table > tbody > tr > td {
-		padding: 0px 4px;
+		padding: 0px 3px;
 		font-size: 15px
 	   
     }
