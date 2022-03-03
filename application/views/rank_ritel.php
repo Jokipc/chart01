@@ -154,7 +154,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 					if($j>110){$j1 = 110;}else{ $j1 = $j;}
 			 
 					$total =($a1+$b1+$c1+$d1+$e1+$f1+$g1+$h1+$i1+$j1)/10;
-					$hasil = sort($total);
+					
 					if ($num < 18 ){
 					print '<tr style="width: 50px">
 								
@@ -176,7 +176,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 								<td class="td-value">'.number_format($h1,0).'%</td>
 								<td class="td-value">'.number_format($i1,0).'%</td>
 								<td class="td-value">'.number_format($j1,0).'%</td>
-								<td class="td-value"><b>'.number_format(sort($hasil,2)).'</b></td>
+								<td class="td-value"><b>'.number_format(sort($total,2)).'</b></td>
 								</tr>';		
 					}
 					else {}
