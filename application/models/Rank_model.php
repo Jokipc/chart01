@@ -268,6 +268,17 @@ class Rank_model extends CI_Model{
     
 
 	  $this->db->select('mantri.pn, mantri.nama_mantri,
+    bbankgaransi,
+    bbristore,
+    bibbiz,
+    bbritama,
+    bpremi, 
+    bpenyalurankur, 
+    mantri.bbrimo, 
+    mantri.bqris,
+    brealkecil,
+    bekstrakom,
+  
       
       IFNULL(sum_bankgaransi.tot_bankgaransi, 0) as a,
       IFNULL(count_bristore.tot_bristore, 0) as b,
@@ -280,7 +291,7 @@ class Rank_model extends CI_Model{
       IFNULL(sum_realkecil.tot_realkecil, 0) as i,
       IFNULL(sum_ekstrakom.tot_ekstrakom, 0) as j,
 
-      ((SELECT(a))/count_targetmantri.tbankgaransi) * 100 as real_a,
+      ((SELECT(a))/count_targetmantri.tbankgaransi) * 100 as real_a,     
       ((SELECT(b))/count_targetmantri.tbristore) * 100 as real_b,
       ((SELECT(c))/count_targetmantri.tibbiz) * 100 as real_c,
       ((SELECT(d))/count_targetmantri.tbritama) * 100 as real_d,
@@ -290,6 +301,7 @@ class Rank_model extends CI_Model{
       ((SELECT(h))/count_targetmantri.tqris) * 100 as real_h,
       ((SELECT(i))/count_targetmantri.trealkeci) * 100 as real_i,
       ((SELECT(j))/count_targetmantri.tekstrakom) * 100 as real_j,
+     
       ROUND(((SELECT(real_a + real_b + real_c + real_d + real_e + real_f + real_g + real_h + real_i + real_j)/1) * 1), 2) as scores');
     $this->db->from('mantri');
     $this->db->join("($query_sum_bankgaransi) as sum_bankgaransi", 'mantri.pn = sum_bankgaransi.pn', 'left');
@@ -306,7 +318,7 @@ class Rank_model extends CI_Model{
     $this->db->join("ritel", 'ritel.id_target = mantri.side'); 
       
       //$this->db->select_sum('tbl_real.plafon');
-      $this->db->order_by('scores','DESC');
+      $this->db->order_by('real_a','DESC');
       //$this->db->limit(10);
       
       $result = $this->db->get();

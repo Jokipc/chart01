@@ -24,8 +24,10 @@
 	<h4 style="color:#4169E1 ;background: rgb(19,200,42);
 background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" ><?php
 				$num = 0;
+				$isi1 = array();
+				$nilai1 = array();
 				foreach( $data as $val){
-					$num++;
+					$mantri= $val->nama_mantri;
 					$a = $val->real_a;	
 					if($a>110){$a1 = 110;}else{ $a1 = $a;}
 					$b = $val->real_b;	
@@ -48,11 +50,20 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 					if($j>110){$j1 = 110;}else{ $j1 = $j;}
 			 
 					$total =($a1+$b1+$c1+$d1+$e1+$f1+$g1+$h1+$i1+$j1)/10;
+					array_push($isi1, array('nama_mantri' => $mantri,
+					'hasil' =>$total,
+					));
+					array_push($nilai1,$total);
+				}
+				array_multisort($nilai1,SORT_DESC, $isi1);
+				foreach($isi1 as $na)
+				{
+					$num++ ;
 					print '<tr>
 								
 								<td>'.$num.'.</td>
-								<td>'.$val->nama_mantri.'&nbsp;</td>
-								<td>'.number_format($val->scores,0).'&nbsp;&nbsp;</td>
+								<td>'.$na['nama_mantri'].'&nbsp;</td>
+								<td>'.number_format($na['hasil'],2).'&nbsp;%&nbsp;</td>
 								
 								
 								
@@ -65,13 +76,46 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	<?php
 		// print_r($data);
 		$number = 0;
-		foreach( $data as $val){
+		$isi1 = array();
+				$nilai1 = array();
+				foreach( $data as $val){
+					$mantri= $val->nama_mantri;
+					$a = $val->real_a;	
+					if($a>110){$a1 = 110;}else{ $a1 = $a;}
+					$b = $val->real_b;	
+					if($b>110){$b1 = 110;}else{ $b1 = $b;}
+					$c = $val->real_c;	
+					if($c>110){$c1 = 110;}else{ $c1 = $c;}
+					$d = $val->real_d;	
+					if($d>110){$d1 = 110;}else{ $d1 = $d;}
+					$e = $val->real_e;	
+					if($e>110){$e1 = 110;}else{ $e1 = $e;}
+					$f = $val->real_f;	
+					if($f>110){$f1 = 110;}else{ $f1 = $f;}
+					$g = $val->real_g;	
+					if($g>110){$g1 = 110;}else{ $g1 = $g;}
+					$h = $val->real_h;	
+					if($h>110){$h1 = 110;}else{ $h1 = $h;}
+					$i = $val->real_i;	
+					if($i>110){$i1 = 110;}else{ $i1 = $i;}
+					$j = $val->real_j;	
+					if($j>110){$j1 = 110;}else{ $j1 = $j;}
+			 
+					$total =($a1+$b1+$c1+$d1+$e1+$f1+$g1+$h1+$i1+$j1)/10;
+					array_push($isi1, array('nama_mantri' => $mantri,
+					'hasil' =>$total,
+					));
+					array_push($nilai1,$total);
+				}
+				array_multisort($nilai1,SORT_DESC, $isi1);
+				foreach($isi1 as $na)
+				{
 			$number++;
 			if ($number <= 5){
 				print '<img src="'.base_url().'template/dist/img/a'.$number.'.gif" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				print '<p>';
 				print '<div class="b b'.$number.'" style="color: #FFF0F5;
-				text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size:16px;"><br><br><center>'.$val->nama_mantri.'</center></br></br></div>';
+				text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size:16px;"><br><br><center>'.$na['nama_mantri'].'</center></br></br></div>';
 				
 			}
 		}
@@ -122,7 +166,6 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		<td class="td-value"><center><b>Real Kecil</b></center></td>
 		<td class="td-value"><center><b>Ekstrakom</b></center></td>
 		<td class="td-value"><center><b>Total %</b></center></td>
-		<td class="td-value"><center><b>Nilai</b></center></td>
 
 
 		</tr>
@@ -130,10 +173,15 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 			
 				$num = 0;
 				$a = 0;
+				$isi = array();
+				$nilai = array();
+
 				foreach( $data as $val){
-					$num++ ;
 					
+					$mantri= $val->nama_mantri;
+
 					$a = $val->real_a;	
+					$ba = $val->b_bankgaransi ;
 					if($a>110){$a1 = 110;}else{ $a1 = $a;}
 					$b = $val->real_b;	
 					if($b>110){$b1 = 110;}else{ $b1 = $b;}
@@ -153,10 +201,31 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 					if($i>110){$i1 = 110;}else{ $i1 = $i;}
 					$j = $val->real_j;	
 					if($j>110){$j1 = 110;}else{ $j1 = $j;}
-			 
-					$total =($a1+$b1+$c1+$d1+$e1+$f1+$g1+$h1+$i1+$j1)/10;
+				
 					
+					$total =($a1+$b1+$c1+$d1+$e1+$f1+$g1+$h1+$i1+$j1)/10;
+					array_push($isi, array('nama_mantri' => $mantri,
+					'bankgaransi' => $a1,
+					'bristore' => $b1,
+					'ibbiz' => $c1,
+					'britamabisnis' => $d1,
+					'premi' => $e1,
+					'penyalurankur' => $f1,
+					'brimo' => $g1,
+					'qris' => $h1,
+					'realkecil' => $i1,
+					'ekstrakom' => $j1,
+
+					'hasil' =>$total,
+					));
+					array_push($nilai,$total);
+				}
+				array_multisort($nilai,SORT_DESC, $isi);
+				foreach($isi as $n)
+				{
+					$num++ ;
 					if ($num < 18 ){
+						
 					print '<tr style="width: 50px">
 								
 								<td class="td-number align-middle ">'.$num.'</td>
@@ -165,20 +234,19 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 										src="'.base_url().'template/dist/img/kanca.png"
 									/>
 								</td>
-								<td class="td-name">'.$val->nama_mantri.'</td>
-								
-								<td class="td-value">'.number_format($a1,0).'%</td>
-								<td class="td-value">'.number_format($b1,0).'%</td>
-								<td class="td-value">'.number_format($c1,0).'%</td>
-								<td class="td-value">'.number_format($d1,0).'%</td>
-								<td class="td-value">'.number_format($e1,0).'%</td>
-								<td class="td-value">'.number_format($f1,0).'%</td>
-								<td class="td-value">'.number_format($g1,0).'%</td>
-								<td class="td-value">'.number_format($h1,0).'%</td>
-								<td class="td-value">'.number_format($i1,0).'%</td>
-								<td class="td-value">'.number_format($j1,0).'%</td>
-								<td class="td-value">'.number_format($total,0).'%</td>
-								<td class="td-value"><b>'.number_format($val->scores,0).'</b></td>
+								<td class="td-name">'.$n['nama_mantri'].'</td>
+							
+								<td class="td-value">'.number_format($n['bankgaransi'],0).'%</td>
+								<td class="td-value">'.number_format($n['bristore'],0).'%</td>
+								<td class="td-value">'.number_format($n['ibbiz'],0).'%</td>
+								<td class="td-value">'.number_format($n['britamabisnis'],0).'%</td>
+								<td class="td-value">'.number_format($n['premi'],0).'%</td>
+								<td class="td-value">'.number_format($n['penyalurankur'],0).'%</td>
+								<td class="td-value">'.number_format($n['brimo'],0).'%</td>
+								<td class="td-value">'.number_format($n['qris'],0).'%</td>
+								<td class="td-value">'.number_format($n['realkecil'],0).'%</td>
+								<td class="td-value">'.number_format($n['ekstrakom'],0).'%</td>
+								<td class="td-value">'.number_format($n['hasil'],2).'%</td>
 								</tr>';		
 					}
 					else {}
