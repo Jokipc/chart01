@@ -185,7 +185,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		<td class="td-number align-middle"><center><b>No</b></center></td>
 		<td></td>
 		<td class="td-name"><center><b>Nama</b></center></td>
-		<td class="td-value"><center><b>Bank Garansi</b></center></td>
+		<td class="td-value"><center><b>Bank Garansi </b></center></td>
 		<td class="td-value"><center><b>Bristore</b></center></td>
 		<td class="td-value"><center><b>Ibbiz</b></center></td>
 		<td class="td-value"><center><b>Britama Bisnis</b></center></td>

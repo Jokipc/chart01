@@ -53,7 +53,7 @@ class Rank_model extends CI_Model{
       //$this->db->select_sum('tbl_real.plafon');
       $this->db->order_by('scores','DESC');
       //$this->db->limit(10);
-      
+      $this->db->where('mantri.id_level','2');
       $result = $this->db->get();
       return $result;
 	}
@@ -111,7 +111,8 @@ class Rank_model extends CI_Model{
       $this->db->order_by('scores','desc');
       
       
-      $this->db->limit(15 ,95);
+      $this->db->limit(15 ,96);
+      $this->db->where('mantri.id_level','2');
       
       $result = $this->db->get();
       return $result;

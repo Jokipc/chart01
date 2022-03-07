@@ -135,11 +135,11 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		</tr>
 			<?php
 			
-				$num = 95;
+				$num = 96;
 				
 				foreach( $end as $val1){
 					$num++ ;
-					if ($num < 111  ){
+					if ($num < 113  ){
 					print '<tr style="width: 50px">
 								
 								<td class="td-number align-middle">'.$num.'</td>
