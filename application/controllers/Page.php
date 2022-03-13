@@ -10,7 +10,7 @@ class Page extends CI_Controller{
   function index(){
     //Allowing akses to admin only
       if($this->session->userdata('id_level')==='1'){
-        redirect('rank/bintang');
+        redirect('saving');
       }else{
           echo "Access Denied";
       }
