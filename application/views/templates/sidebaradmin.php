@@ -46,7 +46,7 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="<?php echo site_url();?>bintang" class="nav-link">
+              <a href="<?php echo site_url();?>rank/bintang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>  
