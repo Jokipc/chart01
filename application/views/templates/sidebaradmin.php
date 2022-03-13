@@ -46,7 +46,7 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="<?php echo site_url();?>rank/bintang" class="nav-link">
+              <a href="<?php echo site_url();?>bintang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>  
@@ -202,6 +202,54 @@
                 <a href="<?php echo site_url();?>realkecil" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Real Kecil</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>premi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PIJAR/DAVESTERA</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>ekstrakom" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rec Ekstrakom</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BRITAMA Bisnis Via DS</p>
+                </a>
+              </li>
+
+
+
+              
+              
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Data RM DANA 1
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>brimo" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data BRIMO</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>pkspayroll" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PKS PAYROLL</p>
                 </a>
               </li>
               <li class="nav-item">
