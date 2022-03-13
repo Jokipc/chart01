@@ -82,7 +82,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	<div class="col-md-5 ">
 
 	<h5 class="animated infinite hinge"><b>PERINGKAT MANTRI 15 TERATAS</b></h5>
-		<table class="table table-sm table-bordered" style="background-color:ivory; opacity:0.8">
+		<table class="table table-sm table-striped table-info table-responsiv" style="background-color:ivory; opacity:0.8">
 		<tr style="width: 50px">
 		<td class="td-number align-middle"><center><b>No</b></center></td>
 		<td></td>
@@ -110,7 +110,8 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 								<td class="td-name">'.$val->nama_mantri.'</td>
 								<td class="td-name">'.$val->unit.'</td>
 								<td class="td-value">'.$val->scores.'</td>
-								</tr>';		
+								</tr>';	
+									
 					}
 					else {}
 				}	
@@ -118,12 +119,58 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 			?>
 		</table>
 		
+		<!-- <table class="table table-sm table-bordered" style="background-color:ivory; opacity:0.8">
+		<tr style="width: 50px">
+		<td class="td-number align-middle"><center><b>No</b></center></td>
+		<td></td>
+		<td class="td-name"><center><b>Nama</b></center></td>
+		<td class="td-name"><center><b>Unit</b></center></td>
+		<td class="td-value"><center><b>Nilai</b></center></td>
+
+
+		</tr>
+			<?php
+			
+				$num = 15;
+				$isi = array();
+				foreach( $data as $val){
+					
+					$mantri = $val->nama_mantri;
+					$unit = $val->unit;
+					$nilai = $val->scores;
+					array_push($isi, array('nama_mantri' => $mantri,
+					'unit' =>$total,
+					'scores'=>$nilai,
+					));
+				}
+				for($i=0; $i < count($isi); $i++){
+					$num++ ;
+					if ($i < 16 ){
+					print '<tr style="width: 50px">
+								
+								<td class="td-number align-middle">'.$num.'</td>
+								<td class="td-image">
+									<img
+										src="'.base_url().'template/dist/img/kanca.png"
+									/>
+								</td>
+								<td class="td-name">'.$isi[$i].'</td>
+								<td class="td-name">'.$isi['unit'].'</td>
+								<td class="td-value">'.$isi['scores'].'</td>
+								</tr>';		
+					}
+					else {}
+				}	
+
+			?>
+		</table> -->
 	
 	</div>
+	
 	<div class="col-md-5">
 
 	<h5 class="animated infinite hinge"><b>PERINGKAT 15 TERBAWAH MANTRI</b></h5>
-		<table class="table table-sm table-bordered " style="background-color:ivory; opacity:0.8">
+		<table class="table table-sm table-striped table-info table-responsiv" style="background-color:ivory; opacity:0.8">
 		<tr style="width: 50px">
 		<td class="td-number align-middle"><center><b>No</b></center></td>
 		<td></td>

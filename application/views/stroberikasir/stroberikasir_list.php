@@ -1,19 +1,43 @@
 <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
 <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
 <section class="conten-header">
+<div class="row">
+<h2 style="margin-top:0px">Stroberikasir List</h2>
+<div class="col-md-0"></div>
 <div class="col-md-6">
-<h2 style="margin-top:0px">Stroberi Kasir List</h2>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
+</div>
+<div class="col-md-6">
+<form action="<?php echo site_url('stroberikasir/index'); ?>" class="form-inline" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="pn" value="<?php echo $pn; ?>">
+                        <span class="input-group-btn">
+                            <?php 
+                                if ($pn <> '')
+                                {
+                                    ?>
+                                    <a href="<?php echo site_url('stroberikasir'); ?>" class="btn btn-default">Reset</a>
+                                    <?php
+                                }
+                            ?>
+                          <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+</div>
 </div>
 </section>
-<section class="content">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
-        <table class="table">
+<section class="content"> 
+  <table class="table">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
 		<th>Tgl</th>
 		<th>Nama Toko</th>
 		<th>Hp</th>
+    <?php if($this->session->userdata('id_level')==='1' ):; ?>
+                <th>Action</th>   
+                <?php endif; ?>
 	
             </tr><?php
             foreach ($stroberikasir_data as $stroberikasir)
@@ -25,15 +49,17 @@
 			<td><?php echo $stroberikasir->tgl ?></td>
 			<td><?php echo $stroberikasir->nama_toko ?></td>
 			<td><?php echo $stroberikasir->hp ?></td>
-      <?php if($this->session->userdata('id_level')==='1' ):; ?>
       <td>
+      <?php if($this->session->userdata('id_level')==='1' ):; ?>
       <?php
-      			echo anchor(site_url('bankgaransi/delete/'.$stroberikasir->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+            echo anchor(site_url('stroberikasir/update/'.$stroberikasir->id),'Update'); 
+            echo ' | '; 
+      			echo anchor(site_url('stroberikasir/delete/'.$stroberikasir->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
             else:;   
       ?>
       </td>
       <?php endif; ?>
-		</tr>
+	        </tr>
                 <?php
             }
             ?>
@@ -85,7 +111,7 @@
         </div>
         <div class="form-group">
             <label for="varchar">Nama Toko<?php echo form_error('nama_nasabah') ?></label>
-            <input type="text" class="form-control" name="nama_toko" id="nama_toko" required autocomplete="off" placeholder="Nama" value="" />
+            <input type="text" class="form-control" name="nama_toko" id="nama_toko" required autocomplete="off" placeholder="Nama_toko" value="" />
         </div>
         <div class="form-group">
             <label for="int">No Hp <?php echo form_error('hp') ?></label>

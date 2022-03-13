@@ -14,52 +14,88 @@ class Bristore extends CI_Controller
 
     public function index()
     { 
-        
         $this->load->view('templates/js');
         $this->load->view('templates/header');
         if($this->session->userdata('side')==='3' ):;
         $this->load->view('templates/sidebaradminunit');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==='1'):;
         $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==='3'):;
         $this->load->view('templates/sidebarritel');
-        $pn = $this->session->userdata('pn');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==''):;
         redirect(login);
         else:;
         endif;
 
         $this->load->view('templates/meta');
-        $q = urldecode($this->input->get('q', TRUE));
+        
+        $pn = urldecode($this->input->get('pn', TRUE));
         $start = intval($this->input->get('start'));
         
-        if ($q <> '') {
-            $config['base_url'] = base_url() . 'bristore/index.html?q=' . urlencode($pn);
-            $config['first_url'] = base_url() . 'bristore/index.html?q=' . urlencode($pn);
-        } else {
-            $config['base_url'] = base_url() . 'bristore/index.html';
-            $config['first_url'] = base_url() . 'bristore/index.html';
-        }
-
-        $config['per_page'] = 10;
+        if ($pn <> '') {
+            $config['base_url'] = base_url() . 'bristore/index.html?pn=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'bristore/index.html?pn=' . urlencode($pn);
+            $config['total_rows'] = $this->Bristore_model->total_rows($pn);
+            $config['per_page'] = 10;
+            if($this->session->userdata('id_level')==='1'):;
+            $config['total_rows'] = $this->Bristore_model->total_rows($pn);
+            $bristore = $this->Bristore_model->get_limit_data1($config['per_page'], $start, $pn);
+            else:   
+            $config['total_rows'] = $this->Bristore_model->total_rows1($pn,$pn1);    
+            $bristore = $this->Bristore_model->get_limit_data($config['per_page'], $start, $pn, $pn1);
+            endif;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Bristore_model->total_rows($pn);
-        $bristore = $this->Bristore_model->get_limit_data($config['per_page'], $start, $pn);
-
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
             'bristore_data' => $bristore,
-            'q' => $q,
+            'pn' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('bristore/bristore_list', $data);
-        $this->load->view('templates/footer');
+        } else {
+            $config['base_url'] = base_url() . 'bristore/index.html';
+            $config['first_url'] = base_url() . 'bristore/index.html';
+            $config['total_rows'] = $this->Bristore_model->total_rows($pn1);
+            $config['per_page'] = 10;
+            $bristore = $this->Bristore_model->get_limit_data1($config['per_page'], $start, $pn1);
+        $config['page_query_string'] = TRUE;
+        $this->load->library('pagination');
+        $this->pagination->initialize($config);
+
+        $data = array(
+            'bristore_data' => $bristore,
+            'pn1' => $pn,
+            'pagination' => $this->pagination->create_links(),
+            'total_rows' => $config['total_rows'],
+            'start' => $start,
+        );
+        }
+
+        // $config['per_page'] = 10;
+        // $config['page_query_string'] = TRUE;
+        // $this->load->library('pagination');
+        // $this->pagination->initialize($config);
+
+        // $data = array(
+        //     'brimo_data' => $brimo,
+        //     'pn' => $pn,
+        //     'pagination' => $this->pagination->create_links(),
+        //     'total_rows' => $config['total_rows'],
+        //     'start' => $start,
+        // );
+       $this->load->view('bristore/bristore_list', $data);
+       $this->load->view('templates/footer');
     }
 
     public function read($id) 
@@ -119,6 +155,28 @@ class Bristore extends CI_Controller
     
     public function update($id) 
     {
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='3'):;
+        $this->load->view('templates/sidebarritel');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
+        else:;
+        endif;
+
+        $this->load->view('templates/meta');
         $row = $this->Bristore_model->get_by_id($id);
 
         if ($row) {

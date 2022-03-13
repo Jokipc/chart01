@@ -1,13 +1,34 @@
 <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
 <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
 <section class="conten-header">
-<div class="col-md-6">
+<div class="row">
 <h2 style="margin-top:0px">Kunjual List</h2>
+<div class="col-md-0"></div>
+<div class="col-md-6">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
+</div>
+<div class="col-md-6">
+<form action="<?php echo site_url('kunjual/index'); ?>" class="form-inline" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="pn" value="<?php echo $pn; ?>">
+                        <span class="input-group-btn">
+                            <?php 
+                                if ($pn <> '')
+                                {
+                                    ?>
+                                    <a href="<?php echo site_url('kunjual'); ?>" class="btn btn-default">Reset</a>
+                                    <?php
+                                }
+                            ?>
+                          <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+</div>
 </div>
 </section>
-<section class="content">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
-        <table class="table">
+<section class="content">  
+  <table class="table">
             <tr>
                 <th>No</th>
 		<th>Pn</th>
@@ -15,6 +36,9 @@
 		<th>Nama Nasabah</th>
 		<th>Nik</th>
 		<th>Hp</th>
+    <?php if($this->session->userdata('id_level')==='1' ):; ?>
+                <th>Action</th>   
+                <?php endif; ?>
             </tr><?php
             foreach ($kunjual_data as $kunjual)
             {
@@ -26,16 +50,17 @@
 			<td><?php echo $kunjual->nama_nasabah ?></td>
 			<td><?php echo $kunjual->nik ?></td>
 			<td><?php echo $kunjual->hp ?></td>
-      <?php if($this->session->userdata('id_level')==='1' ):; ?>
       <td>
+      <?php if($this->session->userdata('id_level')==='1' ):; ?>
       <?php
-      			echo anchor(site_url('bankgaransi/delete/'.$kunjual->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+            echo anchor(site_url('kunjual/update/'.$kunjual->id),'Update'); 
+            echo ' | '; 
+      			echo anchor(site_url('kunjual/delete/'.$kunjual->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
             else:;   
       ?>
       </td>
       <?php endif; ?>
-			<td style="text-align:center" width="200px">
-            </tr>
+	        </tr>
                 <?php
             }
             ?>
@@ -71,7 +96,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Input Data Nasabah</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Input Data Kunjual</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -87,7 +112,7 @@
         </div>
         <div class="form-group">
             <label for="int">NIK<?php echo form_error('nik') ?></label>
-            <input type="text" class="form-control" pattern="[0-9]+" required name="nik" autocomplete="off" id="nik" placeholder="Norek" value="" />
+            <input type="text" class="form-control" pattern="[0-9]+" required name="nik" autocomplete="off" id="nik" placeholder="Nik" value="" />
         </div>
         <div class="form-group">
             <label for="varchar">Nama <?php echo form_error('nama_nasabah') ?></label>

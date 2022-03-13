@@ -1,10 +1,7 @@
-<?php if($this->session->userdata('id_level')==='1'):?> <!doctype html>
+
 <html>
     <head>
-<?php $this->load->view('templates/header'); ?>
-<?php $this->load->view('templates/sidebaradmin'); ?>
-<?php $this->load->view('templates/meta'); ?>
-<?php $this->load->view('templates/js'); ?>
+
 <!doctype html>
 <html>
     <head>
@@ -48,10 +45,7 @@
             <label for="varchar">Nama <?php echo form_error('nama') ?></label>
             <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="<?php echo $nama; ?>" />
         </div>
-	    <div class="form-group">
-            <label for="int">Plafond <?php echo form_error('plafond') ?></label>
-            <input type="text" class="form-control" name="plafond" id="plafond" placeholder="Plafond" value="<?php echo $plafond; ?>" />
-        </div>
+	   
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('britamabisnis') ?>" class="btn btn-default">Cancel</a>
@@ -59,11 +53,3 @@
     <div>
     </body>
 </html>
-<?php else: ?>
-<br>
-<br>
-<center>   
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
-
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
-<?php endif;?>

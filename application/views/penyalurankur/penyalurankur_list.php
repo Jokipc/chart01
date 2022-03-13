@@ -1,13 +1,34 @@
 <div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
 <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
 <section class="conten-header">
+<div class="row">
+<h2 style="margin-top:0px">Penyaluran KUR List</h2>
+<div class="col-md-0"></div>
 <div class="col-md-6">
-<h2 style="margin-top:0px">Penyaluran Kur List</h2>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
+</div>
+<div class="col-md-6">
+<form action="<?php echo site_url('penyalurankur/index'); ?>" class="form-inline" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="pn" value="<?php echo $pn; ?>">
+                        <span class="input-group-btn">
+                            <?php 
+                                if ($pn <> '')
+                                {
+                                    ?>
+                                    <a href="<?php echo site_url('penyalurankur'); ?>" class="btn btn-default">Reset</a>
+                                    <?php
+                                }
+                            ?>
+                          <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+</div>
 </div>
 </section>
-<section class="content">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
-        <table class="table">
+<section class="content">  
+  <table class="table">
             <tr>
                 <th>No</th>
 		        <th>Pn</th>
@@ -15,8 +36,11 @@
 		        <th>Norek</th>
 		        <th>Nama</th>
 		        <th>Plafond</th>
-            </tr>
-            <?php
+            <?php if($this->session->userdata('id_level')==='1' ):; ?>
+                <th>Action</th>   
+                <?php endif; ?>
+            </tr><?php
+            
             foreach ($penyalurankur_data as $penyalurankur)
             {
             ?>
@@ -27,16 +51,18 @@
 			        <td><?php echo $penyalurankur->norek ?></td>
 			        <td><?php echo $penyalurankur->nama ?></td>
 			        <td><?php echo $penyalurankur->plafond ?></td>
+              <td>
               <?php if($this->session->userdata('id_level')==='1' ):; ?>
-      <td>
       <?php
-      			echo anchor(site_url('bankgaransi/delete/'.$penyalurankur->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+            echo anchor(site_url('penyalurankur/update/'.$penyalurankur->id),'Update'); 
+            echo ' | '; 
+      			echo anchor(site_url('penyalurankur/delete/'.$penyalurankur->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
             else:;   
       ?>
       </td>
       <?php endif; ?>
-		        </tr>
-            <?php
+	        </tr>
+                <?php
             }
             ?>
         </table>

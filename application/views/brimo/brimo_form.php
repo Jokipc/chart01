@@ -1,10 +1,5 @@
 <!doctype html>
-<?php if($this->session->userdata('id_level')==='2'):?> 
-<head>
-<?php $this->load->view('templates/header'); ?>
-<?php $this->load->view('templates/sidebar'); ?>
-<?php $this->load->view('templates/js'); ?>
-<?php $this->load->view('templates/meta'); ?>
+
  <title></title>
         
     
@@ -34,11 +29,9 @@
     <section class="content">
         <h2 style="margin-top:0px">Akuisisi Account Brimo</h2>
         <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-            
-            <label for="int"><?php echo $this->session->userdata('pn');?> <?php echo form_error('pn') ?></label>
-            <label for="int"><?php echo $this->session->userdata('nama_mantri');?><?php echo form_error('pn') ?></label>
-            <input type="text" class="form-control" name="pn" id="pn" autocomplete="off" hidden value="<?php echo $this->session->userdata('pn');?>" />
+        <div class="form-group">
+            <label for="date">Pn<?php echo form_error('pn') ?></label>
+            <input type="text" class="form-control" name="pn" id="pn" placeholder="" autocomplete="off" value="<?php echo $pn; ?>" />
         </div>
 	    <div class="form-group">
             <label for="date">Tanggal <?php echo form_error('tgl') ?></label>
@@ -57,14 +50,6 @@
         </body>
         </div>
 </html>
-<?php $this->load->view('templates/footer'); ?>
 
 
-<?php else: ?>
-<br>
-<br>
-<center>
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
 
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
-<?php endif;?>

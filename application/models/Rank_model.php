@@ -197,7 +197,7 @@ class Rank_model extends CI_Model{
     //$this->db->select_sum('tbl_real.plafon');
     $this->db->order_by('scores','DESC');
     //$this->db->limit(10);
-    
+    $this->db->where('account.kd',1);
     $result = $this->db->get();
     return $result;
 	}

@@ -18,51 +18,84 @@ class Stroberikasir extends CI_Controller
         $this->load->view('templates/header');
         if($this->session->userdata('side')==='3' ):;
         $this->load->view('templates/sidebaradminunit');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==='1'):;
         $this->load->view('templates/sidebaradmin');
         elseif($this->session->userdata('id_level')==='2'):;
         $this->load->view('templates/sidebar');
-        $pn = $this->session->userdata('pn');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==='3'):;
         $this->load->view('templates/sidebarritel');
-        $pn = $this->session->userdata('pn');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==''):;
         redirect(login);
-   
         else:;
         endif;
 
         $this->load->view('templates/meta');
-        $q = urldecode($this->input->get('q', TRUE));
+        
+        $pn = urldecode($this->input->get('pn', TRUE));
         $start = intval($this->input->get('start'));
         
-        if ($q <> '') {
-            $config['base_url'] = base_url() . 'stroberikasir/index.html?q=' . urlencode($pn);
-            $config['first_url'] = base_url() . 'stroberikasir/index.html?q=' . urlencode($pn);
-        } else {
-            $config['base_url'] = base_url() . 'stroberikasir/index.html';
-            $config['first_url'] = base_url() . 'stroberikasir/index.html';
-        }
-
-        $config['per_page'] = 10;
+        if ($pn <> '') {
+            $config['base_url'] = base_url() . 'stroberikasir/index.html?pn=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'stroberikasir/index.html?pn=' . urlencode($pn);
+            $config['total_rows'] = $this->Stroberikasir_model->total_rows($pn);
+            $config['per_page'] = 10;
+            if($this->session->userdata('id_level')==='1'):;
+            $config['total_rows'] = $this->Stroberikasir_model->total_rows($pn);
+            $stroberikasir = $this->Stroberikasir_model->get_limit_data1($config['per_page'], $start, $pn);
+            else:   
+            $config['total_rows'] = $this->Stroberikasir_model->total_rows1($pn,$pn1);    
+            $stroberikasir = $this->Stroberikasir_model->get_limit_data($config['per_page'], $start, $pn, $pn1);
+            endif;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Stroberikasir_model->total_rows($pn);
-        $stroberikasir = $this->Stroberikasir_model->get_limit_data($config['per_page'], $start, $pn);
-
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
             'stroberikasir_data' => $stroberikasir,
-            'q' => $pn,
+            'pn' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-         $this->load->view('stroberikasir/stroberikasir_list', $data);
-         $this->load->view('templates/footer');
+        } else {
+            $config['base_url'] = base_url() . 'stroberikasir/index.html';
+            $config['first_url'] = base_url() . 'stroberikasir/index.html';
+            $config['total_rows'] = $this->Stroberikasir_model->total_rows($pn1);
+            $config['per_page'] = 10;
+            $stroberikasir = $this->Stroberikasir_model->get_limit_data1($config['per_page'], $start, $pn1);
+        $config['page_query_string'] = TRUE;
+        $this->load->library('pagination');
+        $this->pagination->initialize($config);
+
+        $data = array(
+            'stroberikasir_data' => $stroberikasir,
+            'pn1' => $pn,
+            'pagination' => $this->pagination->create_links(),
+            'total_rows' => $config['total_rows'],
+            'start' => $start,
+        );
+        }
+
+        // $config['per_page'] = 10;
+        // $config['page_query_string'] = TRUE;
+        // $this->load->library('pagination');
+        // $this->pagination->initialize($config);
+
+        // $data = array(
+        //     'brimo_data' => $brimo,
+        //     'pn' => $pn,
+        //     'pagination' => $this->pagination->create_links(),
+        //     'total_rows' => $config['total_rows'],
+        //     'start' => $start,
+        // );
+       $this->load->view('stroberikasir/stroberikasir_list', $data);
+       $this->load->view('templates/footer');
     }
 
     public function read($id) 
@@ -120,6 +153,27 @@ class Stroberikasir extends CI_Controller
     
     public function update($id) 
     {
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='3'):;
+        $this->load->view('templates/sidebarritel');
+        $pn = $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
+        else:;
+        endif;
+
+        $this->load->view('templates/meta');
         $row = $this->Stroberikasir_model->get_by_id($id);
 
         if ($row) {

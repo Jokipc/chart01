@@ -1,15 +1,8 @@
 <!doctype html>
-<?php if($this->session->userdata('id_level')==='2'):?> 
-<head>
-<?php $this->load->view('templates/header'); ?>
-<?php if($this->session->userdata('id_level')==='1'):?> 
-<?php $this->load->view('templates/sidebaradmin'); ?>
-<?php else: ?>
-<?php $this->load->view('templates/sidebar'); ?>
-<?php endif;?>
-<?php $this->load->view('templates/meta'); ?>
-<?php $this->load->view('templates/js'); ?>
-   
+
+ <title></title>
+        
+    
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Datepicker - Default functionality</title>
@@ -25,18 +18,19 @@
 });
   } );
   </script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
 
     <body>
      <div class="content-wrapper" style="min-height: 955.807px;">
      <br>
      <ul>
-        <h2 style="margin-top:0px">Akuisisi Qris</h2>
+        <h2 style="margin-top:0px">Update Qris</h2>
         <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-            <label for="int"><?php echo $this->session->userdata('pn');?> <?php echo form_error('pn') ?></label>
-            <label for="int"><?php echo $this->session->userdata('nama_mantri');?><?php echo form_error('pn') ?></label>
-            <input type="text" class="form-control" name="pn" id="pn" hidden placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
+        <div class="form-group">
+            <label for="date">Pn<?php echo form_error('pn') ?></label>
+            <input type="text" class="form-control" name="pn" id="pn" placeholder="" autocomplete="off" value="<?php echo $pn; ?>" />
         </div>
 	    <div class="form-group">
             <label for="date">Tanggal<?php echo form_error('tgl') ?></label>
@@ -65,11 +59,3 @@
 </html>
 <?php $this->load->view('templates/footer'); ?>
 
-<?php else: ?>
-<br>
-<br>
-<center>
-<h3><?= "tidak di izinkan!!, Login Dengan Benar" ?></h3>
-
-<a href="<?php echo site_url('login') ?>" class="btn btn-default">Login</a>
-<?php endif;?>

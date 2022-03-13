@@ -42,7 +42,39 @@ class Penyalurankur_model extends CI_Model
     }
 
     // get data with limit and search
-    function get_limit_data($limit, $start = 0, $pn = NULL) {
+    function get_limit_data($limit, $start = 0, $pn = NULL, $pn1 = NULL) {
+        $this->db->order_by($this->id, $this->order);
+        $this->db->or_like('pn', $pn);
+        $this->db->where('pn', $pn1);
+        $this->db->or_like('tgl', $pn);
+        $this->db->or_like('norek', $pn);
+        $this->db->where('pn', $pn1);
+        $this->db->or_like('nama', $pn);
+        $this->db->where('pn', $pn1);
+        $this->db->or_like('plafond', $pn);
+	    $this->db->limit($limit, $start);
+  
+        return $this->db->get($this->table)->result();
+    }
+
+       // get total rows
+       function total_rows1($q = NULL, $pn1 = NULL) {
+	$this->db->or_like('pn', $q,"match");
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('tgl', $q,"match");
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('norek', $q,"match");
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('nama', $q,"match");
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('plafond', $q,"match");
+    $this->db->where('pn', $pn1);
+	$this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+    // get data with limit and search
+    function get_limit_data1($limit, $start = 0, $pn = NULL, $pn1 = NULL) {
         $this->db->order_by($this->id, $this->order);
         $this->db->like('id', $pn);
 	$this->db->or_like('pn', $pn);
@@ -51,10 +83,8 @@ class Penyalurankur_model extends CI_Model
 	$this->db->or_like('nama', $pn);
 	$this->db->or_like('plafond', $pn);
 	$this->db->limit($limit, $start);
-    $this->db->where('pn',14670);
         return $this->db->get($this->table)->result();
     }
-
     // insert data
     function insert($data)
     {
