@@ -14,51 +14,89 @@ class Rekgiro extends CI_Controller
 
     public function index()
     {
-        $q = urldecode($this->input->get('q', TRUE));
+        $this->load->view('templates/js');
+        $this->load->view('templates/header');
+        if($this->session->userdata('side')==='3' ):;
+        $this->load->view('templates/sidebaradminunit');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='1'):;
+        $this->load->view('templates/sidebaradmin');
+        elseif($this->session->userdata('id_level')==='2'):;
+        $this->load->view('templates/sidebar');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='3'):;
+        $this->load->view('templates/sidebarritel');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('side')==='2'):;
+        $this->load->view('templates/sidebarritel');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==''):;
+        redirect(login);
+        else:;
+        endif;
+
+        $this->load->view('templates/meta');
+        
+        $pn = urldecode($this->input->get('pn', TRUE));
         $start = intval($this->input->get('start'));
         
-        if ($q <> '') {
-            $config['base_url'] = base_url() . 'rekgiro/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'rekgiro/index.html?q=' . urlencode($q);
-        } else {
-            $config['base_url'] = base_url() . 'rekgiro/index.html';
-            $config['first_url'] = base_url() . 'rekgiro/index.html';
-        }
-
-        $config['per_page'] = 10;
+        if ($pn <> '') {
+            $config['base_url'] = base_url() . 'rekgiro/index.html?pn=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'rekgiro/index.html?pn=' . urlencode($pn);
+            $config['total_rows'] = $this->Rekgiro_model->total_rows($pn);
+            $config['per_page'] = 10;
+            if($this->session->userdata('id_level')==='1'):;
+            $config['total_rows'] = $this->Rekgiro_model->total_rows($pn);
+            $rekgiro = $this->Rekgiro_model->get_limit_data1($config['per_page'], $start, $pn);
+            else:   
+            $config['total_rows'] = $this->Rekgiro_model->total_rows1($pn,$pn1);    
+            $rekgiro = $this->Rekgiro_model->get_limit_data($config['per_page'], $start, $pn, $pn1);
+            endif;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Rekgiro_model->total_rows($q);
-        $rekgiro = $this->Rekgiro_model->get_limit_data($config['per_page'], $start, $q);
-
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
             'rekgiro_data' => $rekgiro,
-            'q' => $q,
+            'pn' => $pn,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('rekgiro/rekgiro_list', $data);
-    }
-
-    public function read($id) 
-    {
-        $row = $this->Rekgiro_model->get_by_id($id);
-        if ($row) {
-            $data = array(
-		'id' => $row->id,
-		'pn' => $row->pn,
-		'tgl' => $row->tgl,
-		'norek' => $row->norek,
-		'nama' => $row->nama,
-	    );
-            $this->load->view('rekgiro/rekgiro_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('rekgiro'));
+            $config['base_url'] = base_url() . 'rekgiro/index.html';
+            $config['first_url'] = base_url() . 'rekgiro/index.html';
+            $config['total_rows'] = $this->Rekgiro_model->total_rows($pn1);
+            $config['per_page'] = 10;
+            $rekgiro = $this->Rekgiro_model->get_limit_data1($config['per_page'], $start, $pn1);
+        $config['page_query_string'] = TRUE;
+        $this->load->library('pagination');
+        $this->pagination->initialize($config);
+
+        $data = array(
+            'rekgiro_data' => $rekgiro,
+            'pn1' => $pn,
+            'pagination' => $this->pagination->create_links(),
+            'total_rows' => $config['total_rows'],
+            'start' => $start,
+        );
         }
+
+        // $config['per_page'] = 10;
+        // $config['page_query_string'] = TRUE;
+        // $this->load->library('pagination');
+        // $this->pagination->initialize($config);
+
+        // $data = array(
+        //     'brimo_data' => $brimo,
+        //     'pn' => $pn,
+        //     'pagination' => $this->pagination->create_links(),
+        //     'total_rows' => $config['total_rows'],
+        //     'start' => $start,
+        // );
+       $this->load->view('rekgiro/rekgiro_list', $data);
+       $this->load->view('templates/footer');
+        
     }
 
     public function create() 

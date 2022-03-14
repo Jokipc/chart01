@@ -30,30 +30,63 @@ class Edcmerchant_model extends CI_Model
     }
     
     // get total rows
-    function total_rows($q = NULL) {
-        $this->db->like('id', $q);
-	$this->db->or_like('pn', $q);
-	$this->db->or_like('tgl', $q);
-	$this->db->or_like('id_merchant', $q);
-	$this->db->or_like('nama_merchant', $q);
-	$this->db->or_like('hp', $q);
+    function total_rows($pn = NULL) {
+        $this->db->like('id', $pn);
+	$this->db->or_like('pn', $pn);
+	$this->db->or_like('tgl', $pn);
+	$this->db->or_like('id_merchant', $pn);
+	$this->db->or_like('nama_merchant', $pn);
+	$this->db->or_like('hp', $pn);
 	$this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
-    function get_limit_data($limit, $start = 0, $q = NULL) {
+    function get_limit_data($limit, $start = 0, $pn = NULL,$pn1 = NULL) {
         $this->db->order_by($this->id, $this->order);
-        $this->db->like('id', $q);
-	$this->db->or_like('pn', $q);
-	$this->db->or_like('tgl', $q);
-	$this->db->or_like('id_merchant', $q);
-	$this->db->or_like('nama_merchant', $q);
-	$this->db->or_like('hp', $q);
+        
+	$this->db->or_like('pn', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('tgl', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('id_merchant', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('nama_merchant', $pn);
+	$this->db->or_like('hp', $pn);
+    $this->db->where('pn', $pn1);
 	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
 
+    // get total rows
+    function total_rows1($pn = NULL,$pn1 = NULL) {
+
+	$this->db->or_like('pn', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('tgl', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('id_merchant', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('nama_merchant', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->or_like('hp', $pn);
+    $this->db->where('pn', $pn1);
+	$this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+    // get data with limit and search
+    function get_limit_data1($limit, $start = 0, $pn = NULL) {
+        $this->db->order_by($this->id, $this->order);
+        $this->db->like('id', $pn);
+	$this->db->or_like('pn', $pn);
+	$this->db->or_like('tgl', $pn);
+	$this->db->or_like('id_merchant', $pn);
+	$this->db->or_like('nama_merchant', $pn);
+	$this->db->or_like('hp', $pn);
+	$this->db->limit($limit, $start);
+        return $this->db->get($this->table)->result();
+    }
     // insert data
     function insert($data)
     {

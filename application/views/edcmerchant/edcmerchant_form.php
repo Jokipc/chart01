@@ -1,3 +1,7 @@
+
+<html>
+    <head>
+
 <!doctype html>
 <html>
     <head>
@@ -7,22 +11,35 @@
             body{
                 padding: 15px;
             }
+            
         </style>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+  dateFormat: "yy-mm-dd"
+
+});
+  } );
+  </script>
     </head>
     <body>
-        <h2 style="margin-top:0px">Edcmerchant <?php echo $button ?></h2>
+        <h2 style="margin-top:0px">Edc Merchant <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
             <label for="int">Pn <?php echo form_error('pn') ?></label>
             <input type="text" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $pn; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="date">Tgl <?php echo form_error('tgl') ?></label>
-            <input type="text" class="form-control" name="tgl" id="tgl" placeholder="Tgl" value="<?php echo $tgl; ?>" />
+            <label for="date">Tanggal <?php echo form_error('tgl') ?></label>
+            <input type="text" class="form-control" name="tgl" id="datepicker" placeholder="Tgl" value="<?php echo $tgl; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Id Merchant <?php echo form_error('id_merchant') ?></label>
-            <input type="text" class="form-control" name="id_merchant" id="id_merchant" placeholder="Id Merchant" value="<?php echo $id_merchant; ?>" />
+            <input type="text" class="form-control" name="id_merchant" id="id_merchant" placeholder="Id" value="<?php echo $id_merchant; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Nama Merchant <?php echo form_error('nama_merchant') ?></label>

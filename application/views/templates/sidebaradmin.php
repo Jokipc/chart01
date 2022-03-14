@@ -46,7 +46,7 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="<?php echo site_url();?>rank/bintang" class="nav-link">
+              <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>  
@@ -253,21 +253,69 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>premi" class="nav-link">
+                <a href="<?php echo site_url();?>edcmerchant" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PIJAR/DAVESTERA</p>
+                  <p>EDC Merchant</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>ekstrakom" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Rec Ekstrakom</p>
+                  <p>QRIS</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
+                <a href="<?php echo site_url();?>bankgaransi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>BRITAMA Bisnis Via DS</p>
+                  <p>Bank Garansi</p>
+                </a>
+              </li>
+
+
+
+              
+              
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Data RM DANA 2
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>rekgiro" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rekening Giro</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>rektab" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rekening Tabungan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>edcmerchant" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>EDC Merchant</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>brimolajs" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BSB/Brimola/JunioSmart</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>dgsaving" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Digital Saving</p>
                 </a>
               </li>
 

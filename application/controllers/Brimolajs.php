@@ -13,7 +13,7 @@ class Brimolajs extends CI_Controller
     }
 
     public function index()
-    {
+    { 
         $this->load->view('templates/js');
         $this->load->view('templates/header');
         if($this->session->userdata('side')==='3' ):;
@@ -41,28 +41,28 @@ class Brimolajs extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($pn <> '') {
-        //     $config['base_url'] = base_url() . 'brimolajs/index.html?pn=' . urlencode($pn);
-        //     $config['first_url'] = base_url() . 'brimolajs/index.html?pn=' . urlencode($pn);
-        //     $config['total_rows'] = $this->Brimolajs_model->total_rows($pn);
-        //     $config['per_page'] = 10;
-        //     if($this->session->userdata('id_level')==='1'):;
-        //     $config['total_rows'] = $this->Brimolajs_model->total_rows($pn);
-        //     $brimolajs = $this->Brimolajs_model->get_limit_data1($config['per_page'], $start, $pn);
-        //     else:   
-        //     $config['total_rows'] = $this->Brimolajs_model->total_rows1($pn,$pn1);    
-        //     $brimolajs = $this->Brimolajs_model->get_limit_data($config['per_page'], $start, $pn, $pn1);
-        //     endif;
-        // $config['page_query_string'] = TRUE;
-        // $this->load->library('pagination');
-        // $this->pagination->initialize($config);
+            $config['base_url'] = base_url() . 'brimolajs/index.html?pn=' . urlencode($pn);
+            $config['first_url'] = base_url() . 'brimolajs/index.html?pn=' . urlencode($pn);
+            $config['total_rows'] = $this->Brimolajs_model->total_rows($pn);
+            $config['per_page'] = 10;
+            if($this->session->userdata('id_level')==='1'):;
+            $config['total_rows'] = $this->Brimolajs_model->total_rows($pn);
+            $brimolajs = $this->Brimolajs_model->get_limit_data1($config['per_page'], $start, $pn);
+            else:   
+            $config['total_rows'] = $this->Brimolajs_model->total_rows1($pn,$pn1);    
+            $brimolajs = $this->Brimolajs_model->get_limit_data($config['per_page'], $start, $pn, $pn1);
+            endif;
+        $config['page_query_string'] = TRUE;
+        $this->load->library('pagination');
+        $this->pagination->initialize($config);
 
-        // $data = array(
-        //     'brimolajs_data' => $brimolajs,
-        //     'pn' => $pn,
-        //     'pagination' => $this->pagination->create_links(),
-        //     'total_rows' => $config['total_rows'],
-        //     'start' => $start,
-        // );
+        $data = array(
+            'brimolajs_data' => $brimolajs,
+            'pn' => $pn,
+            'pagination' => $this->pagination->create_links(),
+            'total_rows' => $config['total_rows'],
+            'start' => $start,
+        );
         } else {
             $config['base_url'] = base_url() . 'brimolajs/index.html';
             $config['first_url'] = base_url() . 'brimolajs/index.html';
