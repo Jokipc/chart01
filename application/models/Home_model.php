@@ -73,6 +73,54 @@ class Home_model extends CI_Model{
   return $result;
   }
 
+  function pkspayroll($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(pkspayroll.tgl)',3);
+  $result = $this->db->get('pkspayroll');
+  return $result;
+  }
+  function rekgiro($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(rekgiro.tgl)',3);
+  $result = $this->db->get('rekgiro');
+  return $result;
+  }
+  function rektab($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(rektab.tgl)',3);
+  $result = $this->db->get('rektab');
+  return $result;
+  }
+  function brimolajs($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(brimolajs.tgl)',3);
+  $result = $this->db->get('brimolajs');
+  return $result;
+  }
+  function dgsaving($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(dg_saving.tgl)',3);
+  $result = $this->db->get('dg_saving');
+  return $result;
+  }
+  function edcmerchant($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(edcmerchant.tgl)',3);
+  $result = $this->db->get('edcmerchant');
+  return $result;
+  }
   function britamabisnis($pn=271055)
   {
   $this->db->select('pn');

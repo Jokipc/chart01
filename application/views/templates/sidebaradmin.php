@@ -66,7 +66,11 @@
                   </a>
 
                   <a href="<?php echo site_url() ?>rank/ritel" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM
+                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM SME
+                  </a>
+
+                  <a href="<?php echo site_url() ?>rank/dana" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM DANA
                   </a>
                   
               </li>

@@ -21,8 +21,12 @@ class Page extends CI_Controller{
     //Allowing akses to staff only
     if($this->session->userdata('id_level')==='2'){
       redirect('home');
+    }
+    elseif($this->session->userdata('id_level')==='4'){
 
-    }else{
+      redirect('brimo');
+    }
+    else{
         echo "Access Denied";
     }
   }

@@ -30,6 +30,9 @@ class Brimo extends CI_Controller
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
         $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='4'):;
+        $this->load->view('templates/sidebaradminritel');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==''):;
         redirect(login);
         else:;
@@ -156,6 +159,10 @@ class Brimo extends CI_Controller
         elseif($this->session->userdata('id_level')==='1'):;
         $this->load->view('templates/sidebaradmin');
         
+        elseif($this->session->userdata('id_level')==='4'):;
+        $this->load->view('templates/sidebaradminritel');
+        $pn1= $this->session->userdata('pn');
+
         elseif($this->session->userdata('id_level')==='2'):;
         $this->load->view('templates/sidebar');
         $pn1= $this->session->userdata('pn');

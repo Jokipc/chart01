@@ -66,4 +66,17 @@ function live(){
  
   
 }
+
+function dana(){
+   
+      
+  $db = $this->Rank_model->get_dana()->result();
+
+  $x['data'] = $db;
+
+
+  $this->load->view("rank_dana", $x);
+  
+   
+}
 }

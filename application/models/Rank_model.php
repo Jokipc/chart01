@@ -321,7 +321,149 @@ class Rank_model extends CI_Model{
       //$this->db->select_sum('tbl_real.plafon');
       $this->db->order_by('real_a','DESC');
       //$this->db->limit(10);
+      $this->db->where('mantri.side',4);
+      $result = $this->db->get();
+      return $result;
+	}
+  function get_dana()
+	{
+    $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
+      FROM brimo
+      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 3
+      GROUP BY brimo.pn";
       
+    $query_count_pkspayroll = "SELECT pkspayroll.pn as pn, IFNULL(count(pkspayroll.pn), 0) as tot_pkspayroll
+      FROM pkspayroll
+      WHERE YEAR(pkspayroll.tgl) = 2022 and MONTH(pkspayroll.tgl)= 3
+      GROUP BY pkspayroll.pn";
+      
+    $query_count_edcmerchant = "SELECT edcmerchant.pn as pn, IFNULL(count(edcmerchant.pn), 0) as tot_edcmerchant
+      FROM edcmerchant
+      WHERE YEAR(edcmerchant.tgl) = 2022 and MONTH(edcmerchant.tgl)= 3
+      GROUP BY edcmerchant.pn";
+
+    $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
+      FROM qris
+      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 3
+      GROUP BY qris.pn";
+
+    $query_sum_bankgaransi = "SELECT bankgaransi.pn as pn, sum(bankgaransi.plafond) as tot_bankgaransi FROM bankgaransi
+      WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 3
+      GROUP BY bankgaransi.pn";
+
+    $query_count_rekgiro = "SELECT rekgiro.pn as pn, IFNULL(count(rekgiro.pn), 0) as tot_rekgiro
+      FROM rekgiro
+      WHERE YEAR(rekgiro.tgl) = 2022 and MONTH(rekgiro.tgl)= 3
+      GROUP BY rekgiro.pn";
+
+    $query_count_rektab = "SELECT rektab.pn as pn, IFNULL(count(rektab.pn), 0) as tot_rektab
+      FROM rektab
+      WHERE YEAR(rektab.tgl) = 2022 and MONTH(rektab.tgl)= 3
+      GROUP BY rektab.pn";
+  
+    $query_sum_premi = "SELECT premi.pn as pn, sum(premi.plafond) as tot_premi FROM premi
+      WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 3
+      GROUP BY premi.pn";
+
+    $query_count_brimolajs = "SELECT brimolajs.pn as pn, IFNULL(count(brimolajs.pn), 0) as tot_brimolajs
+      FROM brimolajs
+      WHERE YEAR(brimolajs.tgl) = 2022 and MONTH(brimolajs.tgl)= 3
+      GROUP BY brimolajs.pn";
+
+    $query_sum_ekstrakom = "SELECT ekstrakom.pn as pn, sum(ekstrakom.plafond) as tot_ekstrakom FROM ekstrakom
+      WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 3
+      GROUP BY ekstrakom.pn";
+
+    $query_count_dgsaving = "SELECT dg_saving.pn as pn, IFNULL(count(dg_saving.pn), 0) as tot_dgsaving
+      FROM dg_saving
+      WHERE YEAR(dg_saving.tgl) = 2022 and MONTH(dg_saving.tgl)= 3
+      GROUP BY dg_saving.pn";
+      
+    $query_count_targetmantri = "select mantri.pn, 
+    sum(mantri.brimo) as tbrimo, 
+    sum(ritel.t_payrol) as tpayrol,
+    sum(ritel.t_edc) as tedc, 
+    sum(mantri.qris) as tqris,
+    sum(ritel.t_bankgaransi) as tbankgaransi, 
+    sum(ritel.t_giro) as tgiro,
+    sum(ritel.t_tabungan) as ttabungan,
+    sum(ritel.t_pemi) as tpremi, 
+    sum(ritel.t_brimola) as tbrimola,  
+    sum(ritel.t_digitalsav) as tdigitalsav,  
+    
+     
+    sum(mantri.bbrimo) as bbrimo, 
+    sum(ritel.b_payrol) as bpayrol,
+    sum(ritel.b_edc) as bedc, 
+    sum(mantri.bqris) as bqris, 
+    sum(ritel.b_bankgaransi) as bbankgaransi,
+    sum(ritel.b_giro) as bgiro,
+    sum(ritel.b_tabungan) as btabungan, 
+    sum(ritel.b_premi) as bpremi, 
+    sum(ritel.b_brimola) as bbrimola,
+    sum(ritel.b_digitalsav) as bdigitalsav
+    
+    from mantri join ritel on ritel.id_target = mantri.side 
+    
+    GROUP by mantri.pn";
+    
+
+	  $this->db->select('mantri.pn, mantri.nama_mantri,
+    mantri.bbrimo,
+    bpayrol,
+    bedc,
+    mantri.bqris,
+    bbankgaransi,
+    bgiro,
+    btabungan, 
+    bpremi,  
+    bbrimola,
+    bdigitalsav,
+  
+      
+      IFNULL(count_brimo.tot_brimo, 0) as a,  
+      IFNULL(count_pkspayroll.tot_pkspayroll, 0) as b,
+      IFNULL(count_edcmerchant.tot_edcmerchant, 0) as c,
+      IFNULL(count_qris.tot_qris, 0) as d,
+      IFNULL(sum_bankgaransi.tot_bankgaransi, 0) as e,
+      IFNULL(count_rekgiro.tot_rekgiro, 0) as f,
+      IFNULL(count_rektab.tot_rektab, 0) as g,
+      IFNULL(sum_premi.tot_premi, 0) as h,
+      IFNULL(count_brimolajs.tot_brimolajs, 0) as i, 
+      IFNULL(count_dgsaving.tot_dgsaving, 0) as j,
+
+      ((SELECT(a))/count_targetmantri.tbrimo) * 100 as real_a,   
+      ((SELECT(b))/count_targetmantri.tpayrol) * 100 as real_b,
+      ((SELECT(c))/count_targetmantri.tedc) * 100 as real_c,
+      ((SELECT(d))/count_targetmantri.tqris) * 100 as real_d,
+      ((SELECT(e))/count_targetmantri.tbankgaransi) * 100 as real_e,
+      ((SELECT(f))/count_targetmantri.tgiro) * 100 as real_f,
+      ((SELECT(g))/count_targetmantri.ttabungan) *100 as real_g,
+      ((SELECT(h))/count_targetmantri.tpremi) * 100 as real_h,
+      ((SELECT(i))/count_targetmantri.tbrimola) * 100 as real_i,
+      ((SELECT(j))/count_targetmantri.tdigitalsav) * 100 as real_j,
+     
+      ROUND(((SELECT(real_a + real_b + real_c + real_d + real_e + real_f + real_g + real_h + real_i + real_j)/1) * 1), 2) as scores');
+    $this->db->from('mantri');
+    $this->db->join("($query_count_brimo) as count_brimo", 'mantri.pn = count_brimo.pn', 'left');
+    $this->db->join("($query_count_pkspayroll) as count_pkspayroll", 'mantri.pn = count_pkspayroll.pn', 'left');
+    $this->db->join("($query_count_edcmerchant) as count_edcmerchant", 'mantri.pn = count_edcmerchant.pn', 'left');
+    $this->db->join("($query_count_qris) as count_qris", 'mantri.pn = count_qris.pn', 'left');
+    $this->db->join("($query_sum_bankgaransi) as sum_bankgaransi", 'mantri.pn = sum_bankgaransi.pn', 'left');
+    $this->db->join("($query_count_rekgiro) as count_rekgiro", 'mantri.pn = count_rekgiro.pn', 'left');
+    $this->db->join("($query_count_rektab) as count_rektab", 'mantri.pn = count_rektab.pn', 'left');
+    $this->db->join("($query_sum_premi) as sum_premi", 'mantri.pn = sum_premi.pn', 'left');
+    $this->db->join("($query_count_brimolajs) as count_brimolajs", 'mantri.pn = count_brimolajs.pn', 'left');
+    
+    
+    $this->db->join("($query_count_dgsaving) as count_dgsaving", 'mantri.pn = count_dgsaving.pn', 'left');
+    $this->db->join("($query_count_targetmantri) as count_targetmantri", 'mantri.pn = count_targetmantri.pn', 'left'); 
+    $this->db->join("ritel", 'ritel.id_target = mantri.side'); 
+     
+      //$this->db->select_sum('tbl_real.plafon');
+      $this->db->order_by('real_a','DESC');
+      //$this->db->limit(10);
+      $this->db->where('mantri.side',5);
       $result = $this->db->get();
       return $result;
 	}

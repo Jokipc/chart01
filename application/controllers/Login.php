@@ -65,7 +65,13 @@ class Login extends CI_Controller{
             redirect('page/user');
 
         // access login for author
-        }else{
+        }
+        elseif($level === '4'){
+          redirect('page/user');
+
+      // access login for author
+      }
+        else{
             redirect('page/author');
         }
     }else{

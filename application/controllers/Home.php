@@ -11,6 +11,10 @@ class Home extends CI_Controller{
     }
 
     function index(){
+      if($this->session->userdata('id_level')==''):;
+      redirect(login);
+      else:;
+      endif;
       $kode = $this->input->get('kode');
       $pn = $this->session->userdata('pn');
       
@@ -39,7 +43,11 @@ class Home extends CI_Controller{
     }
    
     function ritel(){
-       
+      if($this->session->userdata('id_level')==''):;
+      redirect(login);
+      else:;
+      endif;
+
       
       $this->load->view('templates/sidebarritel');
       $this->load->view('templates/js');
@@ -73,6 +81,45 @@ class Home extends CI_Controller{
       $this->load->view("chart2", $x);
     
       }
+
+      function dana(){
+        if($this->session->userdata('id_level')==''):;
+        redirect(login);
+        else:;
+        endif;
+      
+        $this->load->view('templates/sidebaradminritel');
+        $this->load->view('templates/js');
+        $pn = $this->session->userdata('pn');
+   
+        $brimo = $this->Home_model->brimo($pn)->num_rows();
+        $pkspayroll = $this->Home_model->pkspayroll($pn)->num_rows();
+        $edcmerchant = $this->Home_model->edcmerchant($pn)->num_rows();
+        $qris = $this->Home_model->qris($pn)->num_rows();
+        $bankgaransi = $this->Home_model->bankgaransi($pn)->result();
+        $giro = $this->Home_model->rekgiro($pn)->num_rows();
+        $tab = $this->Home_model->rektab($pn)->num_rows();
+        $premi = $this->Home_model->premi($pn)->result();
+        $brimola = $this->Home_model->brimolajs($pn)->num_rows();
+        $dgsaving = $this->Home_model->dgsaving($pn)->num_rows();
+        $target = $this->Home_model->target($pn)->result();
+        
+        
+        $x['brimo'] = $brimo;
+        $x['pks'] = $pkspayroll;
+        $x['edc'] = $edcmerchant;
+        $x['qris'] = $qris;
+        $x['bankgaransi'] = $bankgaransi;
+        $x['giro'] = $giro;
+        $x['tab'] = $tab;
+        $x['premi'] = $premi;
+        $x['brimola'] = $brimola;
+        $x['dgsaving'] = $dgsaving;
+        $x['target'] = $target;
+        $this->load->view("templates/home_dana", $x);
+        $this->load->view("chart3", $x);
+      
+        }
       
 }
 
