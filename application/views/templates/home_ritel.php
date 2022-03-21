@@ -211,7 +211,7 @@
                       <div class="progress-bar " style="background-color:gold;width:<?= number_format($barpremi1,2),'%' ;R ?>"></div>
                       </div></div>
                     <div class="progress-group">
-                      <span class="progress-text">Total Penyaluran Kur<?= number_format($barkur1,2),'%' ; ?></span>
+                      <span class="progress-text">Total Penyaluran Kur <?= number_format($barkur1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($f_hsl); ?></b>/<b><?php  echo $val->t_penyalurankur/1000000; ?></b> Jt</span>
                       <div class="progress progress-sm">
                       <div class="progress-bar" style="background-color:darksalmon; width:<?= number_format($barkur1,2),'%' ;R ?>"></div>
