@@ -198,14 +198,14 @@
                       </div></div>                   
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Britama Bisnis <?= number_format($barbritama1,2),'%' ; ?></span>
+                      <span class="progress-text">Total Britama Bisnis / Giro <?= number_format($barbritama1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($d_hsl); ?></b>/<b><?php  echo $val->t_britama; ?></b></span>
                       <div class="progress progress-sm">
                       <div class="progress-bar bg-warning" style="width:<?= number_format($barbritama1,2),'%' ;R ?>"></div>
                       </div></div>
                        <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Pijar/Davestera <?= number_format($barpremi1,2),'%' ; ?></span>
+                      <span class="progress-text">Brilife <?= number_format($barpremi1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($e_hsl); ?></b>/<b><?php  echo $val->t_pemi/1000000; ?></b> Jt</span>
                       <div class="progress progress-sm">
                       <div class="progress-bar " style="background-color:gold;width:<?= number_format($barpremi1,2),'%' ;R ?>"></div>

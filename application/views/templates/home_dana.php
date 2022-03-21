@@ -203,7 +203,7 @@
                       <div class="progress-bar " style="background-color:cadetblue; width:<?= number_format($bartabungan1,2),'%' ;R ?>"></div>
                       </div></div>  
                     <div class="progress-group">
-                      <span class="progress-text">Total Pijar / Davestera <?= number_format($barpremi1,2),'%' ; ?></span>
+                      <span class="progress-text">Brilife<?= number_format($barpremi1,2),'%' ; ?></span>
                       <span class="float-right"><b><?php echo number_format($h_hsl); ?></b>/<b><?php  echo $val->t_pemi/1000000; ?></b></span>
                       <div class="progress progress-sm">
                       <div class="progress-bar " style="background-color:darkgreen;width:<?= number_format($barpremi1,2),'%' ;R ?>"></div>
