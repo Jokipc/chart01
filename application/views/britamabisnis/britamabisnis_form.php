@@ -27,7 +27,7 @@
     </head>
     <body>
     <div class="content-wrapper" style="min-height: 555.807px;border:0px;  overflow:auto; float:left; width:100%">
-        <h2 style="margin-top:0px">Britama Bisnis <?php echo $button ?></h2>
+        <h2 style="margin-top:0px">Britama Bisnis / Giro <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
             <label for="int">Pn <?php echo form_error('pn') ?></label>

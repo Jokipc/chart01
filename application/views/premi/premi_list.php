@@ -3,7 +3,7 @@
 <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
 <section class="conten-header">
 <div class="row">
-<h2 style="margin-top:0px">Pijar / Davestera List</h2>
+<h2 style="margin-top:0px">Brilife List</h2>
 <div class="col-md-0"></div>
 <div class="col-md-6">
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
@@ -98,7 +98,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Input Pijar/Davestera</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Input Brilife</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

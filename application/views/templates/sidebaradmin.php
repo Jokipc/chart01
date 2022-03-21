@@ -211,7 +211,7 @@
               <li class="nav-item">
                 <a href="<?php echo site_url();?>premi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PIJAR/DAVESTERA</p>
+                  <p>BRILIFE</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -221,7 +221,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
+                <a href="<?php echo site_url();?>britamabisnis / Giro" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>BRITAMA Bisnis Via DS</p>
                 </a>
