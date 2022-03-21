@@ -175,7 +175,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		<td class="td-value"><center><b>Bank Garansi</b></center></td>
 		<td class="td-value"><center><b>Rek Giro</b></center></td>
 		<td class="td-value"><center><b>Rek Tab</b></center></td>
-		<td class="td-value"><center><b>Pijar/Davestera</b></center></td>
+		<td class="td-value"><center><b>Brilife</b></center></td>
 		<td class="td-value"><center><b>BSB/BRIMOLA/ Junio Smart</b></center></td>
 		<td class="td-value"><center><b>Digital Saving</b></center></td>
 		<td class="td-value"><center><b>Total*Bobot %</b></center></td>

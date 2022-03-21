@@ -188,8 +188,8 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 		<td class="td-value"><center><b>Bank Garansi </b></center></td>
 		<td class="td-value"><center><b>Bristore</b></center></td>
 		<td class="td-value"><center><b>Ibbiz</b></center></td>
-		<td class="td-value"><center><b>Britama Bisnis</b></center></td>
-		<td class="td-value"><center><b>Pijar / Davestera</b></center></td>
+		<td class="td-value"><center><b>Britama Bisnis / Giro</b></center></td>
+		<td class="td-value"><center><b>Brilife</b></center></td>
 		<td class="td-value"><center><b>Penyaluran Kur</b></center></td>
 		<td class="td-value"><center><b>BRIMO</b></center></td>
 		<td class="td-value"><center><b>QRIS</b></center></td>
