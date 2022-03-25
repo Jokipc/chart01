@@ -71,7 +71,7 @@
               <li class="nav-item">
                 <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Britama Bisnis / Giro/p>
+                  <p>Britama Bisnis / Giro</p>
                 </a>
               </li>
               <li class="nav-item">
