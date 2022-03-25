@@ -305,9 +305,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>edcmerchant" class="nav-link">
+                <a href="<?php echo site_url();?>premi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>EDC Merchant</p>
+                  <p>Brilife</p>
                 </a>
               </li>
               <li class="nav-item">
