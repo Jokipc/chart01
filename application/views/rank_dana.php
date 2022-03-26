@@ -1,26 +1,24 @@
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <html lang="en"	dir="ltr">
 	<head>
 	 
 	
 		<meta charset="utf-8">
 		<?php $this->load->view('templates/js'); ?>
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.100"> -->
 		<link rel="stylesheet"	href="<?php echo base_url() ;?>template/dist/css/style.css">
 		<title>Rank</title>
 		
 	</head>
-	<style>body {
-  	background-image: url(../template/dist/img/bag.gif);
-	margin: 0;
-  	padding: 0;
-	background-color: aqua;
-	background-size: cover;
-	}
-	</style>
+	
 	<body>
 	
-	
+	<div class="video-background">
+    <div class="video-foreground">
+      <iframe src="https://www.youtube.com/embed/N-U448Ff4vs?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=N-U448Ff4vs" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
 	<h4 style="color:#4169E1 ;background: rgb(19,200,42);
 background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%, rgba(188,235,245,1) 100%);"><marquee loop="1000" ><?php
 				$num = 0;
@@ -95,6 +93,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 				$nilai1 = array();
 				foreach( $data as $val){
 					$mantri= $val->nama_mantri;
+					$pn= $val->pn;
 					$persen = 110/100;
 					
 					$ba = $val->bbrimo;
@@ -131,7 +130,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 					$totalpersen =$asen+$bsen+$csen+$dsen+$esen+$fsen+$gsen+$hsen+$isen+$jsen;
 			 
 					$total =($a1+$b1+$c1+$d1+$e1+$f1+$g1+$h1+$i1+$j1)/10;
-					array_push($isi1, array('nama_mantri' => $mantri,
+					array_push($isi1, array('pn' => $pn,'nama_mantri' => $mantri,
 					'hasil' =>$total,
 					'persen'=>$totalpersen,
 					));
@@ -141,8 +140,8 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 				foreach($isi1 as $na)
 				{
 			$number++;
-			if ($number <= 5){
-				print '<img src="'.base_url().'template/dist/img/a'.$number.'.gif" id="balon'.$number.'" class="b b'.$number.'" alt="">';
+			if ($number <= 6){
+				print '<img src="'.base_url().'template/dist/img/'.$na['pn'].'.gif" id="balon'.$number.'" class="b b'.$number.'" alt="">';
 				print '<p>';
 				print '<div class="b b'.$number.'" style="color: #FFF0F5;
 				text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; font-size:16px;"><br><br><center>'.$na['nama_mantri'].'</center></br></br></div>';
@@ -162,7 +161,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 	<div class="col-sm-1 "></div>
 	<div class="col-sm-10 ">
 
-	<h5 class="animated infinite hinge"><center>PERINGKAT RM SME</center></h5>
+	<h5 class="animated infinite hinge"><center>PERINGKAT RM DANA</center></h5>
 		<table class="table table-sm table-striped table-info table-responsive" style="background-color:ivory; opacity:0.8">
 		<tr style="width: 50px">
 		<td class="td-number align-middle"><center><b>No</b></center></td>
@@ -305,6 +304,10 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
 			$(this).delay(index*500).show(100);
 		});
 	})
+	function() 
+  {
+    location.reload();    
+  }, 10000);
 </script>
 
 <style>
@@ -312,9 +315,7 @@ background: linear-gradient(90deg, rgba(19,200,42,1) 0%, rgba(95,242,218,1) 35%,
       width: 40%;
       margin: 10px;
       border-radius: 5px;
-	 
 
-	  
     }
     .table > tbody > tr > td {
 		padding: 0px 3px;

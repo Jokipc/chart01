@@ -1,15 +1,44 @@
-body {
-  background: rgb(147, 213, 238);
-  background: radial-gradient(
-    circle,
-    rgba(147, 213, 238, 1) 0%,
-    rgba(96, 194, 188, 1) 100%
-  );
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+* {
+  box-sizing: border-box;
 }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-repeat: repeat;
+  background: rgb(73, 73, 73);
+}
+#vidtop-content {
+  top: 0;
+  color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media all and (max-width: 100%; height: auto;) {
+  .vid-info .acronym {
+    display: none;
+  }
+}
+
 .b {
   height: auto;
   position: absolute;
@@ -17,37 +46,45 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
+  overflow: hidden;
+  border-radius: 1px;
 }
 .b1 {
-  width: 120px;
-  height: auto;
-  top: 10%;
-  z-index: 2;
+  width: 170px;
+  top: 70%;
   animation-duration: 15s;
 }
 .b2 {
   width: 150px;
   height: auto;
-  top: 30%;
+  top: 70%;
   animation-duration: 20s;
+  z-index: 2;
 }
 .b3 {
-  width: 150px;
+  width: 140px;
   height: auto;
-  top: 60%;
+  top: 73%;
   animation-duration: 25s;
 }
 .b4 {
   width: 150px;
   height: auto;
-  top: 25%;
+  top: 74%;
   animation-duration: 35s;
+  z-index: 2;
 }
 .b5 {
-  width: 150px;
+  width: 173px;
   height: auto;
-  top: 55%;
+  top: 70%;
   animation-duration: 40s;
+}
+.b6 {
+  width: 169px;
+  height: auto;
+  top: 75%;
+  animation-duration: 50s;
 }
 
 .c {
@@ -117,9 +154,9 @@ body {
 
 @keyframes run {
   0% {
-    margin-left: -400px;
+    margin-left: -500px;
   }
   100% {
-    margin-left: 100%;
+    margin-left: 105%;
   }
 }
