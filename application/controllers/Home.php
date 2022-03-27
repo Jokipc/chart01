@@ -49,8 +49,7 @@ class Home extends CI_Controller{
       endif;
 
       
-      $this->load->view('templates/sidebarritel');
-      $this->load->view('templates/js');
+
       
      
       
@@ -90,8 +89,7 @@ class Home extends CI_Controller{
         redirect(login);
         else:;
         endif;
-      
-        
+ 
         $pn = $this->session->userdata('pn');
    
         $brimo = $this->Home_model->brimo($pn)->num_rows();
@@ -128,9 +126,7 @@ class Home extends CI_Controller{
           redirect(login);
           else:;
           endif;
-        
-          $this->load->view('templates/sidebarbriguna');
-          $this->load->view('templates/js');
+
           $pn = $this->session->userdata('pn');
      
           $briguna = $this->Home_model->briguna($pn)->result();
@@ -161,9 +157,7 @@ class Home extends CI_Controller{
           redirect(login);
           else:;
           endif;
-        
-          $this->load->view('templates/sidebarkpr');
-          $this->load->view('templates/js');
+
           $pn = $this->session->userdata('pn');
      
           $dtkpr = $this->Home_model->kpr($pn)->result();
