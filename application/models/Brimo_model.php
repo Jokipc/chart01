@@ -41,10 +41,12 @@ class Brimo_model extends CI_Model
     }
 
     function total_rows1($pn = NULL, $pn1 = NULL) {
-        $this->db->like('norek', $pn,"match");
+        $this->db->or_like('pn', $pn);
         $this->db->where('pn', $pn1);
 	    $this->db->or_like('tgl', $pn);
 	    $this->db->where('pn', $pn1);
+        $this->db->or_like('norek', $pn);
+        $this->db->where('pn', $pn1);
 	    $this->db->from($this->table);
         return $this->db->count_all_results();
     }
@@ -53,10 +55,13 @@ class Brimo_model extends CI_Model
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $pn = NULL, $pn1 = NULL) {
         $this->db->order_by($this->id, $this->order);
-        $this->db->like('norek', $pn,"match");
+        $this->db->or_like('pn', $pn);
         $this->db->where('pn', $pn1);
-	    $this->db->or_like('pn', $pn);
 	    $this->db->or_like('tgl', $pn);
+	    $this->db->where('pn', $pn1);
+        $this->db->or_like('norek', $pn);
+        $this->db->where('pn', $pn1);
+	    $this->db->from($this->table);
 	    $this->db->where('pn', $pn1);
 	    $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();

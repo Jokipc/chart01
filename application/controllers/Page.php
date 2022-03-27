@@ -24,7 +24,15 @@ class Page extends CI_Controller{
     }
     elseif($this->session->userdata('id_level')==='4'){
 
-      redirect('brimo');
+      redirect('home/dana');
+    }
+    elseif($this->session->userdata('id_level')==='5'){
+
+      redirect('home/kpr');
+    }
+    elseif($this->session->userdata('id_level')==='6'){
+
+      redirect('home/briguna');
     }
     else{
         echo "Access Denied";

@@ -126,6 +126,12 @@ class User extends CI_Controller
         elseif($this->session->userdata('side')==='2'):;
         $this->load->view('templates/sidebarritel');
         $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='5'):;
+        $this->load->view('templates/sidebarkpr');
+        $pn1= $this->session->userdata('pn');
+        elseif($this->session->userdata('id_level')==='6'):;
+        $this->load->view('templates/sidebarbriguna');
+        $pn1= $this->session->userdata('pn');
         elseif($this->session->userdata('id_level')==''):;
         redirect(login);
         else:;

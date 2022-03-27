@@ -12,7 +12,6 @@
     <body>
         <h2 style="margin-top:0px">Kpr Read</h2>
         <table class="table">
-	    <tr><td>Id</td><td><?php echo $id; ?></td></tr>
 	    <tr><td>Pn</td><td><?php echo $pn; ?></td></tr>
 	    <tr><td>Tgl</td><td><?php echo $tgl; ?></td></tr>
 	    <tr><td>Norek</td><td><?php echo $norek; ?></td></tr>

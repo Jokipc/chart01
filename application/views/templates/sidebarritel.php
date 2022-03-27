@@ -31,25 +31,71 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+                <li class="nav-item"> 
+              
+        
 
-               <li class="nav-item">
-                <a href="<?php echo site_url();?>home/ritel" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Home</p>
-                </a>
-                <a href="<?php echo site_url() ?>rank/ritel" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM
-                  </a>
-          <li class="nav-item">
+           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Form 1
+                Rank
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
 
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="<?php echo site_url();?>home/ritel" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Home</p>
+                </a>  
+                
+
+                  <a href="<?php echo site_url() ?>rank/ritel" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM SME
+                  </a>
+
+                  
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Data Form
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>brimo" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data BRIMO</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>ibbiz  " class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data IBBIZ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="<?php echo site_url();?>bristore" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data BRISTORE</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>QRIS</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="<?php echo site_url();?>bankgaransi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -57,92 +103,63 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>bristore" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bristore</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>ibbiz" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>IBBIZ</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Britama Bisnis / Giro</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>premi" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>BRILIFE<p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Form 2
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
                 <a href="<?php echo site_url();?>penyalurankur" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Penyaluran Kur</p>
+                  <p>Penyaluran KUR</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>brimo" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Brimo</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>qris" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Qris</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>realkecil" class="nav-link">
+              <a href="<?php echo site_url();?>realkecil" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Real Kecil</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>ekstrakom" class="nav-link">
+                <a href="<?php echo site_url();?>premi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Rec Ekstrakom<p>
+                  <p>Brilife</p>
                 </a>
               </li>
+              <li class="nav-item">
+              <a href="<?php echo site_url();?>ekstrakom" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rec Ekstrakom</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="<?php echo site_url();?>britamabisnis / Giro" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BRITAMA Bisnis Via DS</p>
+                </a>
+              </li>
+
+
+              
               
             </ul>
           </li>
-          
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                User
+                Ubah Password
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
 
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+            <li class="nav-item">
                 <a href="<?php echo site_url();?>user/update/<?php echo $this->session->userdata('id_pn');?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ubah Password</p>
                 </a>
+            </li>
+              
+            </ul>
+          </li>
+       
+
           
         </ul>
       </nav>

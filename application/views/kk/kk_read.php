@@ -12,7 +12,6 @@
     <body>
         <h2 style="margin-top:0px">Kk Read</h2>
         <table class="table">
-	    <tr><td>Id</td><td><?php echo $id; ?></td></tr>
 	    <tr><td>Pn</td><td><?php echo $pn; ?></td></tr>
 	    <tr><td>Tgl</td><td><?php echo $tgl; ?></td></tr>
 	    <tr><td>Nik</td><td><?php echo $nik; ?></td></tr>

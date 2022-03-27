@@ -1,118 +1,133 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>"/>
-        <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>"/>
-        <style>
-            .dataTables_wrapper {
-                min-height: 500px
-            }
-            
-            .dataTables_processing {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                margin-left: -50%;
-                margin-top: -25px;
-                padding-top: 20px;
-                text-align: center;
-                font-size: 1.2em;
-                color:grey;
-            }
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="row" style="margin-bottom: 10px">
-            <div class="col-md-4">
-                <h2 style="margin-top:0px">Kk List</h2>
-            </div>
-            <div class="col-md-4 text-center">
-                <div style="margin-top: 4px"  id="message">
-                    <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
-                </div>
-            </div>
-            <div class="col-md-4 text-right">
-                <?php echo anchor(site_url('kk/create'), 'Create', 'class="btn btn-primary"'); ?>
-		<?php echo anchor(site_url('kk/excel'), 'Excel', 'class="btn btn-primary"'); ?>
-	    </div>
-        </div>
-        <table class="table table-bordered table-striped" id="mytable">
-            <thead>
+<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
+<center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
+<section class="conten-header">
+<div class="row">
+<h2 style="margin-top:0px">Kartu Kredit List</h2>
+<div class="col-md-0"></div>
+<div class="col-md-6">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
+</div>
+<div class="col-md-6">
+<form action="<?php echo site_url('kk/index'); ?>" class="form-inline" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="pn" value="<?php echo $pn; ?>">
+                        <span class="input-group-btn">
+                            <?php 
+                                if ($pn <> '')
+                                {
+                                    ?>
+                                    <a href="<?php echo site_url('kk'); ?>" class="btn btn-default">Reset</a>
+                                    <?php
+                                }
+                            ?>
+                          <button class="btn btn-primary" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+</div>
+</div>
+</section>
+<section class="content">     
+    <table class="table">
+            <tr>
+                <th>No</th>
+		<th>Pn</th>
+		<th>Tgl</th>
+		<th>Nik</th>
+		<th>Nama</th>
+		<th>Hp</th>
+		<?php if($this->session->userdata('id_level')==='1' ):; ?>
+        <th>Action</th>   
+        <?php endif; ?>
+            </tr><?php
+            foreach ($kk_data as $kk)
+            {
+                ?>
                 <tr>
-                    <th width="80px">No</th>
-		    <th>Id</th>
-		    <th>Pn</th>
-		    <th>Tgl</th>
-		    <th>Nik</th>
-		    <th>Nama</th>
-		    <th>Hp</th>
-		    <th width="200px">Action</th>
-                </tr>
-            </thead>
-	    
+			<td width="80px"><?php echo ++$start ?></td>
+			<td><?php echo $kk->pn ?></td>
+			<td><?php echo $kk->tgl ?></td>
+			<td><?php echo $kk->nik ?></td>
+			<td><?php echo $kk->nama ?></td>
+			<td><?php echo $kk->hp ?></td>
+			<?php if($this->session->userdata('id_level')==='1' ):; ?>
+      <td>
+      <?php
+            echo anchor(site_url('kk/update/'.$kk->id),'Update'); 
+            echo ' | '; 
+      			echo anchor(site_url('kk/delete/'.$kk->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+            else:;   
+      ?>
+      </td>
+      <?php endif; ?>
+	        </tr>
+                <?php
+            }
+            ?>
         </table>
-        <script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
-        <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>"></script>
-        <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)
-                {
-                    return {
-                        "iStart": oSettings._iDisplayStart,
-                        "iEnd": oSettings.fnDisplayEnd(),
-                        "iLength": oSettings._iDisplayLength,
-                        "iTotal": oSettings.fnRecordsTotal(),
-                        "iFilteredTotal": oSettings.fnRecordsDisplay(),
-                        "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
-                        "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
-                    };
-                };
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+                <?php if($this->session->userdata('id_level')==='1' ):; ?>
+		            <?php echo anchor(site_url('kk/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+                <?php endif; ?>
+	          </div>
+            <div class="col-md-6 text-right">
+              <?php echo $pagination ?>
+            </div>
+        </div>
+        </div>
+</section>
 
-                var t = $("#mytable").dataTable({
-                    initComplete: function() {
-                        var api = this.api();
-                        $('#mytable_filter input')
-                                .off('.DT')
-                                .on('keyup.DT', function(e) {
-                                    if (e.keyCode == 13) {
-                                        api.search(this.value).draw();
-                            }
-                        });
-                    },
-                    oLanguage: {
-                        sProcessing: "loading..."
-                    },
-                    processing: true,
-                    serverSide: true,
-                    ajax: {"url": "kk/json", "type": "POST"},
-                    columns: [
-                        {
-                            "data": "",
-                            "orderable": false
-                        },{"data": "id"},{"data": "pn"},{"data": "tgl"},{"data": "nik"},{"data": "nama"},{"data": "hp"},
-                        {
-                            "data" : "action",
-                            "orderable": false,
-                            "className" : "text-center"
-                        }
-                    ],
-                    order: [[0, 'desc']],
-                    rowCallback: function(row, data, iDisplayIndex) {
-                        var info = this.fnPagingInfo();
-                        var page = info.iPage;
-                        var length = info.iLength;
-                        var index = page * length + (iDisplayIndex + 1);
-                        $('td:eq(0)', row).html(index);
-                    }
-                });
-            });
-        </script>
-    </body>
-</html>
+<!-- datepicker -->
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+  dateFormat: "yy-mm-dd"
+
+});
+  } );
+  </script>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Input Kartu Kredit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="<?php echo base_url()?>kk/create_action" method="post">
+	    <div class="form-group">
+            <label for="int">Pn <?php echo form_error('pn') ?></label>
+            <input type="text" class="form-control" name="pn" disabled id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
+            <input type="hidden" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
+        </div>
+        <div class="form-group">
+            <label for="date">Tgl <?php echo form_error('tgl') ?></label>
+            <input type="text" class="form-control" name="tgl" id="datepicker" autocomplete="off" placeholder="Tgl" value="" />
+        </div>
+        <div class="form-group">
+            <label for="int">NIK <?php echo form_error('nik') ?></label>
+            <input type="text" class="form-control" pattern="[0-9]+" required name="nik" autocomplete="off" id="nik" placeholder="Nik" value="" />
+        </div>
+        <div class="form-group">
+            <label for="varchar">Nama <?php echo form_error('nama') ?></label>
+            <input type="text" class="form-control" name="nama" id="nama" required autocomplete="off" placeholder="Nama" value="" />
+        </div>
+	    <div class="form-group">
+            <label for="int">Hp<?php echo form_error('hp') ?></label>
+            <input type="text" pattern="[0-9]+" title="only letters" class="form-control" name="hp" required autocomplete="off" id="hp" placeholder="Hp" value="" />
+        </div>
+        <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

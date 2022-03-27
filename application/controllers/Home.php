@@ -51,6 +51,9 @@ class Home extends CI_Controller{
       
       $this->load->view('templates/sidebarritel');
       $this->load->view('templates/js');
+      
+     
+      
       $pn = $this->session->userdata('pn');
  
       $bankgaransi = $this->Home_model->bankgaransi($pn)->result();
@@ -120,6 +123,73 @@ class Home extends CI_Controller{
         $this->load->view("chart3", $x);
       
         }
+
+        function briguna(){
+          if($this->session->userdata('id_level')==''):;
+          redirect(login);
+          else:;
+          endif;
+        
+          $this->load->view('templates/sidebarbriguna');
+          $this->load->view('templates/js');
+          $pn = $this->session->userdata('pn');
+     
+          $briguna = $this->Home_model->briguna($pn)->result();
+          $debbriguna = $this->Home_model->deb_briguna($pn)->num_rows();
+          $kk = $this->Home_model->kartukredit($pn)->num_rows();
+          $brimo = $this->Home_model->brimo($pn)->num_rows();
+          $dgsaving = $this->Home_model->dgsaving($pn)->num_rows();
+          $premi = $this->Home_model->premi($pn)->result();
+          $ekstrakom = $this->Home_model->ekstrakom($pn)->result();
+          
+          $target = $this->Home_model->target($pn)->result();
+          
+          $x['briguna'] = $briguna;
+          $x['deb'] = $debbriguna;
+          $x['kk'] = $kk;
+          $x['brimo'] = $brimo;
+          $x['dgsaving'] = $dgsaving;
+          $x['premi'] = $premi;
+          $x['ekstrakom'] = $ekstrakom;
+          $x['target'] = $target;
+          $this->load->view("templates/home_briguna", $x);
+          $this->load->view("chart4", $x);
+        
+          }
+
+          function kpr(){
+            if($this->session->userdata('id_level')==''):;
+          redirect(login);
+          else:;
+          endif;
+        
+          $this->load->view('templates/sidebarkpr');
+          $this->load->view('templates/js');
+          $pn = $this->session->userdata('pn');
+     
+          $dtkpr = $this->Home_model->kpr($pn)->result();
+          $debkpr = $this->Home_model->deb_kpr($pn)->num_rows();
+          $kk = $this->Home_model->kartukredit($pn)->num_rows();
+          $brimo = $this->Home_model->brimo($pn)->num_rows();
+          $dgsaving = $this->Home_model->dgsaving($pn)->num_rows();
+          $premi = $this->Home_model->premi($pn)->result();
+          $ekstrakom = $this->Home_model->ekstrakom($pn)->result();
+          
+          $target = $this->Home_model->target($pn)->result();
+          
+          $x['kpr'] = $dtkpr;
+          $x['deb'] = $debkpr;
+          $x['kk'] = $kk;
+          $x['brimo'] = $brimo;
+          $x['dgsaving'] = $dgsaving;
+          $x['premi'] = $premi;
+          $x['ekstrakom'] = $ekstrakom;
+          $x['target'] = $target;
+          $this->load->view("templates/home_kpr", $x);
+          $this->load->view("chart5", $x);
+        
+          
+            }
       
 }
 

@@ -17,7 +17,7 @@
           <img src="<?php echo base_url() ;?>template/dist/img/<?php echo $this->session->userdata('ico');?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-        <h6 style="color:white;"> RM DANA </h6>
+        <h6 style="color:white;"> RM KONSUMER 4DX </h6>
           <a href="#" style="color:orange" class="d-block"><?php echo $this->session->userdata('nama_mantri');?></a>
 
         </div>
@@ -46,13 +46,11 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="<?php echo site_url();?>home/dana" class="nav-link">
+              <a href="<?php echo site_url();?>home/kpr" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>  
-                  <a href="<?php echo site_url() ?>rank/dana" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>&nbsp; Rank RM DANA
-                  </a>
+               
                   
               </li>
             </ul>
@@ -60,6 +58,7 @@
 
 
 
+         
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -71,45 +70,27 @@
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="<?php echo site_url();?>kpr" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data KPR</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url();?>kk" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kartu Kredit</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data BRIMO</p>
+                  <p>Brimo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>pkspayroll" class="nav-link">
+                <a href="<?php echo site_url();?>dgsaving" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PKS PAYROLL</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>edcmerchant" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>EDC Merchant</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>qris" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>QRIS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>bankgaransi" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bank Garansi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>rekgiro" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Rekening Giro</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>rektab" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Rekening Tabungan</p>
+                  <p>Digital Saving</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -119,20 +100,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>brimolajs" class="nav-link">
+                <a href="<?php echo site_url();?>ekstrakom" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>BSB/Brimola/JunioSmart</p>
+                  <p>Ekstrakom</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php echo site_url();?>dgsaving" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Digital Saving</p>
-                </a>
-              </li>
-
-
-              
               
             </ul>
           </li>

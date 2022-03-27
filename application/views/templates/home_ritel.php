@@ -50,7 +50,7 @@
           
 <?php $this->load->view('templates/header') ?>
 
-
+ 
 
 <div class="wrapper">
 
@@ -62,7 +62,7 @@
 
   <!-- Main Sidebar Container -->
 
-<?php $this->load->view('templates/sidebarritel'); ?>
+<?php $this->load->view('templates/js'); ?>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -72,7 +72,7 @@
   <section class="content">
   
       <div class="container-fluid" >
-      <h5>4DX MANTRI </h5>
+      <h5>4DX RM SME</h5>
         <div class="row"  >
           <div class="col-md-6"  >
           

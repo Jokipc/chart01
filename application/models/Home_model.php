@@ -166,6 +166,51 @@ class Home_model extends CI_Model{
   return $result;
   }
 
+  function kpr($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(kpr.tgl)',3);
+  $result = $this->db->get('kpr');
+  return $result;
+  }
+
+  function deb_kpr($pn=271055)
+  {
+    $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(kpr.tgl)',3);
+  $result = $this->db->get('kpr');
+  return $result;
+  }
+
+  function briguna($pn=271055)
+  {
+  $this->db->select_sum('plafond');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(briguna.tgl)',3);
+  $result = $this->db->get('briguna');
+  return $result;
+  }
+
+  function deb_briguna($pn=271055)
+  {
+    $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(briguna.tgl)',3);
+  $result = $this->db->get('briguna');
+  return $result;
+  }
+
+  function kartukredit($pn=271055)
+  {
+    $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(kk.tgl)',3);
+  $result = $this->db->get('kk');
+  return $result;
+  }
+
   function target($pn=271055)
   {
   $this->db->select('mantri.*,  ritel.*');
@@ -175,4 +220,9 @@ class Home_model extends CI_Model{
   $result = $this->db->get();
   return $result;
   }
+
+  
+
+
 }
+ 

@@ -38,11 +38,12 @@
 
   <!-- Navbar -->
  <?php $this->load->view('templates/meta') ?>
-  <!-- /.navbar -->
+ 
+ <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
 
-<?php $this->load->view('templates/sidebaradminritel'); ?>
+<?php $this->load->view('templates/js'); ?>
 
 
   <!-- Content Wrapper. Contains page content -->
