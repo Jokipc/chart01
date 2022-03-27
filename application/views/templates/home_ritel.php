@@ -61,9 +61,8 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-
-<?php $this->load->view('templates/js'); ?>
-
+  <?php $this->load->view('templates/js'); ?>
+<?php $this->load->view('templates/sidebaradminritel'); ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="background-color:white";>

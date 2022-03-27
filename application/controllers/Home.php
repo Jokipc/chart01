@@ -91,8 +91,7 @@ class Home extends CI_Controller{
         else:;
         endif;
       
-        $this->load->view('templates/sidebaradminritel');
-        $this->load->view('templates/js');
+        
         $pn = $this->session->userdata('pn');
    
         $brimo = $this->Home_model->brimo($pn)->num_rows();
