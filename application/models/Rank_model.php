@@ -165,6 +165,13 @@ $this->db->join("account", 'mantri.branch = account.branch');
   WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 4
   GROUP by branch";
 
+  $query_count_umi = "select account.branch, count(umi.pn) as p_umi
+  from mantri
+  join account on mantri.branch = account.branch
+  join umi on umi.pn = mantri.pn
+  WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 4
+  GROUP by branch";
+
   $query_count_mantri = "select branch, count(mantri.pn)-1 as jmlmantri 
   
   from mantri GROUP by branch";
@@ -175,11 +182,13 @@ $this->db->join("account", 'mantri.branch = account.branch');
   sum(mantri.kunjual) as tkunjual, 
   sum(mantri.qris) as tqris, 
   sum(mantri.stroberikasir) as tstroberikasir,
+  sum(mantri.umi) as tumi, 
   sum(mantri.bbrimo) as bbrimo, 
   sum(mantri.bsaving) as bsaving, 
   sum(mantri.bkunjual) as bkunjual, 
   sum(mantri.bqris) as bqris, 
-  sum(mantri.bstroberikasir) as bstroberikasir
+  sum(mantri.bstroberikasir) as bstroberikasir,
+  sum(mantri.bumi) as bumi
   
   from account join mantri on mantri.branch = account.branch 
   
@@ -192,19 +201,22 @@ $this->db->join("account", 'mantri.branch = account.branch');
     IFNULL(count_qris.p_qris, 0) as tot_q,
     IFNULL(count_stroberikasir.p_stroberi, 0) as tot_str,
     IFNULL(count_kunjual.p_kunjual, 0) as tot_k,
+    IFNULL(count_umi.p_umi, 0) as tot_u,
 
     (((SELECT(tot_s))/tsaving)) * bsaving as real_saving,
     ((SELECT(tot_b))/tbrimo)* bbrimo as real_brimo,
     ((SELECT(tot_q))/tqris)* bqris as real_qris,
     ((SELECT(tot_str))/tstroberikasir)* bstroberikasir as real_stroberikasir,
     ((SELECT(tot_k))/tkunjual) * bkunjual as real_kunjual,
-    ROUND(((SELECT(real_saving + real_brimo + real_qris + real_kunjual + real_stroberikasir )/jmlmantri ) * 1), 2) as scores');
+    ((SELECT(tot_u))/tumi) * bumi as real_umi,
+    ROUND(((SELECT(real_saving + real_brimo + real_qris + real_kunjual + real_stroberikasir + real_umi )/jmlmantri ) * 1), 2) as scores');
   $this->db->from('account');
   $this->db->join("($query_count_saving) as count_saving", 'account.branch = count_saving.branch', 'left');
   $this->db->join("($query_count_brimo) as count_brimo", 'account.branch = count_brimo.branch', 'left');
   $this->db->join("($query_count_qris) as count_qris", 'account.branch = count_qris.branch', 'left');
   $this->db->join("($query_count_stroberikasir) as count_stroberikasir", 'account.branch = count_stroberikasir.branch', 'left');
   $this->db->join("($query_count_kunjual) as count_kunjual", 'account.branch = count_kunjual.branch', 'left'); 
+  $this->db->join("($query_count_umi) as count_umi", 'account.branch = count_umi.branch', 'left');
    $this->db->join("($query_count_target) as count_target", 'account.branch = count_target.branch', 'left'); 
    $this->db->join("($query_count_mantri) as count_mantri", 'account.branch = count_mantri.branch', 'left');  
     //$this->db->select_sum('tbl_real.plafon');
