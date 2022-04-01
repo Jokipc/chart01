@@ -25,13 +25,14 @@
 			</div>
 			
 		</div>
-		<table width=100% >Bobot :
+		<table style="font-size:12 ; word-spacing: -2px;" width=100%  >Bobot :
 			
 			<td style="background-color:#007bff">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bsaving'); ?>%</td><td>&nbsp;&nbsp;</td>
 			<td style="background-color:#17a2b8">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bbrimo'); ?>%</td><td>&nbsp;&nbsp;</td>
 			<td style="background-color:#28a745">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bqris'); ?>%</td><td>&nbsp;&nbsp;</td>
 			<td style="background-color:#ffc107">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bkunjual'); ?>%</td><td>&nbsp;&nbsp;</td>
 			<td style="background-color:#dc3545">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bstroberikasir'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:yellow">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bumi'); ?>%</td><td>&nbsp;&nbsp;</td>
 		
 		</table>	
 	</body>
@@ -60,10 +61,14 @@
                     $stroberitarget = $this->session->userdata('stroberikasir');
                     $bstroberikasir = $this->session->userdata('bstroberikasir');
                     $stroberipersen = ($data_stroberikasir/$stroberitarget)*$bstroberikasir;
+
+					$umitarget = $this->session->userdata('umi');
+                    $bumi = $this->session->userdata('bumi');
+                    $umipersen = ($umi/$umitarget)*$bumi;
                    
                    
 
-					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen,1) ; 
+					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen+$umipersen,1) ; 
 ?>
 <?php $angka=10; ?>
 

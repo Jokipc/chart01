@@ -40,11 +40,11 @@
          <i class="far fa-circle nav-icon"></i>&nbsp; RANK
          </a>
          
-          <li class="nav-item">
+         <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-table"></i>
               <p>
-                Forms
+                Form
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -56,16 +56,17 @@
                   <p>Saving</p>
                 </a>
               </li>
+              </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>qris" class="nav-link">
+              <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Qris</p>
+                  <p>BRIMO</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>brimo" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Brimo</p>
+                  <p>QRIS</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -77,9 +78,17 @@
               <li class="nav-item">
                 <a href="<?php echo site_url();?>stroberikasir" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Stroberi Kasir<p>
+                  <p>Stroberi Kasir/Tagihan</p>
                 </a>
               </li>
+              <li class="nav-item">
+              <a href="<?php echo site_url();?>umi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deb Umi</p>
+                </a>
+              </li>
+              
+  
             </ul>
           </li>
           

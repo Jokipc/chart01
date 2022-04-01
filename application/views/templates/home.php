@@ -41,6 +41,7 @@
               
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                   <?php $this->load->view('chart1') ?>
+                  
                 </div>
               </div>
               <!-- /.card-body -->
@@ -86,6 +87,11 @@
                     $stroberipersen = ($data_stroberikasir/$stroberitarget)*($bstroberikasir/$stroberitarget) ;
                     $stroberibar = ($data_stroberikasir/$stroberitarget)*100 ;
 
+                    $umitarget = $this->session->userdata('umi');
+                    $bumi = $this->session->userdata('bumir');
+                    $umipersen = ($umi/$umitarget)*($bumi/$umitarget) ;
+                    $umibar = ($umi/$umitarget)*100 ;
+
                    
                     ?>
                     <div class="progress-group">
@@ -117,10 +123,17 @@
                       </div></div>
                        <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi Stroberi <?= number_format($stroberibar,2),'%' ; ?></span>
+                      <span class="progress-text">Stroberi Kasir / Tagihan <?= number_format($stroberibar,2),'%' ; ?></span>
                       <span class="float-right"><b><?= number_format($data_stroberikasir); ?></b>/<?php echo $this->session->userdata('stroberikasir');?></span>
                       <div class="progress progress-sm">
                       <div class="progress-bar bg-danger" style="width:<?= number_format($stroberibar,2),'%' ;R ?>"></div>
+                      </div></div>
+                       <!-- /.progress-group -->
+                    <div class="progress-group">
+                      <span class="progress-text">Deb Umi <?= number_format($umibar,2),'%' ; ?></span>
+                      <span class="float-right"><b><?= number_format($umi); ?></b>/<?php echo $this->session->userdata('umi');?></span>
+                      <div class="progress progress-sm">
+                      <div class="progress-bar" style="background-color:yellow; width:<?= number_format($umibar,2),'%' ;R ?> "></div>
                       </div></div>
                        <!-- /.progress-group -->
                     

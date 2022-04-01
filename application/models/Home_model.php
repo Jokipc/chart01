@@ -202,6 +202,16 @@ class Home_model extends CI_Model{
   return $result;
   }
 
+  function umi($pn=271055)
+  {
+    $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $this->db->where('MONTH(umi.tgl)',4);
+  $result = $this->db->get('umi');
+  return $result;
+  }
+
+
   function kartukredit($pn=271055)
   {
     $this->db->select('pn');

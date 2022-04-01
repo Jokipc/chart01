@@ -31,8 +31,8 @@ class Login extends CI_Controller{
         $bstroberikasir = $data['bstroberikasir'];
         $bkunjual = $data['bkunjual'];
         $side = $data['side'];
-       
-        
+        $umi = $data['umi'];
+        $bumi = $data['bumi'];
         $level = $data['id_level'];
         $sesdata = array(
           'id_pn'  => $idpn,
@@ -50,8 +50,8 @@ class Login extends CI_Controller{
             'bstroberikasir'     => $bstroberikasir,
             'bkunjual'     => $bkunjual,
             'side'     => $side,
-            
-
+            'umi'     => $umi,
+            'bumi'     => $bumi,
             'id_level'     => $level,
             'logged_in' => TRUE
         );

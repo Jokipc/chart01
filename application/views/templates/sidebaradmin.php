@@ -95,15 +95,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>qris" class="nav-link">
+              <a href="<?php echo site_url();?>brimo" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Qris</p>
+                  <p>Data BRIMO</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>brimo" class="nav-link">
+                <a href="<?php echo site_url();?>qris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Brimo</p>
+                  <p>Data QRIS</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -115,9 +115,17 @@
               <li class="nav-item">
                 <a href="<?php echo site_url();?>stroberikasir" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Stroberi<p>
+                  <p>Stroberi Kasir/Tagihan</p>
                 </a>
               </li>
+              <li class="nav-item">
+              <a href="<?php echo site_url();?>umi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Umi</p>
+                </a>
+              </li>
+              
+  
             </ul>
           </li>
 
@@ -139,7 +147,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url();?>ibbiz  " class="nav-link">
+                <a href="<?php echo site_url();?>ibbiz" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data IBBIZ</p>
                 </a>
@@ -187,9 +195,9 @@
                 </a>
               </li>
               <li class="nav-item">
-              <a href="<?php echo site_url();?>britamabisnis / Giro" class="nav-link">
+              <a href="<?php echo site_url();?>britamabisnis" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>BRITAMA Bisnis Via DS</p>
+                  <p>BRITAMA Bisnis/Giro</p>
                 </a>
               </li>
 

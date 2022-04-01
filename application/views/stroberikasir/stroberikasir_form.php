@@ -23,7 +23,7 @@
      <br>
      <ul>
 
-        <h2 style="margin-top:0px">Akuisisi Strowberi Kasir</h2>
+        <h2 style="margin-top:0px">Strowberi Kasir / Tagihan</h2>
         <form action="<?php echo $action; ?>" method="post">
         <div class="form-group">
             <label for="date">Pn<?php echo form_error('pn') ?></label>

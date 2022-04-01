@@ -24,6 +24,7 @@ class Home extends CI_Controller{
       $saving = $this->Home_model->saving($pn)->num_rows();
       $stroberikasir = $this->Home_model->stroberikasir($pn)->num_rows();
       $kunjual = $this->Home_model->kunjual($pn)->num_rows();
+      $umi = $this->Home_model->umi($pn)->num_rows();
      
       
      
@@ -32,6 +33,7 @@ class Home extends CI_Controller{
       $x['data_stroberikasir'] = $stroberikasir;
       $x['data_saving'] = $saving;
       $x['data_kunjual'] = $kunjual;
+      $x['umi'] = $umi;
       
      
       $this->load->view("templates/home", $x);

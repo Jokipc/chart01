@@ -94,7 +94,7 @@
 			<td style="background-color:#007bff">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $ba; ?>%</td><td></td>
 			<td style="background-color:#17a2b8">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $bb; ?>%</td><td></td>
 			<td style="background-color:#28a745">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $bc; ?>%</td><td></td>
-			<td style="background-color:#ffc107">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $bd; ?>%</td><td></td>
+			<td style="background-color:#ffc107">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo number_format($bd,0); ?>%</td><td></td>
 			<td style="background-color:gold">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo number_format($be); ?>%</td><td></td>
 			<td style="background-color:darksalmon;">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $bf; ?>%</td><td></td>
 			<td style="background-color:cadetblue">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $bg; ?>%</td><td></td>

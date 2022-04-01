@@ -87,8 +87,7 @@
      
                 <div class="card-tools">
                 <div> Bobot :
-<p align="justify"> Bankgaransi : <?= $ba ; ?> %,&nbsp&nbsp Bristore : <?= $bb ; ?>%,&nbsp&nbsp Ibbiz : <?= $bc ; ?>%,&nbsp&nbsp Britamabisnis : <?= $bd ; ?>%
-,&nbsp&nbsp Pijar/Davestera : <?= $be ; ?>%,&nbsp&nbsp Penyaluran Kur : <?= $bf ; ?>%,&nbsp&nbsp Brimo : <?= $bg ; ?>%,&nbsp&nbsp Qris : <?= $bh ; ?>%
+<p align="justify"> Bankgaransi : <?= $ba ; ?>%,&nbsp&nbsp Bristore : <?= $bb ; ?>%,&nbsp&nbsp Ibbiz : <?= $bc ; ?>%,&nbsp&nbsp Britamabisnis : <?= $bd ; ?>%,&nbsp&nbsp Pijar/Davestera : <?= $be ; ?>%,&nbsp&nbsp Penyaluran Kur : <?= $bf ; ?>%,&nbsp&nbsp Brimo : <?= number_format($bg,0) ; ?>%,&nbsp&nbsp Qris : <?= number_format($bh,0) ; ?>%
 ,&nbsp&nbsp Realkecil : <?= $bi ; ?>%,&nbsp&nbsp Rec Ekstrakom : <?= $bj ; ?>%
 </p></div>
                 </div>

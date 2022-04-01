@@ -68,7 +68,7 @@
      
                 <div class="card-tools">
                 <div> Bobot :
-<p align="justify"> Brimo : <?= $ba ; ?> %,&nbsp&nbsp Pks Payroll : <?= $bb ; ?>%,&nbsp&nbsp EDC Merchant : <?= $bc ; ?>%,&nbsp&nbsp Qris : <?= $bd ; ?>%
+<p align="justify"> Brimo : <?= number_format($ba,0) ; ?> %,&nbsp&nbsp Pks Payroll : <?= $bb ; ?>%,&nbsp&nbsp EDC Merchant : <?= $bc ; ?>%,&nbsp&nbsp Qris : <?= $bd ; ?>%
 ,&nbsp&nbsp Bank Garansi : <?= $be ; ?>%,&nbsp&nbsp Rek Giro : <?= $bf ; ?>%,&nbsp&nbsp Rek Simpanan : <?= $bg ; ?>%,&nbsp&nbsp Pijar/Davestera : <?= $bh ; ?>%
 ,&nbsp&nbsp BSB/BRIMOLA/JunioSmart : <?= $bi ; ?>%,&nbsp&nbsp Dig. Saving : <?= $bj ; ?>%
 </p></div>
