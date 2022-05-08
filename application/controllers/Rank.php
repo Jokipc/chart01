@@ -79,4 +79,17 @@ function dana(){
   
    
 }
+
+function rmall(){
+   
+      
+  $db = $this->Rank_model->rmall()->result();
+
+  $x['data'] = $db;
+
+
+  $this->load->view("rank_rmall", $x);
+  
+   
+}
 }
