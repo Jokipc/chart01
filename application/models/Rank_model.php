@@ -4,29 +4,29 @@ class Rank_model extends CI_Model{
   function get_rank()
 	{
     $query_count_saving = "SELECT saving.pn as pn, count(saving.pn) as tot_saving FROM saving
-      WHERE YEAR(saving.tgl) = 2022 and MONTH(saving.tgl)= 5
+      WHERE YEAR(saving.tgl) = 2022 and MONTH(saving.tgl)= 6
       GROUP BY saving.pn";
     $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
       FROM brimo
-      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 5
+      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 6
       GROUP BY brimo.pn";
     $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
       FROM qris
-      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 5
+      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 6
       GROUP BY qris.pn";
     $query_count_stroberikasir = "SELECT stroberikasir.pn as pn, IFNULL(count(stroberikasir.pn), 0) as tot_stroberikasir
       FROM stroberikasir
-      WHERE YEAR(stroberikasir.tgl) = 2022 and MONTH(stroberikasir.tgl)= 5
+      WHERE YEAR(stroberikasir.tgl) = 2022 and MONTH(stroberikasir.tgl)= 6
       GROUP BY stroberikasir.pn";
 
     $query_count_kunjual = "SELECT kunjual.pn as pn, IFNULL(count(kunjual.pn), 0) as tot_kunjual
       FROM kunjual
-      WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 5
+      WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 6
       GROUP BY kunjual.pn";
 
     $query_count_umi = "SELECT umi.pn as pn, IFNULL(count(umi.pn), 0) as tot_umi
      FROM umi
-     WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 5
+     WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 6
      GROUP BY umi.pn";
    
     
@@ -68,29 +68,29 @@ class Rank_model extends CI_Model{
   function get_end()
 	{
     $query_count_saving = "SELECT saving.pn as pn, count(saving.pn) as tot_saving FROM saving
-      WHERE YEAR(saving.tgl) = 2022  and MONTH(saving.tgl)= 5
+      WHERE YEAR(saving.tgl) = 2022  and MONTH(saving.tgl)= 6
       GROUP BY saving.pn";
     $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
       FROM brimo
-      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 5
+      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 6
       GROUP BY brimo.pn";
     $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
       FROM qris
-      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 5
+      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 6
       GROUP BY qris.pn";
     $query_count_stroberikasir = "SELECT stroberikasir.pn as pn, IFNULL(count(stroberikasir.pn), 0) as tot_stroberikasir
       FROM stroberikasir
-      WHERE YEAR(stroberikasir.tgl) = 2022 and MONTH(stroberikasir.tgl)= 5
+      WHERE YEAR(stroberikasir.tgl) = 2022 and MONTH(stroberikasir.tgl)= 6
       GROUP BY stroberikasir.pn";
 
     $query_count_kunjual = "SELECT kunjual.pn as pn, IFNULL(count(kunjual.pn), 0) as tot_kunjual
       FROM kunjual
-      WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 5
+      WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 6
       GROUP BY kunjual.pn";
 
     $query_count_umi = "SELECT umi.pn as pn, IFNULL(count(umi.pn), 0) as tot_umi
       FROM umi
-      WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 5
+      WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 6
       GROUP BY umi.pn";
 
 $this->db->select('mantri.nama_mantri,account.unit,
@@ -137,39 +137,39 @@ $this->db->join("account", 'mantri.branch = account.branch');
   from mantri
   join account on mantri.branch = account.branch
   join saving on saving.pn = mantri.pn
-  WHERE YEAR(saving.tgl) = 2022 and MONTH(saving.tgl)= 5
+  WHERE YEAR(saving.tgl) = 2022 and MONTH(saving.tgl)= 6
   GROUP by branch";
   $query_count_brimo = "select account.branch, count(brimo.pn) as p_brimo
   from mantri
   join account on mantri.branch = account.branch
   join brimo on brimo.pn = mantri.pn
-  WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 5
+  WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 6
   GROUP by branch";
   $query_count_qris = "select account.branch, count(qris.pn) as p_qris
   from mantri
   join account on mantri.branch = account.branch
   join qris on qris.pn = mantri.pn
-  WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 5
+  WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 6
   GROUP by branch";
   $query_count_stroberikasir = "select account.branch, count(stroberikasir.pn) as p_stroberi
   from mantri
   join account on mantri.branch = account.branch
   join stroberikasir on stroberikasir.pn = mantri.pn
-  WHERE YEAR(stroberikasir.tgl) = 2022 and MONTH(stroberikasir.tgl)= 5
+  WHERE YEAR(stroberikasir.tgl) = 2022 and MONTH(stroberikasir.tgl)= 6
   GROUP by branch";
 
   $query_count_kunjual = "select account.branch, count(kunjual.pn) as p_kunjual
   from mantri
   join account on mantri.branch = account.branch
   join kunjual on kunjual.pn = mantri.pn
-  WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 5
+  WHERE YEAR(kunjual.tgl) = 2022 and MONTH(kunjual.tgl)= 6
   GROUP by branch";
 
   $query_count_umi = "select account.branch, count(umi.pn) as p_umi
   from mantri
   join account on mantri.branch = account.branch
   join umi on umi.pn = mantri.pn
-  WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 5
+  WHERE YEAR(umi.tgl) = 2022 and MONTH(umi.tgl)= 6
   GROUP by branch";
 
   $query_count_mantri = "select branch, count(mantri.pn)-1 as jmlmantri 
@@ -230,39 +230,39 @@ $this->db->join("account", 'mantri.branch = account.branch');
   function get_ritel()
 	{
     $query_sum_bankgaransi = "SELECT bankgaransi.pn as pn, sum(bankgaransi.plafond) as tot_bankgaransi FROM bankgaransi
-      WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 5
+      WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 6
       GROUP BY bankgaransi.pn";
     $query_count_bristore = "SELECT bristore.pn as pn, count(bristore.pn) as tot_bristore
       FROM bristore
-      WHERE YEAR(bristore.tgl) = 2022 and MONTH(bristore.tgl)= 5
+      WHERE YEAR(bristore.tgl) = 2022 and MONTH(bristore.tgl)= 6
       GROUP BY bristore.pn";
     $query_count_ibbiz = "SELECT ibbiz.pn as pn, IFNULL(count(ibbiz.pn), 0) as tot_ibbiz
       FROM ibbiz
-      WHERE YEAR(ibbiz.tgl) = 2022 and MONTH(ibbiz.tgl)= 5
+      WHERE YEAR(ibbiz.tgl) = 2022 and MONTH(ibbiz.tgl)= 6
       GROUP BY ibbiz.pn";
     $query_count_britamabisnis = "SELECT britamabisnis.pn as pn, IFNULL(count(britamabisnis.norek), 0) as tot_britamabisnis
       FROM britamabisnis
-      WHERE YEAR(britamabisnis.tgl) = 2022 and MONTH(britamabisnis.tgl)= 5
+      WHERE YEAR(britamabisnis.tgl) = 2022 and MONTH(britamabisnis.tgl)= 6
       GROUP BY britamabisnis.pn";
     $query_sum_premi = "SELECT premi.pn as pn, sum(premi.plafond) as tot_premi FROM premi
-      WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 5
+      WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 6
       GROUP BY premi.pn";
     $query_sum_penyalurankur = "SELECT penyalurankur.pn as pn, sum(penyalurankur.plafond) as tot_penyalurankur FROM penyalurankur
-      WHERE YEAR(penyalurankur.tgl) = 2022 and MONTH(penyalurankur.tgl)= 5
+      WHERE YEAR(penyalurankur.tgl) = 2022 and MONTH(penyalurankur.tgl)= 6
       GROUP BY penyalurankur.pn";
     $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
       FROM brimo
-      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 5
+      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 6
       GROUP BY brimo.pn";
     $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
       FROM qris
-      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 5
+      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 6
       GROUP BY qris.pn";
     $query_sum_realkecil = "SELECT realkecil.pn as pn, sum(realkecil.plafond) as tot_realkecil FROM realkecil
-      WHERE YEAR(realkecil.tgl) = 2022 and MONTH(realkecil.tgl)= 5
+      WHERE YEAR(realkecil.tgl) = 2022 and MONTH(realkecil.tgl)= 6
       GROUP BY realkecil.pn";
     $query_sum_ekstrakom = "SELECT ekstrakom.pn as pn, sum(ekstrakom.plafond) as tot_ekstrakom FROM ekstrakom
-      WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 5
+      WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 6
       GROUP BY ekstrakom.pn";
     
     $query_count_targetmantri = "select mantri.pn, 
@@ -356,54 +356,54 @@ $this->db->join("account", 'mantri.branch = account.branch');
 
     $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
       FROM brimo
-      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 5
+      WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 6
       GROUP BY brimo.pn";
       
     $query_count_pkspayroll = "SELECT pkspayroll.pn as pn, IFNULL(count(pkspayroll.pn), 0) as tot_pkspayroll
       FROM pkspayroll
-      WHERE YEAR(pkspayroll.tgl) = 2022 and MONTH(pkspayroll.tgl)= 5
+      WHERE YEAR(pkspayroll.tgl) = 2022 and MONTH(pkspayroll.tgl)= 6
       GROUP BY pkspayroll.pn";
       
     $query_count_edcmerchant = "SELECT edcmerchant.pn as pn, IFNULL(count(edcmerchant.pn), 0) as tot_edcmerchant
       FROM edcmerchant
-      WHERE YEAR(edcmerchant.tgl) = 2022 and MONTH(edcmerchant.tgl)= 5
+      WHERE YEAR(edcmerchant.tgl) = 2022 and MONTH(edcmerchant.tgl)= 6
       GROUP BY edcmerchant.pn";
 
     $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
       FROM qris
-      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 5
+      WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 6
       GROUP BY qris.pn";
 
     $query_sum_bankgaransi = "SELECT bankgaransi.pn as pn, sum(bankgaransi.plafond) as tot_bankgaransi FROM bankgaransi
-      WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 5
+      WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 6
       GROUP BY bankgaransi.pn";
 
     $query_count_rekgiro = "SELECT rekgiro.pn as pn, IFNULL(count(rekgiro.pn), 0) as tot_rekgiro
       FROM rekgiro
-      WHERE YEAR(rekgiro.tgl) = 2022 and MONTH(rekgiro.tgl)= 5
+      WHERE YEAR(rekgiro.tgl) = 2022 and MONTH(rekgiro.tgl)= 6
       GROUP BY rekgiro.pn";
 
     $query_count_rektab = "SELECT rektab.pn as pn, IFNULL(count(rektab.pn), 0) as tot_rektab
       FROM rektab
-      WHERE YEAR(rektab.tgl) = 2022 and MONTH(rektab.tgl)= 5
+      WHERE YEAR(rektab.tgl) = 2022 and MONTH(rektab.tgl)= 6
       GROUP BY rektab.pn";
   
     $query_sum_premi = "SELECT premi.pn as pn, sum(premi.plafond) as tot_premi FROM premi
-      WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 5
+      WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 6
       GROUP BY premi.pn";
 
     $query_count_brimolajs = "SELECT brimolajs.pn as pn, IFNULL(count(brimolajs.pn), 0) as tot_brimolajs
       FROM brimolajs
-      WHERE YEAR(brimolajs.tgl) = 2022 and MONTH(brimolajs.tgl)= 5
+      WHERE YEAR(brimolajs.tgl) = 2022 and MONTH(brimolajs.tgl)= 6
       GROUP BY brimolajs.pn";
 
     $query_sum_ekstrakom = "SELECT ekstrakom.pn as pn, sum(ekstrakom.plafond) as tot_ekstrakom FROM ekstrakom
-      WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 5
+      WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 6
       GROUP BY ekstrakom.pn";
 
     $query_count_dgsaving = "SELECT dg_saving.pn as pn, IFNULL(count(dg_saving.pn), 0) as tot_dgsaving
       FROM dg_saving
-      WHERE YEAR(dg_saving.tgl) = 2022 and MONTH(dg_saving.tgl)= 5
+      WHERE YEAR(dg_saving.tgl) = 2022 and MONTH(dg_saving.tgl)= 6
       GROUP BY dg_saving.pn";
       
     $query_count_targetmantri = "select mantri.pn, 
@@ -501,100 +501,100 @@ $this->db->join("account", 'mantri.branch = account.branch');
     
   //   $query_count_britamabisnis = "SELECT britamabisnis.pn as pn, IFNULL(count(britamabisnis.norek), 0) as tot_britamabisnis
   //     FROM britamabisnis
-  //     WHERE YEAR(britamabisnis.tgl) = 2022 and MONTH(britamabisnis.tgl)= 5
+  //     WHERE YEAR(britamabisnis.tgl) = 2022 and MONTH(britamabisnis.tgl)= 6
   //     GROUP BY britamabisnis.pn";
 
   //   $query_sum_kpr = "SELECT kpr.pn as pn, sum(kpr.plafond) as tot_kpr FROM kpr
-  //   WHERE YEAR(kpr.tgl) = 2022 and MONTH(kpr.tgl)= 5
+  //   WHERE YEAR(kpr.tgl) = 2022 and MONTH(kpr.tgl)= 6
   //   GROUP BY kpr.pn";
 
   // $query_count_kpr = "SELECT kpr.pn as pn, IFNULL(count(kpr.norek), 0) as tot_debkpr
   //   FROM kpr
-  //   WHERE YEAR(kpr.tgl) = 2022 and MONTH(kpr.tgl)= 5
+  //   WHERE YEAR(kpr.tgl) = 2022 and MONTH(kpr.tgl)= 6
   //   GROUP BY kpr.pn";
 
   // $query_count_kk = "SELECT kk.pn as pn, IFNULL(count(kk.norek), 0) as tot_kk
   //   FROM kk
-  //   WHERE YEAR(kk.tgl) = 2022 and MONTH(kk.tgl)= 5
+  //   WHERE YEAR(kk.tgl) = 2022 and MONTH(kk.tgl)= 6
   //   GROUP BY kk.pn";
 
   // $query_sum_briguna = "SELECT briguna.pn as pn, sum(briguna.plafond) as tot_briguna FROM briguna
-  //   WHERE YEAR(briguna.tgl) = 2022 and MONTH(briguna.tgl)= 5
+  //   WHERE YEAR(briguna.tgl) = 2022 and MONTH(briguna.tgl)= 6
   //   GROUP BY briguna.pn";
 
   // $query_count_briguna = "SELECT briguna.pn as pn, IFNULL(count(briguna.norek), 0) as tot_debbriguna
   //   FROM briguna
-  //   WHERE YEAR(briguna.tgl) = 2022 and MONTH(briguna.tgl)= 5
+  //   WHERE YEAR(briguna.tgl) = 2022 and MONTH(briguna.tgl)= 6
   //   GROUP BY briguna.pn";
 
   //   $query_sum_realkecil = "SELECT realkecil.pn as pn, sum(realkecil.plafond) as tot_realkecil FROM realkecil
-  //     WHERE YEAR(realkecil.tgl) = 2022 and MONTH(realkecil.tgl)= 5
+  //     WHERE YEAR(realkecil.tgl) = 2022 and MONTH(realkecil.tgl)= 6
   //     GROUP BY realkecil.pn"
 
   //   $query_sum_penyalurankur = "SELECT penyalurankur.pn as pn, sum(penyalurankur.plafond) as tot_penyalurankur FROM penyalurankur
-  //     WHERE YEAR(penyalurankur.tgl) = 2022 and MONTH(penyalurankur.tgl)= 5
+  //     WHERE YEAR(penyalurankur.tgl) = 2022 and MONTH(penyalurankur.tgl)= 6
   //     GROUP BY penyalurankur.pn";
 
   //   $query_count_bristore = "SELECT bristore.pn as pn, count(bristore.pn) as tot_bristore
   //     FROM bristore
-  //     WHERE YEAR(bristore.tgl) = 2022 and MONTH(bristore.tgl)= 5
+  //     WHERE YEAR(bristore.tgl) = 2022 and MONTH(bristore.tgl)= 6
   //     GROUP BY bristore.pn";
 
   //   $query_count_ibbiz = "SELECT ibbiz.pn as pn, IFNULL(count(ibbiz.pn), 0) as tot_ibbiz
   //     FROM ibbiz
-  //     WHERE YEAR(ibbiz.tgl) = 2022 and MONTH(ibbiz.tgl)= 5
+  //     WHERE YEAR(ibbiz.tgl) = 2022 and MONTH(ibbiz.tgl)= 6
   //     GROUP BY ibbiz.pn";
 
   //   $query_count_brimo = "SELECT brimo.pn as pn, count(brimo.pn) as tot_brimo
   //     FROM brimo
-  //     WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 5
+  //     WHERE YEAR(brimo.tgl) = 2022 and MONTH(brimo.tgl)= 6
   //     GROUP BY brimo.pn";
       
   //   $query_count_pkspayroll = "SELECT pkspayroll.pn as pn, IFNULL(count(pkspayroll.pn), 0) as tot_pkspayroll
   //     FROM pkspayroll
-  //     WHERE YEAR(pkspayroll.tgl) = 2022 and MONTH(pkspayroll.tgl)= 5
+  //     WHERE YEAR(pkspayroll.tgl) = 2022 and MONTH(pkspayroll.tgl)= 6
   //     GROUP BY pkspayroll.pn";
       
   //   $query_count_edcmerchant = "SELECT edcmerchant.pn as pn, IFNULL(count(edcmerchant.pn), 0) as tot_edcmerchant
   //     FROM edcmerchant
-  //     WHERE YEAR(edcmerchant.tgl) = 2022 and MONTH(edcmerchant.tgl)= 5
+  //     WHERE YEAR(edcmerchant.tgl) = 2022 and MONTH(edcmerchant.tgl)= 6
   //     GROUP BY edcmerchant.pn";
 
   //   $query_count_qris = "SELECT qris.pn as pn, IFNULL(count(qris.pn), 0) as tot_qris
   //     FROM qris
-  //     WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 5
+  //     WHERE YEAR(qris.tgl) = 2022 and MONTH(qris.tgl)= 6
   //     GROUP BY qris.pn";
 
   //   $query_sum_bankgaransi = "SELECT bankgaransi.pn as pn, sum(bankgaransi.plafond) as tot_bankgaransi FROM bankgaransi
-  //     WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 5
+  //     WHERE YEAR(bankgaransi.tgl) = 2022 and MONTH(bankgaransi.tgl)= 6
   //     GROUP BY bankgaransi.pn";
 
   //   $query_count_rekgiro = "SELECT rekgiro.pn as pn, IFNULL(count(rekgiro.pn), 0) as tot_rekgiro
   //     FROM rekgiro
-  //     WHERE YEAR(rekgiro.tgl) = 2022 and MONTH(rekgiro.tgl)= 5
+  //     WHERE YEAR(rekgiro.tgl) = 2022 and MONTH(rekgiro.tgl)= 6
   //     GROUP BY rekgiro.pn";
 
   //   $query_count_rektab = "SELECT rektab.pn as pn, IFNULL(count(rektab.pn), 0) as tot_rektab
   //     FROM rektab
-  //     WHERE YEAR(rektab.tgl) = 2022 and MONTH(rektab.tgl)= 5
+  //     WHERE YEAR(rektab.tgl) = 2022 and MONTH(rektab.tgl)= 6
   //     GROUP BY rektab.pn";
   
   //   $query_sum_premi = "SELECT premi.pn as pn, sum(premi.plafond) as tot_premi FROM premi
-  //     WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 5
+  //     WHERE YEAR(premi.tgl) = 2022 and MONTH(premi.tgl)= 6
   //     GROUP BY premi.pn";
 
   //   $query_count_brimolajs = "SELECT brimolajs.pn as pn, IFNULL(count(brimolajs.pn), 0) as tot_brimolajs
   //     FROM brimolajs
-  //     WHERE YEAR(brimolajs.tgl) = 2022 and MONTH(brimolajs.tgl)= 5
+  //     WHERE YEAR(brimolajs.tgl) = 2022 and MONTH(brimolajs.tgl)= 6
   //     GROUP BY brimolajs.pn";
 
   //   $query_sum_ekstrakom = "SELECT ekstrakom.pn as pn, sum(ekstrakom.plafond) as tot_ekstrakom FROM ekstrakom
-  //     WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 5
+  //     WHERE YEAR(ekstrakom.tgl) = 2022 and MONTH(ekstrakom.tgl)= 6
   //     GROUP BY ekstrakom.pn";
 
   //   $query_count_dgsaving = "SELECT dg_saving.pn as pn, IFNULL(count(dg_saving.pn), 0) as tot_dgsaving
   //     FROM dg_saving
-  //     WHERE YEAR(dg_saving.tgl) = 2022 and MONTH(dg_saving.tgl)= 5
+  //     WHERE YEAR(dg_saving.tgl) = 2022 and MONTH(dg_saving.tgl)= 6
   //     GROUP BY dg_saving.pn";
       
   //   $query_count_targetmantri = "select mantri.pn,

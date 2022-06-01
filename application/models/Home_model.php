@@ -6,7 +6,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(brimo.tgl)',5);
+  $this->db->where('MONTH(brimo.tgl)',6);
   $result = $this->db->get('brimo');
   return $result;
   }
@@ -15,7 +15,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(qris.tgl)',5);
+  $this->db->where('MONTH(qris.tgl)',6);
   $result = $this->db->get('qris');
   return $result;
   }
@@ -24,7 +24,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(kunjual.tgl)',5);
+  $this->db->where('MONTH(kunjual.tgl)',6);
   $result = $this->db->get('kunjual');
   return $result;
   }
@@ -33,7 +33,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(saving.tgl)',5);
+  $this->db->where('MONTH(saving.tgl)',6);
   $result = $this->db->get('saving');
   return $result;
   }
@@ -41,7 +41,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(stroberikasir.tgl)',5);
+  $this->db->where('MONTH(stroberikasir.tgl)',6);
   $result = $this->db->get('stroberikasir');
   return $result;
   }
@@ -50,7 +50,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(bankgaransi.tgl)',5);
+  $this->db->where('MONTH(bankgaransi.tgl)',6);
   $result = $this->db->get('bankgaransi');
   return $result;
   }
@@ -59,7 +59,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(bristore.tgl)',5);
+  $this->db->where('MONTH(bristore.tgl)',6);
   $result = $this->db->get('bristore');
   return $result;
   }
@@ -68,7 +68,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(ibbiz.tgl)',5);
+  $this->db->where('MONTH(ibbiz.tgl)',6);
   $result = $this->db->get('ibbiz');
   return $result;
   }
@@ -77,7 +77,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(pkspayroll.tgl)',5);
+  $this->db->where('MONTH(pkspayroll.tgl)',6);
   $result = $this->db->get('pkspayroll');
   return $result;
   }
@@ -85,7 +85,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(rekgiro.tgl)',5);
+  $this->db->where('MONTH(rekgiro.tgl)',6);
   $result = $this->db->get('rekgiro');
   return $result;
   }
@@ -93,7 +93,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(rektab.tgl)',5);
+  $this->db->where('MONTH(rektab.tgl)',6);
   $result = $this->db->get('rektab');
   return $result;
   }
@@ -101,7 +101,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(brimolajs.tgl)',5);
+  $this->db->where('MONTH(brimolajs.tgl)',6);
   $result = $this->db->get('brimolajs');
   return $result;
   }
@@ -109,7 +109,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(dg_saving.tgl)',5);
+  $this->db->where('MONTH(dg_saving.tgl)',6);
   $result = $this->db->get('dg_saving');
   return $result;
   }
@@ -117,7 +117,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(edcmerchant.tgl)',5);
+  $this->db->where('MONTH(edcmerchant.tgl)',6);
   $result = $this->db->get('edcmerchant');
   return $result;
   }
@@ -125,7 +125,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(britamabisnis.tgl)',5);
+  $this->db->where('MONTH(britamabisnis.tgl)',6);
   $result = $this->db->get('britamabisnis');
   return $result;
   }
@@ -134,7 +134,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(premi.tgl)',5);
+  $this->db->where('MONTH(premi.tgl)',6);
   $result = $this->db->get('premi');
   return $result;
   }
@@ -143,7 +143,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(penyalurankur.tgl)',5);
+  $this->db->where('MONTH(penyalurankur.tgl)',6);
   $result = $this->db->get('penyalurankur');
   return $result;
   }
@@ -152,7 +152,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(realkecil.tgl)',5);
+  $this->db->where('MONTH(realkecil.tgl)',6);
   $result = $this->db->get('realkecil');
   return $result;
   }
@@ -161,7 +161,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(ekstrakom.tgl)',5);
+  $this->db->where('MONTH(ekstrakom.tgl)',6);
   $result = $this->db->get('ekstrakom');
   return $result;
   }
@@ -170,7 +170,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(kpr.tgl)',5);
+  $this->db->where('MONTH(kpr.tgl)',6);
   $result = $this->db->get('kpr');
   return $result;
   }
@@ -179,7 +179,7 @@ class Home_model extends CI_Model{
   {
     $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(kpr.tgl)',5);
+  $this->db->where('MONTH(kpr.tgl)',6);
   $result = $this->db->get('kpr');
   return $result;
   }
@@ -188,7 +188,7 @@ class Home_model extends CI_Model{
   {
   $this->db->select_sum('plafond');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(briguna.tgl)',5);
+  $this->db->where('MONTH(briguna.tgl)',6);
   $result = $this->db->get('briguna');
   return $result;
   }
@@ -197,7 +197,7 @@ class Home_model extends CI_Model{
   {
     $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(briguna.tgl)',5);
+  $this->db->where('MONTH(briguna.tgl)',6);
   $result = $this->db->get('briguna');
   return $result;
   }
@@ -206,7 +206,7 @@ class Home_model extends CI_Model{
   {
     $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(umi.tgl)',5);
+  $this->db->where('MONTH(umi.tgl)',6);
   $result = $this->db->get('umi');
   return $result;
   }
@@ -216,7 +216,7 @@ class Home_model extends CI_Model{
   {
     $this->db->select('pn');
   $this->db->where('pn',$pn);
-  $this->db->where('MONTH(kk.tgl)',5);
+  $this->db->where('MONTH(kk.tgl)',6);
   $result = $this->db->get('kk');
   return $result;
   }
