@@ -61,6 +61,9 @@
                 </a>
                 
                  
+                  <a href="<?php echo site_url();?>rank/u<?php echo $this->session->userdata('branch');?>" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>&nbsp; Per Mantri Unit
+                  </a>
                   <a href="<?php echo site_url('rank') ?>" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>&nbsp; Rank Mantri
                   </a>

@@ -24,7 +24,7 @@ class Login extends CI_Controller{
         $qris = $data['qris'];
         $stroberikasir = $data['stroberikasir'];
         $kunjual = $data['kunjual'];
-        
+        $branch = $data['branch'];
         $bsaving = $data['bsaving'];
         $bbrimo = $data['bbrimo'];
         $bqris = $data['bqris'];
@@ -44,6 +44,7 @@ class Login extends CI_Controller{
             'brimo'     => $brimo,
             'stroberikasir'     => $stroberikasir,
             'kunjual'     => $kunjual,
+            'branch'     => $branch,
             'bsaving'     => $bsaving,
             'bqris'     => $bqris,
             'bbrimo'     => $bbrimo,
