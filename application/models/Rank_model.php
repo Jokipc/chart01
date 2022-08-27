@@ -124,7 +124,7 @@ $this->db->join("account", 'mantri.branch = account.branch');
       $this->db->order_by('scores','desc');
       
       
-      $this->db->limit(15 ,96);
+      $this->db->limit(15 ,94);
       $this->db->where('mantri.id_level','2');
       
       $result = $this->db->get();
