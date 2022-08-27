@@ -1,5 +1,5 @@
 <?php
-class Home_model extends CI_Model{
+class Maps_model extends CI_Model{
 
 
   function brimo($pn=271055)
