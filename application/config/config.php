@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-// $config['base_url'] = 'https://kancakudus4dx.com/';
-$config['base_url'] = 'http://localhost/chart/';
+$config['base_url'] = 'https://kancakudus4dx.com/';
+// $config['base_url'] = 'http://localhost/chart/';
 
 
 
