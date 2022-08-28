@@ -1,4 +1,6 @@
+
 <script src="<?php echo base_url() ;?>template/plugins/jquery/jquery.min.js"></script>
+<script> src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="<?php echo base_url() ;?>template/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
