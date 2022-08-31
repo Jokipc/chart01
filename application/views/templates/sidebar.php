@@ -39,9 +39,9 @@
          <a href="<?php echo site_url('rank') ?>" class="nav-link ">
          <i class="far fa-circle nav-icon"></i>&nbsp; RANK
          </a>
-         <a href="<?php echo site_url('maps') ?>" class="nav-link ">
+         <!-- <a href="<?php echo site_url('maps') ?>" class="nav-link ">
          <i class="far fa-circle nav-icon"></i>&nbsp; MAPS
-         </a>
+         </a> -->
          
          <li class="nav-item">
             <a href="#" class="nav-link">

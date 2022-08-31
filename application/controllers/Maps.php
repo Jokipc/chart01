@@ -1,12 +1,16 @@
 <?php
 
-class Maps extends CI_Controller{
-    function __construct(){
-      parent::__construct();
-      //load Home_model from model
-      $this->load->model('Maps_model');
-      $this->load->model('Mantri_model');
-     
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Mapsgis extends CI_Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Maps_model');
+        $this->load->model('Mantri_model');
+        $this->load->library('form_validation');
     }
 
     function index(){
@@ -61,20 +65,20 @@ class Maps extends CI_Controller{
         $data = array(
             'button' => 'Create',
             'action' => site_url('maps/create_action'),
-            'id' => set_value('id'),
-            // 'pn' => set_value('pn'),
-            'nama' => set_value('nama'),
-            'alamat' => set_value('alamat'),
-            'hp' => set_value('hp'),
-            'email' => set_value('email'),
-            'latitude' => set_value('latitude'),
-            'longitude' => set_value('longitude'),
-            // 'rek' => set_value('rek'),
-            // 'brimo' => set_value('brimo'),
-            // 'qris' => set_value('qris'),
-            // 'edc' => set_value('edc'),
+	    'id' => set_value('id')
+	    // 'pn'=> set_value('pn'),
+	    // 'nama' => set_value('nama'),
+	    // 'alamat' => set_value('alamat'),
+	    // 'hp' => set_value('hp'),
+	    // 'email' => set_value('email'),
+	    // 'latitude' => set_value('latitude'),
+	    // 'longitude' => set_value('longitude'),
+	    // 'rek' => set_value('rek'),
+	    // 'brimo' => set_value('brimo'),
+	    // 'qris' => set_value('qris'),
+	    // 'edc' => set_value('edc'),
 	);
-        $this->load->view('templates/maps', $data);
+        $this->load->view('templates/maps_form', $data);
     }
     
     public function create_action() 
@@ -85,17 +89,18 @@ class Maps extends CI_Controller{
             $this->create();
         } else {
             $data = array(
-              'pn' => $this->input->post('pn',TRUE),
-              'nama' => $this->input->post('nama',TRUE),
-              'alamat' => $this->input->post('alamat',TRUE),
-              'hp' => $this->input->post('hp',TRUE),
-              'email' => $this->input->post('email',TRUE),
-              'latitude' => $this->input->post('latitude',TRUE),
-              'longitude' => $this->input->post('longitude',TRUE),
-              // 'rek' => $this->input->post('rek',TRUE),
-              // 'brimo' => $this->input->post('brimo',TRUE),
-              // 'qris' => $this->input->post('qris',TRUE),
-              // 'edc' => $this->input->post('edc',TRUE),
+              'id' => $this->input->post('id',TRUE),
+            //   'pn' => $this->input->post('pn',TRUE),
+            //   'nama' => $this->input->post('nama',TRUE),
+            //   'alamat' => $this->input->post('alamat',TRUE),
+            //   'hp' => $this->input->post('hp',TRUE),
+            //   'email' => $this->input->post('email',TRUE),
+            //   'latitude' => $this->input->post('latitude',TRUE),
+            //   'longitude' => $this->input->post('longitude',TRUE),
+            //   'rek' => $this->input->post('rek',TRUE),
+            //   'brimo' => $this->input->post('brimo',TRUE),
+            //   'qris' => $this->input->post('qris',TRUE),
+            //   'edc' => $this->input->post('edc',TRUE),
 	    );
 
             $this->Maps_model->insert($data);
@@ -186,15 +191,20 @@ class Maps extends CI_Controller{
 
     public function _rules() 
     {
-      $this->form_validation->set_rules('pn', 'pn', 'trim|required');
-      $this->form_validation->set_rules('nama', 'nama', 'trim|required');
-      $this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
-      $this->form_validation->set_rules('hp', 'hp', 'trim|required');
-      $this->form_validation->set_rules('email', 'email', 'trim|required');
-      $this->form_validation->set_rules('latitude', 'latitude', 'trim|required');
-      $this->form_validation->set_rules('longitude', 'longitude', 'trim|required');
-      $this->form_validation->set_rules('id', 'id', 'trim');
-      $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+	$this->form_validation->set_rules('pn', 'pn', 'trim|required');
+	$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+	$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
+	$this->form_validation->set_rules('hp', 'hp', 'trim|required');
+	$this->form_validation->set_rules('email', 'email', 'trim|required');
+	$this->form_validation->set_rules('latitude', 'latitude', 'trim|required');
+	$this->form_validation->set_rules('longitude', 'longitude', 'trim|required');
+	$this->form_validation->set_rules('rek', 'rek', 'trim|required');
+	$this->form_validation->set_rules('brimo', 'brimo', 'trim|required');
+	$this->form_validation->set_rules('qris', 'qris', 'trim|required');
+	$this->form_validation->set_rules('edc', 'edc', 'trim|required');
+
+	$this->form_validation->set_rules('id', 'id', 'trim');
+	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
     public function excel()

@@ -107,8 +107,9 @@
                       </div>
                       <div class="card-body">
                         <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>     
+                                      
                         <table class="table">
-                        <form action="<?php echo base_url()?>maps/create_action" method="post">
+                        <form action="<?php echo $action; ?>" method="post">
                             <div class="mb-3">
                                 <input type="hidden" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
 
