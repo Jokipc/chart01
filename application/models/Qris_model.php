@@ -18,38 +18,52 @@ class Qris_model extends CI_Model
     // get all
     function get_all()
     {
-        $this->db->order_by($this->id, $this->order);
-        return $this->db->get($this->table)->result();
+       
+        
+        $this->db->select('*');
+        $this->db->from('mantri');
+        $this->db->join('qris','mantri.pn = qris.pn');      
+        $this->db->join('account','mantri.branch = account.branch');
+        
+        return $this->db->get()->result();
     }
 
     // get data by id
     function get_by_id($id)
     {
         $this->db->where($this->id, $id);
-        return $this->db->get($this->table)->row();
+        return $this->db->get('$this->table')->row();
     }
     
     function total_rows($pn = NULL) {
-        $this->db->like('id', $pn);
-	    $this->db->or_like('pn', $pn);
-	    $this->db->or_like('tgl', $pn);
-	    $this->db->or_like('norek', $pn);
-        $this->db->or_like('nama_qris', $pn);
-        $this->db->or_like('hp', $pn);
-	    $this->db->from($this->table);
+        // $this->db->like('id', $pn);
+	    // $this->db->or_like('pn', $pn);
+	    // $this->db->or_like('mid', $pn);
+	    // $this->db->or_like('nama_merchant', $pn);
+        // $this->db->or_like('norek', $pn);
+        // $this->db->or_like('foto', $pn);
+	    // $this->db->from('qris');
+        $this->db->select('*');
+        $this->db->from('mantri');
+        $this->db->join('qris','mantri.pn = qris.pn');      
+        $this->db->join('account','mantri.branch = account.branch');
         return $this->db->count_all_results();
     }
 
     function total_rows1($pn = NULL, $pn1 = NULL) {
         // $this->db->like('id', $pn);
-	    $this->db->or_like('pn',$pn,"match");
-        $this->db->where('pn', $pn1);
-	    $this->db->or_like('tgl', $pn);
-        $this->db->or_like('nama_qris',$pn,"match");
-        $this->db->where('pn', $pn1);
-        $this->db->or_like('norek', $pn,"match");
-        $this->db->where('pn', $pn1);
-        $this->db->or_like('hp', $pn,"match");
+	    // $this->db->or_like('pn',$pn,"match");
+        // $this->db->where('pn', $pn1);
+	    // $this->db->or_like('tgl', $pn);
+        // $this->db->or_like('nama_qris',$pn,"match");
+        // $this->db->where('pn', $pn1);
+        // $this->db->or_like('norek', $pn,"match");
+        // $this->db->where('pn', $pn1);
+        // $this->db->or_like('hp', $pn,"match");
+        $this->db->select('*');
+        $this->db->from('mantri');
+        $this->db->join('qris','mantri.pn = qris.pn');      
+        $this->db->join('account','mantri.branch = account.branch');
         $this->db->where('pn', $pn1);
 	    $this->db->from($this->table);
         return $this->db->count_all_results();
@@ -57,33 +71,46 @@ class Qris_model extends CI_Model
 
      // get data with limit and search
      function get_limit_data($limit, $start = 0, $pn = NULL, $pn1 = NULL) {
-        $this->db->order_by($this->id, $this->order);
-	    $this->db->or_like('pn',$pn,"match");
-        $this->db->where('pn', $pn1);
-	    $this->db->or_like('tgl', $pn);
-        $this->db->or_like('nama_qris',$pn,"match");
-        $this->db->where('pn', $pn1);
-        $this->db->or_like('norek', $pn,"match");
-        $this->db->where('pn', $pn1);
-        $this->db->or_like('hp', $pn,"match");
-        $this->db->where('pn', $pn1);
+        // $this->db->order_by($this->id, $this->order);
+	    // $this->db->or_like('pn',$pn,"match");
+        // $this->db->where('pn', $pn1);
+	    // $this->db->or_like('tgl', $pn);
+        // $this->db->or_like('nama_qris',$pn,"match");
+        // $this->db->where('pn', $pn1);
+        // $this->db->or_like('norek', $pn,"match");
+        // $this->db->where('pn', $pn1);
+        // $this->db->or_like('hp', $pn,"match");
+        // $this->db->where('pn', $pn1);
+     
+	    // $this->db->limit($limit, $start);
+        // return $this->db->get($this->table)->result();
+        $this->db->select('*');
+        $this->db->from('mantri');
+        $this->db->join('qris','mantri.pn = qris.pn');      
+        $this->db->join('account','mantri.branch = account.branch');
         
-        // $this->db->or_like('hp', $pn,'after');
-        
-	    $this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
+        $query = $this->db->get();
+        return $query;
     }
     // get data with limit and search
     function get_limit_data1($limit, $start = 0, $pn = NULL, $pn1 = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('id', $pn);
-	    $this->db->or_like('pn', $pn);
-	    $this->db->or_like('tgl', $pn);
-	    $this->db->or_like('norek', $pn);
-        $this->db->or_like('nama_qris', $pn);
-        $this->db->or_like('hp', $pn);
-	    $this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
+        // $this->db->order_by($this->id, $this->order);
+        // $this->db->like('id', $pn);
+	    // $this->db->or_like('pn', $pn);
+	    // $this->db->or_like('mid', $pn);
+	    // $this->db->or_like('nama_merchant', $pn);
+        // $this->db->or_like('norek', $pn);
+        // $this->db->or_like('foto', $pn);
+	    // $this->db->limit($limit, $start);
+        // return $this->db->get($this->table)->result();
+
+        $this->db->select('*');
+        $this->db->from('mantri');
+        $this->db->join('qris','mantri.pn = qris.pn');      
+        $this->db->join('account','mantri.branch = account.branch');
+        
+        $query = $this->db->get();
+        return $query;
     }
 
     // insert data
