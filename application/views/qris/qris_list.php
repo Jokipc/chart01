@@ -1,4 +1,4 @@
-<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:90%">
+<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
     <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
 <div class="container-sm">
     
