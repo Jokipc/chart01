@@ -1,89 +1,91 @@
-<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
-<center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
-<section class="conten-header">
-<div class="row">
-<h2 style="margin-top:0px">Qris List</h2>
-<div class="col-md-0"></div>
-<div class="col-md-6">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
-</div>
-<div class="col-md-6">
-<form action="<?php echo site_url('qris/index'); ?>" class="form-inline" method="get">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="pn" value="<?php echo $pn; ?>">
-                        <span class="input-group-btn">
-                            <?php 
-                                if ($pn <> '')
-                                {
-                                    ?>
-                                    <a href="<?php echo site_url('qris'); ?>" class="btn btn-default">Reset</a>
-                                    <?php
-                                }
-                            ?>
-                          <button class="btn btn-primary" type="submit">Search</button>
-                        </span>
-                    </div>
-                </form>
-</div>
-</div>
-</section>
-<section class="content"> 
-  <table class="table">
-            <tr>
-                <th>No</th>
-		            <th>Pn</th>
-		            <th>Tgl</th>
-		            <th>Norek</th>
-		            <th>Nama Qris</th>
-		            <th>Hp</th>
+<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:90%">
+    <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
+<div class="container-sm">
+    
+          <div class="row">
+            <h2 style="margin-top:0px">Data Qris</h2>
+            <!-- <div class="col-md-0"></div>
+            <div class="col-md-6"></div> -->
+            <div class="col-md-6">
+
+              <form action="<?php echo site_url('qris/index'); ?>" class="form-inline" method="get">
+                    <div class="input-group"></div>
+              </form>
+            </div>
+          </div>
+      
+
+
+  <div class="table-responsive">
+    <table class="table" >
+        <tr class="table-success">
+              <th>No</th>
+		          <th>ID Merchant</th>
+		          <th>Nama Merchant</th>
+		          <th>Sales Volume</th>
+		          <th>Saldo</th>
+              <th>Nama PIC</th>
+              <th>Unit</th>
+		          <th>Foto</th>
                 <?php if($this->session->userdata('id_level')==='1' ):; ?>
-                <th>Action</th>   
+              <th>Action</th>   
                 <?php endif; ?>
-                </tr>
+        </tr>
                 <?php
-            foreach ($qris_data as $qris)
-            {
+                foreach ($qris_data as $qris){
                 ?>
-                <tr>
-			        <td width="80px"><?php echo ++$start ?></td>
-			        <td><?php echo $qris->pn ?></td>
-			        <td><?php echo $qris->tgl ?></td>
-			        <td><?php echo $qris->norek ?></td>
-			        <td><?php echo $qris->nama_qris ?></td>
-			        <td><?php echo $qris->hp ?></td>
-              <?php if($this->session->userdata('id_level')==='1' ):; ?>
-      <td>
-      <?php
-            echo anchor(site_url('qris/update/'.$qris->id),'Update'); 
-            echo ' | '; 
-      			echo anchor(site_url('qris/delete/'.$qris->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
-            else:;   
-      ?>
-      </td>
-      <?php endif; ?>
-	        </tr>
+        <tr>
+			        <td><?php echo ++$start ?></td>
+			        <td><?php echo $qris->mid ?></td>
+			        <td><?php echo strtoupper($qris->nama_merchant) ?></td>
+			        <td><?php echo "Rp " . number_format($qris->saldo,2,',','.') ?></td>
+              <td><?php echo "Rp " . number_format($qris->sales_volume,2,',','.') ?></td>
+              <td><?php echo strtoupper($qris->nama_mantri)?></td>
+              <td><?php echo $qris->unit ?></td>
+			        <td ><img src="<?php echo base_url() ;?>template/dist/img/<?php echo $qris->foto ?>"class="rounded-lg" width="75"  alt=""></td>
+                <?php if($this->session->userdata('id_level')==='1' ):; ?>
+              <td>
                 <?php
-            }
-            ?>
-        </table>
+                echo anchor(site_url('qris/update/'.$qris->id),'Detail'); 
+                echo ' | '; 
+                echo anchor(site_url('qris/delete/'.$qris->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+                else:;   
+                ?>
+              </td>
+                <?php endif; ?>
+	      </tr>
+                <?php }?>
+           
+    </table>
+  </div> 
         <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
-		            <?php echo anchor(site_url('qris/excel'), 'Excel', 'class="btn btn-primary"'); ?>
-	          </div>
+		              <?php echo anchor(site_url('qris/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+	          </div></div>
+
+            <div>
+                <?php echo form_open_multipart('upload/do_upload');?>
+            <br><br><br><br>
+              <h5 style="margin-top:0px">Update Sales Volume :</h5>
+              <input type="file" name="userfile" size="20" />
+              <input  type="submit" value="upload" />
+            </form>
+            </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
             </div>
+            
         </div>
-        </div>
-</section>
-
+  </div>
+</div>
 <!-- datepicker -->
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
   <script>
   $( function() {
     $( "#datepicker" ).datepicker({
@@ -91,8 +93,9 @@
 
 });
   } );
-  </script>
+  </script> -->
 
+<!-- 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -125,8 +128,10 @@
         </div>
         <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Simpan</button>
+
+        
+
       </form>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->
