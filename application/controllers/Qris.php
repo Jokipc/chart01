@@ -48,55 +48,50 @@ class Qris extends CI_Controller
             $config['first_url'] = base_url() . 'qris/index.html?pn=' . urlencode($pn);
             $config['total_rows'] = $this->Qris_model->total_rows($pn);
             $config['per_page'] = 10;
-            if($this->session->userdata('id_level')==='1'):;
-            $config['total_rows'] = $this->Qris_model->total_rows($pn);
-            $qris = $this->Qris_model->get_limit_data1($config['per_page'], $start, $pn);
-            else:   
-            $config['total_rows'] = $this->Qris_model->total_rows1($pn,$pn1);    
-            $qris = $this->Qris_model->get_limit_data($config['per_page'], $start, $pn, $pn1);
-            endif;
-        $config['page_query_string'] = TRUE;
-        $this->load->library('pagination');
-        $this->pagination->initialize($config);
-
-        $data = array(
-            'qris_data' => $qris,
-            'pn' => $pn,
-            'pagination' => $this->pagination->create_links(),
-            'total_rows' => $config['total_rows'],
-            'start' => $start,
-        );
-        } else {
+                if($this->session->userdata('id_level')==='1'):;
+                    $config['total_rows'] = $this->Qris_model->total_rows($pn);
+                    $qris = $this->Qris_model->get_limit_data1($config['per_page'], $start, $pn)->result(); 
+                    
+                else:   
+                    $config['total_rows'] = $this->Qris_model->total_rows1($pn,$pn1);    
+                    $qris = $this->Qris_model->get_limit_data1($config['per_page'], $start, $pn1)->result();
+                endif;
+            $config['page_query_string'] = TRUE;
+            $this->load->library('pagination');
+            $this->pagination->initialize($config);
+                $data = array(
+                        'qris_data' => $qris,
+                        'pn' => $pn,
+                        'pagination' => $this->pagination->create_links(),
+                        'total_rows' => $config['total_rows'],
+                        'start' => $start,
+                    );
+        }
+        else 
+        {
             $config['base_url'] = base_url() . 'qris/index.html';
             $config['first_url'] = base_url() . 'qris/index.html';
             $config['total_rows'] = $this->Qris_model->total_rows($pn1);
             $config['per_page'] = 10;
-            $qris = $this->Qris_model->get_limit_data1($config['per_page'], $start, $pn1);
-        $config['page_query_string'] = TRUE;
-        $this->load->library('pagination');
-        $this->pagination->initialize($config);
+            $qris = $this->Qris_model->get_limit_data1($config['per_page'], $start, $pn1)->result();
+            
+            
+            $config['page_query_string'] = TRUE;
+            $this->load->library('pagination');
+            $this->pagination->initialize($config);
 
-        $data = array(
-            'qris_data' => $qris,
-            'pn1' => $pn,
-            'pagination' => $this->pagination->create_links(),
-            'total_rows' => $config['total_rows'],
-            'start' => $start,
-        );
+                $data = array(
+                        'qris_data' => $qris,
+                        'hasil'=>$x,
+                        'pn1' => $pn,
+                        'pagination' => $this->pagination->create_links(),
+                        'total_rows' => $config['total_rows'],
+                        'start' => $start,
+            );
+        
         }
-
-        // $config['per_page'] = 10;
-        // $config['page_query_string'] = TRUE;
-        // $this->load->library('pagination');
-        // $this->pagination->initialize($config);
-
-        // $data = array(
-        //     'brimo_data' => $brimo,
-        //     'pn' => $pn,
-        //     'pagination' => $this->pagination->create_links(),
-        //     'total_rows' => $config['total_rows'],
-        //     'start' => $start,
-        // );
+        
+    
        $this->load->view('qris/qris_list', $data);
        $this->load->view('templates/footer');
     }
@@ -270,22 +265,26 @@ class Qris extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "Pn");
-	xlsWriteLabel($tablehead, $kolomhead++, "Tgl");
-	xlsWriteLabel($tablehead, $kolomhead++, "Norek");
-	xlsWriteLabel($tablehead, $kolomhead++, "Nama Qris");
-	xlsWriteLabel($tablehead, $kolomhead++, "Hp");
+        xlsWriteLabel($tablehead, $kolomhead++, "MID");
+        xlsWriteLabel($tablehead, $kolomhead++, "Nama Merchant");
+        xlsWriteLabel($tablehead, $kolomhead++, "Sales_volume");
+        xlsWriteLabel($tablehead, $kolomhead++, "Saldo");
+        xlsWriteLabel($tablehead, $kolomhead++, "Rekening");
+        xlsWriteLabel($tablehead, $kolomhead++, "PIC");
+        xlsWriteLabel($tablehead, $kolomhead++, "Unit");
 
 	foreach ($this->Qris_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->pn);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->tgl);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->norek);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_qris);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->hp);
+            xlsWriteNumber($tablebody, $kolombody++, $data->mid);
+            xlsWriteLabel($tablebody, $kolombody++, $data->nama_merchant);
+            xlsWriteLabel($tablebody, $kolombody++, $data->sales_volume);
+            xlsWriteLabel($tablebody, $kolombody++, $data->saldo);
+            xlsWriteLabel($tablebody, $kolombody++, $data->norek);
+            xlsWriteLabel($tablebody, $kolombody++, $data->nama_mantri);
+            xlsWriteLabel($tablebody, $kolombody++, $data->unit);
 
 	    $tablebody++;
             $nourut++;
