@@ -60,82 +60,90 @@
               </div>
               <div class="card-body">
                 <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-               
+                
+                    
+                 
                 <?php
-                    $savingtarget = $this->session->userdata('saving');
-                    $bsaving = $this->session->userdata('bsaving');
-                    $savingpersen = ($data_saving/$savingtarget)*($bsaving/$savingtarget) ;
-                    $savingbar = ($data_saving/$savingtarget)*100 ;
+                    $merchanttarget = $this->session->userdata('merchant');
+                    $bmerchant = $this->session->userdata('bmerchant');
+                    
+                    $merchantmax = ($merchanttarget * 130 ) / 100;
+                    if ($data_merchant > $merchantmax ){
+                      $merchantpersen = 130 ;
+                      $merchantbar = 130 ;
+                    }else{
+                      $merchantpersen = ($data_merchant/$merchanttarget)*($bmerchant/$merchanttarget) ;
+                      $merchantbar = ($data_merchant/$merchanttarget)*100 ;
+                    }
+                    
 
-                    $brimotarget = $this->session->userdata('brimo');
-                    $bbrimo = $this->session->userdata('bbrimo');
-                    $brimopersen = ($data_brimo/$brimotarget)*($bbrimo/$brimotarget) ;
-                    $brimobar = ($data_brimo/$brimotarget)*100 ;
-
-                    $qristarget = $this->session->userdata('qris');
-                    $bqris = $this->session->userdata('bqris');
-                    $qrispersen = ($data_qris/$qristarget)*($bqris/$qristarget) ;
-                    $qrisbar = ($data_qris/$qristarget)*100 ;
-
-                    $kunjualtarget = $this->session->userdata('kunjual');
-                    $bkunjual = $this->session->userdata('bkunjual');
-                    $kunjualpersen = ($data_kunjual/$kunjualtarget)*($bkunjual/$kunjualtarget) ;
-                    $kunjualbar = ($data_kunjual/$kunjualtarget)*100 ;
-
-                    $stroberitarget = $this->session->userdata('stroberikasir');
-                    $bstroberikasir = $this->session->userdata('bstroberikasir');
-                    $stroberipersen = ($data_stroberikasir/$stroberitarget)*($bstroberikasir/$stroberitarget) ;
-                    $stroberibar = ($data_stroberikasir/$stroberitarget)*100 ;
-
-                    $umitarget = $this->session->userdata('umi');
-                    $bumi = $this->session->userdata('bumir');
-                    $umipersen = ($umi/$umitarget)*($bumi/$umitarget) ;
-                    $umibar = ($umi/$umitarget)*100 ;
+                    ?>
+                    <?php
+                        $a = 0; 
+                        foreach($volume as $val) {
+                            $a += $val->sales_volume;
+                        }
+                        $data_sales=$a;
+                    ?>
+                    <?php
+                    $salestarget = $this->session->userdata('sales');
+                    $bsales = $this->session->userdata('bsales');
+                    $salesmax= ($salestarget * 130 ) / 100;
+                    if($data_sales > $salesmax){
+                      $salespersen = 130 ;
+                      $salesbar = 130 ;
+                    }else{
+                      $salespersen = ($data_sales/$salestarget)*($bsales/$salestarget) ;
+                      $salesbar = ($data_sales/$salestarget)*100 ;
+                    }
+                   
+                  
+                    ?>
+                    <?php
+                        $b = 0; 
+                        foreach($saldoku as $val) {
+                            $b += $val->saldo;
+                        }
+                        $data_saldo=$b;
+                    ?>
+                    <?php
+                    $saldotarget = $this->session->userdata('saldo');
+                    $bsaldo = $this->session->userdata('bsaldo');
+                    $saldomax= ($saldotarget * 130 ) / 100;
+                    if($data_saldo > $saldomax){
+                      $saldopersen = 130;
+                      $saldobar = 130 ;
+                    }else{
+                      $saldopersen = ($data_saldo/$saldotarget)*($saldo/$saldotarget) ;
+                      $saldobar = ($data_saldo/$saldotarget)*100 ;
+                    }                   
+                    
+                    
 
                    
                     ?>
                     <div class="progress-group">
-                      Total Akuisisi saving <?= number_format($savingbar,2),'%' ; ?> 
-                      <span class="float-right"><b><?= number_format($data_saving); ?></b>/ <?php echo $this->session->userdata('saving');?></span>                 
+                      Total Akuisisi QRIS <?= number_format($merchantbar,2),'%' ; ?> 
+                      <span class="float-right"><b><?= number_format($data_merchant); ?></b>/ <?php echo $this->session->userdata('merchant');?></span>                 
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-primary" style="width:  <?= number_format($savingbar,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-primary" style="width:  <?= number_format($merchantbar,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      Total Akuisisi Brimo <?= number_format($brimobar,2),'%' ; ?>
-                      <span class="float-right"><b><?= number_format($data_brimo); ?></b>/<?php echo $this->session->userdata('brimo');?></span>
+                      Total Sales Volume <?= number_format($salesbar,2),'%' ; ?>
+                      <span class="float-right"><b><?= number_format($data_sales); ?></b>/<?php echo number_format($this->session->userdata('sales'));?></span>
                       <div class="progress progress-sm">
-                      <div class="progress-bar bg-info " style="width:<?= number_format($brimobar,2),'%' ;R ?>"></div>
+                      <div class="progress-bar bg-info " style="width:<?= number_format($salesbar,2),'%' ;R ?>"></div>
                       </div></div>
                     <!-- /.progress-group -->
                     <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi Qris <?= number_format($qrisbar,2),'%' ; ?></span>
-                      <span class="float-right"><b><?= number_format($data_qris); ?></b>/<?php echo $this->session->userdata('qris');?></span>
+                      <span class="progress-text">Total Saldo <?= number_format($saldobar,2),'%' ; ?></span>
+                      <span class="float-right"><b><?= number_format($data_saldo); ?></b>/<?php echo number_format($this->session->userdata('saldo'));?></span>
                       <div class="progress progress-sm">
-                       <div class="progress-bar bg-success" style="width:<?= number_format($qrisbar,2),'%' ;R ?>"></div>
+                       <div class="progress-bar bg-success" style="width:<?= number_format($saldobar,2),'%' ;R ?>"></div>
                       </div></div>                   
                     <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Total Akuisisi kunjual <?= number_format($kunjualbar,2),'%' ; ?></span>
-                      <span class="float-right"><b><?= number_format($data_kunjual); ?></b>/<?php echo $this->session->userdata('kunjual');?></span>
-                      <div class="progress progress-sm">
-                      <div class="progress-bar bg-warning" style="width:<?= number_format($kunjualbar,2),'%' ;R ?>"></div>
-                      </div></div>
-                       <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Stroberi Kasir / Tagihan <?= number_format($stroberibar,2),'%' ; ?></span>
-                      <span class="float-right"><b><?= number_format($data_stroberikasir); ?></b>/<?php echo $this->session->userdata('stroberikasir');?></span>
-                      <div class="progress progress-sm">
-                      <div class="progress-bar bg-danger" style="width:<?= number_format($stroberibar,2),'%' ;R ?>"></div>
-                      </div></div>
-                       <!-- /.progress-group -->
-                    <div class="progress-group">
-                      <span class="progress-text">Deb Umi <?= number_format($umibar,2),'%' ; ?></span>
-                      <span class="float-right"><b><?= number_format($umi); ?></b>/<?php echo $this->session->userdata('umi');?></span>
-                      <div class="progress progress-sm">
-                      <div class="progress-bar" style="background-color:yellow; width:<?= number_format($umibar,2),'%' ;R ?> "></div>
-                      </div></div>
-                       <!-- /.progress-group -->
+                    
                     
     </section>
      <?php
