@@ -1,13 +1,19 @@
-<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:100%">
-    <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
-<div class="container-sm">
-    
-          <div class="row">
-            <h2 style="margin-top:0px">Data Qris</h2>
-            <!-- <div class="col-md-0"></div>
-            <div class="col-md-6"></div> -->
-            <div class="col-md-6">
 
+<div class="content-wrapper" style="min-height: 955.807px;border:0px; heigth:100%; overflow:auto; float:left; width:90%">
+    <center><?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></center>
+    <h2 style="margin-top:0px">Data Qris</h2><br><br><br>
+    <?php if($this->session->userdata('id_level')!=='1' ):; ?>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class"fa fa-plus"></i>Tambah Data</button>
+    <?php endif; ?>
+    <div class="container-sm">
+          
+          <div class="row">
+          
+                
+            <div class="col-md-0"></div>
+            <div class="col-md-12"></div>
+                
+                
               <form action="<?php echo site_url('qris/index'); ?>" class="form-inline" method="get">
                     <div class="input-group"></div>
               </form>
@@ -42,7 +48,7 @@
               <td><?php echo "Rp " . number_format($qris->sales_volume,2,',','.') ?></td>
               <td><?php echo strtoupper($qris->nama_mantri)?></td>
               <td><?php echo $qris->unit ?></td>
-			        <td ><img src="<?php echo base_url() ;?>template/dist/img/<?php echo $qris->foto ?>"class="rounded-lg" width="75"  alt=""></td>
+			        <td ><img src="<?php echo base_url() ;?>template/dist/img/<?php echo $qris->foto ?>"class="rounded-lg" width="50" height="60"  alt=""></td>
                 <?php if($this->session->userdata('id_level')==='1' ):; ?>
               <td>
                 <?php
@@ -65,12 +71,14 @@
 	          </div></div>
 
             <div>
-                <?php echo form_open_multipart('upload/do_upload');?>
+            <?php if($this->session->userdata('id_level')==='1' ):; ?>   
+            <?php echo form_open_multipart('upload/do_upload');?>
             <br><br><br><br>
               <h5 style="margin-top:0px">Update Sales Volume :</h5>
               <input type="file" name="userfile" size="20" />
               <input  type="submit" value="upload" />
             </form>
+            <?php endif; ?>
             </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
@@ -79,23 +87,9 @@
         </div>
   </div>
 </div>
-<!-- datepicker -->
 
-<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker({
-  dateFormat: "yy-mm-dd"
 
-});
-  } );
-  </script> -->
-
-<!-- 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -111,20 +105,20 @@
             <input type="hidden" class="form-control" name="pn" id="pn" placeholder="Pn" value="<?php echo $this->session->userdata('pn');?>" />
         </div>
         <div class="form-group">
-            <label for="date">Tgl <?php echo form_error('tgl') ?></label>
-            <input type="text" class="form-control" name="tgl" id="datepicker" autocomplete="off" placeholder="Tgl" value="" />
+            <label for="date">MID <?php echo form_error('mid') ?></label>
+            <input type="number" class="form-control" name="mid" autocomplete="off" placeholder="MID Merchant" value="" pattern="[0-9]+" required />
         </div>
         <div class="form-group">
-            <label for="int">Norek <?php echo form_error('norek') ?></label>
-            <input type="text" class="form-control" pattern="[0-9]+" required name="norek" autocomplete="off" id="norek" placeholder="Norek" value="" />
+            <label for="int">Nama Merchant <?php echo form_error('nama_merchant') ?></label>
+            <input type="text" class="form-control" required name="nama_merchant" autocomplete="off" id="nama_merchant" placeholder="nama_merchant" value="" />
         </div>
         <div class="form-group">
-            <label for="varchar">Nama Qris<?php echo form_error('nama') ?></label>
-            <input type="text" class="form-control" name="nama_qris" id="nama_qris" required autocomplete="off" placeholder="Nama" value="" />
+            <label for="varchar">No Rekening<?php echo form_error('norek') ?></label>
+            <input type="number" class="form-control" name="norek" id="norek" pattern="[0-9]+" required autocomplete="off" placeholder="No Rekening" value="" />
         </div>
         <div class="form-group">
-            <label for="int">No Hp <?php echo form_error('no_hp') ?></label>
-            <input type="text" class="form-control" pattern="[0-9]+" required name="hp" autocomplete="off" id="hp" placeholder="No Hp" value="" />
+            <label for="int">Ambil Foto </label>
+            <input type="file" name="foto" id="foto" accept="image/*">
         </div>
         <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Simpan</button>
@@ -134,4 +128,4 @@
       </form>
       </div>
     </div>
-  </div> -->
+  </div></div>
