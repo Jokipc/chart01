@@ -18,17 +18,19 @@ class Home extends CI_Controller{
       $kode = $this->input->get('kode');
       $pn = $this->session->userdata('pn');
       
+      $volume= $this->Home_model->sales($pn)->result();
+      $saldoku= $this->Home_model->saldorek($pn)->result();
+      $merchant = $this->Home_model->merchant($pn)->num_rows();
       
-      $qris = $this->Home_model->qris($pn)->num_rows();
       $brimo = $this->Home_model->brimo($pn)->num_rows();
       $saving = $this->Home_model->saving($pn)->num_rows();
       $stroberikasir = $this->Home_model->stroberikasir($pn)->num_rows();
       $kunjual = $this->Home_model->kunjual($pn)->num_rows();
       $umi = $this->Home_model->umi($pn)->num_rows();
      
-      
-     
-      $x['data_qris'] = $qris;
+      $x['volume'] = $volume;
+      $x['saldoku'] = $saldoku;
+      $x['data_merchant'] = $merchant;
       $x['data_brimo'] = $brimo;
       $x['data_stroberikasir'] = $stroberikasir;
       $x['data_saving'] = $saving;
@@ -187,6 +189,10 @@ class Home extends CI_Controller{
             }
       
 }
+
+
+   
+
 
 
    
