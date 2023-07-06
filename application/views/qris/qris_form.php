@@ -33,24 +33,28 @@
             <input type="text" class="form-control" name="pn" id="pn" placeholder="" autocomplete="off" value="<?php echo $pn; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="date">Tanggal<?php echo form_error('tgl') ?></label>
-            <input type="text" class="form-control" name="tgl" id="datepicker" placeholder="yyyy-mm-dd" autocomplete="off" value="<?php echo $tgl; ?>" />
+            <label for="varchar">MID<?php echo form_error('mid') ?></label>
+            <input type="number" class="form-control" name="mid" autocomplete="off" required value="<?php echo $mid; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="varchar">No Rekening <?php echo form_error('norek') ?></label>
-            <input type="number" class="form-control" name="norek" id="norek" autocomplete="off" maxlength="15" placeholder="0000000000000000" value="<?php echo $norek; ?>" />
+            <label for="varchar">Nama Merchant <?php echo form_error('nama_merchant') ?></label>
+            <input type="text" class="form-control" name="nama_merchant" id="nama_merchant" autocomplete="off" value="<?php echo $nama_merchant; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="varchar">Nama Qris <?php echo form_error('nama_qris') ?></label>
-            <input type="text" class="form-control" name="nama_qris" id="nama_qris" autocomplete="off" placeholder="Nama Qris" value="<?php echo $nama_qris; ?>" />
+            <label for="varchar">Norek <?php echo form_error('norek') ?></label>
+            <input type="number" class="form-control" name="norek" id="norek" autocomplete="off" placeholder="Norek" value="<?php echo $norek; ?>" />
         </div>
-	    <div class="form-group">
+        <div class="form-group">
+            <label for="int">Ambil Foto </label>
+            <input type="file" name="foto" id="foto" accept="image/*">" />
+        </div>
+	    <!-- <div class="form-group">
             <label for="varchar">Hp <?php echo form_error('hp') ?></label>
             <input type="text" class="form-control" name="hp" id="hp" autocomplete="off" maxlength="13" placeholder="Hp" value="<?php echo $hp; ?>" />
-        </div>
+        </div> -->
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('home') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('qris') ?>" class="btn btn-default">Cancel</a>
 	</form>
     </section>
         </body>
