@@ -82,12 +82,13 @@ class Qris_model extends CI_Model
         // $this->db->or_like('hp', $pn,"match");
         // $this->db->where('pn', $pn1);
      
-	    // $this->db->limit($limit, $start);
+	    
         // return $this->db->get($this->table)->result();
         $this->db->select('*');
         $this->db->from('mantri');
         $this->db->join('qris','mantri.pn = qris.pn');      
         $this->db->join('account','mantri.branch = account.branch');
+        $this->db->limit($limit, $start);
         
         $query = $this->db->get();
         return $query;
@@ -108,7 +109,7 @@ class Qris_model extends CI_Model
         $this->db->from('mantri');
         $this->db->join('qris','mantri.pn = qris.pn');      
         $this->db->join('account','mantri.branch = account.branch');
-        
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
         return $query;
     }
