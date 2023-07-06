@@ -24,6 +24,9 @@ class Login extends CI_Controller{
         $qris = $data['qris'];
         $stroberikasir = $data['stroberikasir'];
         $kunjual = $data['kunjual'];
+        $merchant = $data['merchant'];
+        $sales = $data['sales'];
+        $saldo = $data['saldo'];
         $branch = $data['branch'];
         $bsaving = $data['bsaving'];
         $bbrimo = $data['bbrimo'];
@@ -31,6 +34,9 @@ class Login extends CI_Controller{
         $bstroberikasir = $data['bstroberikasir'];
         $bkunjual = $data['bkunjual'];
         $side = $data['side'];
+        $bmerchant = $data['bmerchant'];
+        $bsales = $data['bsales'];
+        $bsaldo = $data['bsaldo'];
         $umi = $data['umi'];
         $bumi = $data['bumi'];
         $level = $data['id_level'];
@@ -54,6 +60,17 @@ class Login extends CI_Controller{
             'umi'     => $umi,
             'bumi'     => $bumi,
             'id_level'     => $level,
+
+            'merchant'     => $merchant,
+            'sales'     => $sales,
+            'saldo'     => $saldo,
+            
+            'bmerchant'     => $bmerchant,
+            'bsales'     => $bsales,
+            'bsaldo'     => $bsaldo,
+
+
+
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
