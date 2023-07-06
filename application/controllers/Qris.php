@@ -121,11 +121,12 @@ class Qris extends CI_Controller
             'button' => 'Create',
             'action' => site_url('qris/create_action'),
 	    'id' => set_value('id'),
-	    'pn' => set_value('pn'),
-	    'tgl' => set_value('tgl'),
+        'pn' => set_value('pn'),
+	    'mid' => set_value('mid'),
+	    'nama_merchant' => set_value('nama_merchant'),
 	    'norek' => set_value('norek'),
-	    'nama_qris' => set_value('nama_qris'),
-	    'hp' => set_value('hp'),
+        'foto' => set_value('foto'),
+	   
 	);
         $this->load->view('qris/qris_form', $data);
     }
@@ -139,10 +140,9 @@ class Qris extends CI_Controller
         } else {
             $data = array(
 		'pn' => $this->input->post('pn',TRUE),
-		'tgl' => $this->input->post('tgl',TRUE),
+		'mid' => $this->input->post('mid',TRUE),
+		'nama_merchant' => $this->input->post('nama_merchant',TRUE),
 		'norek' => $this->input->post('norek',TRUE),
-		'nama_qris' => $this->input->post('nama_qris',TRUE),
-		'hp' => $this->input->post('hp',TRUE),
 	    );
 
             $this->Qris_model->insert($data);
@@ -233,14 +233,13 @@ class Qris extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('pn', 'pn', 'trim|required');
-	$this->form_validation->set_rules('tgl', 'tgl', 'trim|required');
-	$this->form_validation->set_rules('norek', 'norek', 'trim|required');
-	$this->form_validation->set_rules('nama_qris', 'nama qris', 'trim|required');
-	$this->form_validation->set_rules('hp', 'hp', 'trim|required');
-
-	$this->form_validation->set_rules('id', 'id', 'trim');
-	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+        $this->form_validation->set_rules('pn', 'pn', 'trim|required');
+        $this->form_validation->set_rules('mid', 'mid', 'trim|required');
+        $this->form_validation->set_rules('nama_merchant', 'nama_merchant', 'trim|required');
+        $this->form_validation->set_rules('norek', 'norek', 'trim|required');
+        $this->form_validation->set_rules('foto', 'foto', 'trim|required');
+        $this->form_validation->set_rules('id', 'id', 'trim');
+        $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
     public function excel()
