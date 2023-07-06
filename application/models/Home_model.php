@@ -1,6 +1,29 @@
 <?php
 class Home_model extends CI_Model{
 
+  function merchant($pn=271055)
+  {
+  $this->db->select('pn');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('qris');
+  return $result;
+  }
+
+  function sales($pn=271055)
+  {
+  $this->db->select_sum('sales_volume');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('qris');
+  return $result;
+  }
+
+  function saldorek($pn=271055)
+  {
+  $this->db->select_sum('saldo');
+  $this->db->where('pn',$pn);
+  $result = $this->db->get('qris');
+  return $result;
+  }
 
   function brimo($pn=271055)
   {
