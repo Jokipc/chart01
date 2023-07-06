@@ -27,48 +27,68 @@
 		</div>
 		<table style="font-size:12 ; word-spacing: -2px;" width=100%  >Bobot :
 			
-			<td style="background-color:#007bff">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bsaving'); ?>%</td><td>&nbsp;&nbsp;</td>
-			<td style="background-color:#17a2b8">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bbrimo'); ?>%</td><td>&nbsp;&nbsp;</td>
-			<td style="background-color:#28a745">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bqris'); ?>%</td><td>&nbsp;&nbsp;</td>
-			<td style="background-color:#ffc107">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bkunjual'); ?>%</td><td>&nbsp;&nbsp;</td>
-			<td style="background-color:#dc3545">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bstroberikasir'); ?>%</td><td>&nbsp;&nbsp;</td>
-			<td style="background-color:yellow">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bumi'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:#007bff">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bmerchant'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:#17a2b8">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bsales'); ?>%</td><td>&nbsp;&nbsp;</td>
+			<td style="background-color:green">&nbsp;&nbsp;&nbsp;</td><td>&nbsp;:&nbsp;<?php echo $this->session->userdata('bsaldo'); ?>%</td><td>&nbsp;&nbsp;</td>
 		
 		</table>	
 	</body>
 </html>
 
 <?php
-                    $savingtarget = $this->session->userdata('saving');
-                    $bsaving = $this->session->userdata('bsaving');
-                    $savingpersen = ($data_saving/$savingtarget)*$bsaving ;
-                   
+                    $merchanttarget = $this->session->userdata('merchant');
+                    $bmerchant = $this->session->userdata('bmerchant');
+					$merchantmax = ($bmerchant * 130 ) / 100 ;
+					$merchanthasil= ($data_merchant/$merchanttarget)*$bmerchant ;
+					if($merchanthasil > $merchantmax ){
+						$merchantpersen = $merchantmax;
+					}else{
+						$merchantpersen = $merchanthasil; 
+					}
+					
+					
+					?>
+                    <?php
+                        $a = 0; 
+                        foreach($volume as $val) {
+                            $a += $val->sales_volume;
+                        }
+                        $data_sales=$a;
+                    ?>
+                    <?php
+                    $salestarget = $this->session->userdata('sales');
+                    $bsales = $this->session->userdata('bsales');
+					$salesmax = ($bsales*130 )/100 ;
+                    $saleshasil = ($data_sales/$salestarget)*$bsales ;
+                    if($salesthasil > $salesmax ){
+						$salespersen = $bsales;
+					}else{
+						$salespersen = $salesmax; 
+					}
 
-                    $brimotarget = $this->session->userdata('brimo');
-                    $bbrimo = $this->session->userdata('bbrimo');
-                    $brimopersen = ($data_brimo/$brimotarget)*$bbrimo ;
+					?>
+                    <?php
+                        $b = 0; 
+                        foreach($saldoku as $val) {
+                            $b += $val->saldo;
+                        }
+                        $data_saldo=$b;
+                    ?>
+					<?php
+                    $saldotarget = $this->session->userdata('saldo');
+                    $bsaldo = $this->session->userdata('bsaldo');
+					$saldomax = ($bsaldo * 130 ) / 100 ;
+                    $saldohasil = ($data_saldo/$saldotarget)*$bsaldo ;
+					if ($saldohasil > $saldomax){
+						$saldopersen = $saldomax ; 
+					}else{
+						$saldopersen =$saldohasil ;
+					}
                     
 
-                    $qristarget = $this->session->userdata('qris');
-                    $bqris = $this->session->userdata('bqris');
-                    $qrispersen = ($data_qris/$qristarget)*$bqris ;
-                    
-                    $kunjualtarget = $this->session->userdata('kunjual');
-                    $bkunjual = $this->session->userdata('bkunjual');
-                    $kunjualpersen = ($data_kunjual/$kunjualtarget)*$bkunjual;
-                
-
-                    $stroberitarget = $this->session->userdata('stroberikasir');
-                    $bstroberikasir = $this->session->userdata('bstroberikasir');
-                    $stroberipersen = ($data_stroberikasir/$stroberitarget)*$bstroberikasir;
-
-					$umitarget = $this->session->userdata('umi');
-                    $bumi = $this->session->userdata('bumi');
-                    $umipersen = ($umi/$umitarget)*$bumi;
-                   
                    
 
-					$total=number_format($savingpersen+$brimopersen+$qrispersen+$kunjualpersen+$stroberipersen+$umipersen,1) ; 
+					$total=number_format($merchantpersen+$salespersen+$saldopersen,1) ; 
 ?>
 <?php $angka=10; ?>
 
@@ -78,13 +98,13 @@
 		type: "tsgauge",
 		data: {
 			datasets: [{
-				backgroundColor: ['#ff0000', 'orange','#ffff00', '#008000'],
+				backgroundColor: ['#ff0000', '#ff0000','#008000', '#008000'],
 				borderWidth: 0,
 				gaugeData: {
 					value: <?php echo number_format($total,1); ?>,
 					valueColor: "#ff7143"
 				},
-				gaugeLimits: [0, 25, 50, 75, 100]
+				gaugeLimits: [0, 50, 100, 150, 200]
 			}]
 		},
 		options: {
